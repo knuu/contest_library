@@ -1,0 +1,1 @@
+mypy -s --strict-optional --disallow-untyped-defs --disallow-untyped-calls --disallow-incomplete-defs --disallow-untyped-decorators --disallow-subclassing-any --warn-no-return --strict --cache-dir=/dev/null */*.py

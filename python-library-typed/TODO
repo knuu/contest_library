@@ -1,0 +1,41 @@
+# RMQ
+Segment Tree
+
+# math
+segment sieve
+Atkin (Sieve)
+FFT
+
+# geometry
+compress
+on segment
+intersection
+
+# Graph
+Eppstein (k-shortest path)
+Johnson (all shortest paths)
+
+# Tree
+Cuninghame-Green (Minimum Diameter Spanning Tree)
+Chu-Liu/Edmond (Minimum Spanning Arborescence)
+Dreyfus-Wagner (Minimum Steiner Tree)
+Molle-Richter-Rossmanith (Minimum Steiner Tree)
+Tarjan (Least Common Ancestor)
+
+# Flow
+Edmonds-Karp (Maximum Flow)
+Goldberg-Tarjan (Maximum Flow)
+Nagamochi-Ibaraki/Stoer-Wagner (Minimum Cut - undrected)
+Gusfield (Gomory-Hu Tree, Cut Tree, Maximum Flow)
+Primal-Dual (Minimum Cost Flow)
+
+# matching
+Edmonds (Maximum Matching)
+Edmonds (Minimum Weight Matching)
+tutte Matrix
+Hungariana (Assignment Problem)
+
+# Linear Programming
+Simplex
+Interior point
+Karmarkar
