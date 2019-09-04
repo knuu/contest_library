@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <vector>
 
 struct StronglyConnectedComponents {
@@ -32,14 +33,22 @@ struct StronglyConnectedComponents {
   }
 
   int run() {
-    fill(used.begin(), used.end(), false);
+    std::fill(used.begin(), used.end(), false);
     vs.clear();
     for (int v = 0; v < V; v++)
       if (!used[v]) dfs(v);
-    fill(used.begin(), used.end(), false);
+    std::fill(used.begin(), used.end(), false);
     int k = 0;
     for (int i = vs.size() - 1; i >= 0; i--)
       if (!used[vs[i]]) rdfs(vs[i], k++);
     return k;
+  }
+
+  std::vector<int> create_order() {
+    std::vector<int> order(V);
+    for (std::size_t i = 0; i < cmp.size(); i++) {
+      order[cmp[i]] = i;
+    }
+    return order;
   }
 };
