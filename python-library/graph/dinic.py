@@ -8,6 +8,7 @@ class MaxFlow:
     """
     class Edge:
         """edge in flow networks"""
+
         def __init__(self, to, cap, rev):
             self.to, self.cap, self.rev = to, cap, rev
 
@@ -67,3 +68,26 @@ class MaxFlow:
                 if e.cap > 0 and self.level[e.to] < 0:
                     self.level[e.to] = self.level[fr] + 1
                     que.append(e.to)
+
+
+def yosupo_bi():
+    L, R, M = map(int, input().split())
+    source, sink = L + R, L + R + 1
+    mf = MaxFlow(L + R + 2)
+    for _ in range(M):
+        a, b = map(int, input().split())
+        mf.add_edge(a, L + b, 1)
+    for i in range(L):
+        mf.add_edge(source, i, 1)
+    for i in range(R):
+        mf.add_edge(L + i, sink, 1)
+    print(mf.dinic(source, sink))
+
+    for i in range(L):
+        for e in mf.E[i]:
+            if e.cap == 0 and e.to < L + R:
+                print(i, e.to - L)
+
+
+if __name__ == "__main__":
+    yosupo_bi()

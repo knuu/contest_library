@@ -49,3 +49,22 @@ def divisorsList(n):
             if n // i != i:
                 divsList.append(n//i)
     return sorted(divsList)
+
+
+def yosupo():
+    # https://judge.yosupo.jp/problem/factorize
+    Q = int(input())
+    for _ in range(Q):
+        a = int(input())
+        if a == 1:
+            print(0)
+            continue
+        pf = Divisor(a)
+        ans = []
+        for k in sorted(pf.primeFactorization):
+            ans.extend([k] * pf.primeFactorization[k])
+        print(len(ans), *ans)
+
+
+if __name__ == "__main__":
+    yosupo()

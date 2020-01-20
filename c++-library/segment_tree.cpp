@@ -1,6 +1,10 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <cassert>
+#include <iostream>
+#include <limits>
+#include <vector>
 
-template<class Monoid>
+template <class Monoid>
 struct SegmentTree {
   using T = typename Monoid::type;
   int N_, N;
@@ -38,49 +42,119 @@ struct SegmentTree {
 
     while (key > 0) {
       key = (key - 1) / 2;
-      dat[key] = Monoid::merge(dat[2 * key + 1], dat[2 * key + 2]);  // rewrite here
+      dat[key] =
+          Monoid::merge(dat[2 * key + 1], dat[2 * key + 2]);  // rewrite here
     }
   }
 
-  // [a, b)
-  T query(int low, int high) {
-    assert(0 <= low && low <= high && high <= N_);
-    return query(low, high, 0, 0, N);
-  }
+  inline const T &operator[](const int k) const { return dat.at(N - 1 + k); }
+  inline T &operator[](const int k) { return dat.at(N - 1 + k); }
 
-  T query(int low, int high, int key, int left, int right) {
-    if (right <= low || high <= left) return Monoid::identity();
-    if (low <= left && right <= high) return dat[key];
-
-    int mid = (left + right) / 2;
-    return Monoid::merge(query(low, high, 2 * key + 1, left, mid),
-                         query(low, high, 2 * key + 2, mid, right));  // rewrite here
+  T query(int low, int high) const {
+    T left_ret = Monoid::identity(), right_ret = Monoid::identity();
+    for (low += N, high += N; low < high; low >>= 1, high >>= 1) {
+      if (low & 1) {
+        left_ret = Monoid::merge(left_ret, dat[low - 1]);
+        low++;
+      }
+      if (high & 1) {
+        high--;
+        right_ret = Monoid::merge(dat[high - 1], right_ret);
+      }
+    }
+    return Monoid::merge(left_ret, right_ret);
   }
 };
 
 template <typename T>
 struct RangeSumQuery {
   using type = T;
-  static type identity() { return 0; }
-  static type merge(const type &l, const type &r) {
-    return l + r;
-  }
+  static type identity() { return T(0); }
+  static type merge(const type &l, const type &r) { return l + r; }
 };
 
 template <typename T>
 struct RangeMinQuery {
   using type = T;
-  static type identity() { return INT_MAX; }
-  static type merge(const type &l, const type &r) {
-    return min(l, r);
-  }
+  static type identity() { return std::numeric_limits<T>::max(); }
+  static type merge(const type &l, const type &r) { return std::min(l, r); }
 };
 
 template <typename T>
 struct RangeMaxQuery {
   using type = T;
-  static type identity() { return 0; }
-  static type merge(const type &l, const type &r) {
-    return max(l, r);
-  }
+  static type identity() { return T(0); }
+  static type merge(const type &l, const type &r) { return std::max(l, r); }
 };
+
+void aoj_min() {
+  // https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A
+  int N, Q;
+  std::cin >> N >> Q;
+  SegmentTree<RangeMinQuery<int>> rmq(N);
+  for (int i = 0; i < Q; i++) {
+    int t, x, y;
+    std::cin >> t >> x >> y;
+    if (t == 0) {
+      rmq.update(x, y);
+    } else {
+      std::cout << rmq.query(x, y + 1) << '\n';
+    }
+  }
+}
+
+void aoj_sum() {
+  int N, Q;
+  std::cin >> N >> Q;
+  SegmentTree<RangeSumQuery<int>> rsq(N);
+  for (int i = 0; i < Q; i++) {
+    int t, x, y;
+    std::cin >> t >> x >> y;
+    x--;
+    if (t == 0) {
+      rsq.update(x, rsq[x] + y);
+    } else {
+      std::cout << rsq.query(x, y) << '\n';
+    }
+  }
+}
+
+void yosupo_static_rmq() {
+  int N, Q;
+  std::cin >> N >> Q;
+  std::vector<int> arr(N);
+  for (int i = 0; i < N; i++) std::cin >> arr[i];
+  SegmentTree<RangeMinQuery<int>> rsq(arr);
+  for (int i = 0; i < Q; i++) {
+    int x, y;
+    std::cin >> x >> y;
+    std::cout << rsq.query(x, y) << '\n';
+  }
+}
+
+void yosupo_rsq() {
+  int N, Q;
+  std::cin >> N >> Q;
+  std::vector<long long> arr(N);
+  for (int i = 0; i < N; i++) std::cin >> arr[i];
+  SegmentTree<RangeSumQuery<long long>> rsq(arr);
+  for (int i = 0; i < Q; i++) {
+    int t, x, y;
+    std::cin >> t >> x >> y;
+    if (t == 0) {
+      rsq.update(x, rsq[x] + y);
+    } else {
+      std::cout << rsq.query(x, y) << '\n';
+    }
+  }
+}
+
+int main() {
+  std::cin.tie(0);
+  std::ios_base::sync_with_stdio(false);
+  // aoj_min();
+  // aoj_sum();
+  // yosupo_static_rmq();
+  yosupo_rsq();
+  return 0;
+}

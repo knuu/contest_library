@@ -16,6 +16,7 @@
  */
 
 #include <cassert>
+#include <iostream>
 #include <vector>
 
 template <typename T>
@@ -36,7 +37,7 @@ struct RangeSumQuery {
   }
 
   // [0, k)
-  T sum(int k) {
+  T sum(int k) const {
     assert(k >= 0);
     T ret = 0;
     for (int x = k - 1; x >= 0; x = (x & (x + 1)) - 1) {
@@ -45,13 +46,44 @@ struct RangeSumQuery {
     return ret;
   }
   // [l, r)
-  T sum(int l, int r) {
+  T sum(int l, int r) const {
     assert(0 <= l && l <= r && r <= N);
     return sum(r) - sum(l);
   }
 
-  T index(int k) {
+  T index(int k) const {
     assert(0 <= k && k < N);
     return sum(k + 1) - sum(k);
   }
 };
+
+void yosupo() {
+  int N, Q;
+  std::cin >> N >> Q;
+  RangeSumQuery<long long> rsq(N);
+  for (int i = 0; i < N; i++) {
+    long long v;
+    std::cin >> v;
+    rsq.add(i, v);
+  }
+
+  for (int i = 0; i < Q; i++) {
+    int t;
+    long long x, y;
+    std::cin >> t >> x >> y;
+    if (t == 0) {
+      rsq.add(x, y);
+    } else {
+      std::cout << rsq.sum(x, y) << '\n';
+    }
+  }
+}
+
+int main() {
+  std::cin.tie(0);
+  std::ios_base::sync_with_stdio(false);
+
+  yosupo();
+
+  return 0;
+}

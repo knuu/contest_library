@@ -12,12 +12,12 @@
 
 #include <algorithm>
 #include <array>
+#include <cassert>
+#include <cstddef>
 #include <iostream>
 #include <limits>
 #include <numeric>
 #include <vector>
-#include <cassert>
-#include <cstddef>
 
 /**
  * @brief type for input data of kd-tree
@@ -41,9 +41,11 @@ struct Data {
    * @param data2 Second data for comparing
    * @param base Start dimension for comparing.
    *
-   * @return If data1 < data1 in lexicographical order, then true, otherwise false.
+   * @return If data1 < data1 in lexicographical order, then true, otherwise
+   * false.
    */
-  static bool compare (const Data<type> &data1, const Data<type> &data2, size_t base = 1) {
+  static bool compare(const Data<type> &data1, const Data<type> &data2,
+                      size_t base = 1) {
     const size_t dim = data1.data.size();
     for (size_t i = 0; i < dim; i++) {
       if (data1.data[(i + base) % dim] != data2.data[(i + base) % dim]) {
@@ -58,8 +60,10 @@ struct Data {
   bool operator==(const Data<type> &data) const {
     return this->data == data.data;
   }
-  const T& operator[](const size_t i) const { return *(this->data.begin() + i); }
-  T& operator[](const size_t i) { return *(this->data.begin() + i); }
+  const T &operator[](const size_t i) const {
+    return *(this->data.begin() + i);
+  }
+  T &operator[](const size_t i) { return *(this->data.begin() + i); }
 };
 
 /**
@@ -76,13 +80,14 @@ struct Region {
    * @param low lower borders of orthogonal region
    * @param high higher borders of orthogonal region
    */
-  Region(T low, T high) : low(low), high(high) {};
+  Region(T low, T high) : low(low), high(high){};
 
   /**
    * Checking Function of Inclusion for Data and Region.
    *
    * @param data A data
-   * @return If this region include the data, then return true, otherwise return false.
+   * @return If this region include the data, then return true, otherwise return
+   * false.
    */
   bool include(T data) const {
     size_t dim = this->low.size();
@@ -98,7 +103,8 @@ struct Region {
    * Checking Function of Inclusion for Two Regions.
    *
    * @param region A region.
-   * @return If this region include the given region, then return true, otherwise return false.
+   * @return If this region include the given region, then return true,
+   * otherwise return false.
    */
   bool include(Region<T> region) const {
     size_t dim = this->low.size();
@@ -122,7 +128,8 @@ struct Region {
    * Cheking Function of Overlapping for Two Regions.
    *
    * @param region A region.
-   * @return If this region overlaps the given region, then return true, otherwise return false.
+   * @return If this region overlaps the given region, then return true,
+   * otherwise return false.
    */
   bool overlap(Region<T> region) const {
     size_t dim = this->low.size();
@@ -145,7 +152,7 @@ struct Region {
   /**
    * overloading of << operator
    */
-  friend std::ostream& operator<<(std::ostream& os, const Region<T> &region) {
+  friend std::ostream &operator<<(std::ostream &os, const Region<T> &region) {
     for (size_t i = 0; i < region.low.size(); i++) {
       if (i > 0) {
         os << 'x';
@@ -167,7 +174,8 @@ struct KDTreeNode {
   /// Children of the node
   KDTreeNode *left, *right;
 
-  KDTreeNode(size_t axis, size_t idx) : axis(axis), idx(idx), left(nullptr), right(nullptr) {}
+  KDTreeNode(size_t axis, size_t idx)
+      : axis(axis), idx(idx), left(nullptr), right(nullptr) {}
   bool is_leaf_node() const {
     return this->left == nullptr and this->right == nullptr;
   }
@@ -180,10 +188,10 @@ template <typename DataType>
 struct KDTree {
   using T = typename DataType::type;
   using VT = typename T::value_type;
-  size_t dim;                   /**< Dimension of Data */
-  std::vector<DataType> data;   /**< Data in kd-tree */
-  VT min_range, max_range;      /**< Initial Range for range query */
-  KDTreeNode *root;             /**< Root Node of kd-tree */
+  size_t dim;                 /**< Dimension of Data */
+  std::vector<DataType> data; /**< Data in kd-tree */
+  VT min_range, max_range;    /**< Initial Range for range query */
+  KDTreeNode *root;           /**< Root Node of kd-tree */
 
   /**
    * Constructor for kd-tree
@@ -192,7 +200,9 @@ struct KDTree {
    * @param min_range Minimun value of query range
    * @param max_range Maximun value of query range
    */
-  KDTree(size_t dim = 2, VT min_range = std::numeric_limits<VT>::min(), VT max_range = std::numeric_limits<VT>::max()) : dim(dim), min_range(min_range), max_range(max_range) {}
+  KDTree(size_t dim = 2, VT min_range = std::numeric_limits<VT>::min(),
+         VT max_range = std::numeric_limits<VT>::max())
+      : dim(dim), min_range(min_range), max_range(max_range) {}
 
   /**
    * Recursive Builder of kd-tree
@@ -206,13 +216,16 @@ struct KDTree {
     if (data[0].size() == 1) {
       return new KDTreeNode(this->dim, data[0][0]);
     } else {
-      std::vector<std::vector<size_t>> left_data(this->dim), right_data(this->dim);
-      size_t median_idx = static_cast<size_t>(static_cast<int>(data[0].size() - 1) / 2);
+      std::vector<std::vector<size_t>> left_data(this->dim),
+          right_data(this->dim);
+      size_t median_idx =
+          static_cast<size_t>(static_cast<int>(data[0].size() - 1) / 2);
       size_t median = data[depth % this->dim][median_idx];
       for (size_t i = 0; i < this->dim; i++) {
         for (size_t j : data[i]) {
           if (this->data[j] == this->data[median] or
-              DataType::compare(this->data[j], this->data[median], depth % this->dim)) {
+              DataType::compare(this->data[j], this->data[median],
+                                depth % this->dim)) {
             left_data[i].emplace_back(j);
           } else {
             right_data[i].emplace_back(j);
@@ -237,7 +250,8 @@ struct KDTree {
 
     this->data = data;
 
-    std::vector<std::vector<size_t>> _data(this->dim, std::vector<size_t>(data.size()));
+    std::vector<std::vector<size_t>> _data(this->dim,
+                                           std::vector<size_t>(data.size()));
     for (size_t i = 0; i < this->dim; i++) {
       std::iota(_data[i].begin(), _data[i].end(), 0);
       sort(_data[i].begin(), _data[i].end(),
@@ -286,7 +300,8 @@ struct KDTree {
    * @param node_region
    * @param output
    */
-  void query(KDTreeNode *node, Region<T> query_region, Region<T> node_region, std::vector<size_t> &output) const {
+  void query(KDTreeNode *node, Region<T> query_region, Region<T> node_region,
+             std::vector<size_t> &output) const {
     T data = this->data[node->idx].data;
     if (node->is_leaf_node()) {
       if (query_region.include(data)) {
@@ -294,17 +309,18 @@ struct KDTree {
       }
     } else {
       Region<T> left_region = node_region, right_region = node_region;
-      Region<T> left_query_region = query_region, right_query_region = query_region;
+      Region<T> left_query_region = query_region,
+                right_query_region = query_region;
 
       left_region.high[node->axis] = data[node->axis];
       right_region.low[node->axis] = data[node->axis];
-      if (query_region.low[node->axis] <= data[node->axis] and data[node->axis] < query_region.high[node->axis]) {
+      if (query_region.low[node->axis] <= data[node->axis] and
+          data[node->axis] < query_region.high[node->axis]) {
         left_query_region.high[node->axis] = data[node->axis];
-
       }
-      if (data[node->axis] <= query_region.high[node->axis] and query_region.low[node->axis] < data[node->axis]) {
+      if (data[node->axis] <= query_region.high[node->axis] and
+          query_region.low[node->axis] < data[node->axis]) {
         right_query_region.low[node->axis] = data[node->axis];
-
       }
       if (left_query_region.include(left_region)) {
         report_subtree(node->left, output);
@@ -323,9 +339,7 @@ struct KDTree {
   /**
    *
    */
-  void output() const {
-    output_kdtree(this->root);
-  }
+  void output() const { output_kdtree(this->root); }
 
   /**
    *
@@ -333,16 +347,17 @@ struct KDTree {
    * @param node
    */
   void output_kdtree(KDTreeNode *node) const {
-      std::cout << "idx: " << node->idx << ", (";
-      for (size_t i = 0; i < this->dim; i++) {
-        if (i > 0) {
-          std::cout << ',';
-        }
-        std::cout << this->data[node->idx][i];
+    std::cout << "idx: " << node->idx << ", (";
+    for (size_t i = 0; i < this->dim; i++) {
+      if (i > 0) {
+        std::cout << ',';
       }
-      std::cout << ") ";
+      std::cout << this->data[node->idx][i];
+    }
+    std::cout << ") ";
     if (not node->is_leaf_node()) {
-      std::cout << "(left, right) = (" << node->left->idx << ',' << node->right->idx << ')' << std::endl;
+      std::cout << "(left, right) = (" << node->left->idx << ','
+                << node->right->idx << ')' << std::endl;
       output_kdtree(node->left);
       output_kdtree(node->right);
     } else {
@@ -352,23 +367,29 @@ struct KDTree {
 };
 
 /*
- * Example of Usage (AOJ DSL_2_C http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C)
+ * Example of Usage (AOJ DSL_2_C
+ * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C)
  */
-int main() {
+
+void aoj() {
   using DataType = Data<std::array<int, 2>>;
   KDTree<DataType> kdtree;
   std::vector<DataType> points;
-  int N; scanf("%d", &N);
+  int N;
+  scanf("%d", &N);
   for (size_t i = 0; (int)i < N; i++) {
-    int x, y; scanf("%d %d", &x, &y);
+    int x, y;
+    scanf("%d %d", &x, &y);
     DataType::type tmp = {x, y};
     points.emplace_back(DataType(tmp));
   }
   kdtree.build(points);
 
-  int Q; scanf("%d", &Q);
+  int Q;
+  scanf("%d", &Q);
   for (size_t i = 0; (int)i < Q; i++) {
-    int sx, tx, sy, ty; scanf("%d %d %d %d", &sx, &tx, &sy, &ty);
+    int sx, tx, sy, ty;
+    scanf("%d %d %d %d", &sx, &tx, &sy, &ty);
     DataType::type low = {sx, sy}, high = {tx, ty};
     Region<DataType::type> query_region(low, high);
     std::vector<size_t> out;
@@ -377,6 +398,11 @@ int main() {
     for (size_t i : out) printf("%lu\n", i);
     printf("\n");
   }
+}
 
+int main() {
+  std::cin.tie(0);
+  std::ios_base::sync_with_stdio(false);
+  aoj();
   return 0;
 }

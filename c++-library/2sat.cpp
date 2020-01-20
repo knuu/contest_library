@@ -52,45 +52,53 @@ struct StronglyConnectedComponents {
   }
 };
 
+struct TwoSat : StronglyConnectedComponents {
+  int N;
+  std::vector<bool> ans;
+  TwoSat(const int N) : StronglyConnectedComponents(2 * N + 1), N(N), ans(N) {}
+
+  void add_constraint(int a, int b) {
+    add_edge(neg(a), pos(b));
+    add_edge(neg(b), pos(a));
+  }
+  int pos(const int v) { return v > 0 ? v : N - v; }
+  int neg(const int v) { return v > 0 ? N + v : -v; }
+
+  bool run() {
+    StronglyConnectedComponents::run();
+    for (int i = 1; i <= N; i++) {
+      if (cmp[i] == cmp[i + N]) {
+        return false;
+      }
+    }
+
+    for (int i = 1; i <= N; i++) {
+      ans[i - 1] = cmp[i] > cmp[i + N];
+    }
+    return true;
+  }
+};
+
 void yosupo() {
   // https://judge.yosupo.jp/problem/scc
+  std::string s;
+  std::cin >> s >> s;
   int N, M;
   std::cin >> N >> M;
-  StronglyConnectedComponents scc(N);
+  TwoSat sat(N);
   for (int i = 0; i < M; i++) {
-    int a, b;
-    std::cin >> a >> b;
-    scc.add_edge(a, b);
+    int a, b, c;
+    std::cin >> a >> b >> c;
+    sat.add_constraint(a, b);
   }
-  scc.run();
-  std::map<int, std::vector<int>> ans;
-  for (int i = N - 1; i >= 0; i--) {
-    ans[scc.cmp[i]].emplace_back(i);
-  }
-  std::cout << ans.size() << std::endl;
-  for (auto&& p : ans) {
-    std::cout << p.second.size();
-    for (int& i : p.second) std::cout << ' ' << i;
-    std::cout << std::endl;
-  }
-}
-
-void aoj() {
-  int N, M;
-  std::cin >> N >> M;
-  StronglyConnectedComponents scc(N);
-  for (int i = 0; i < M; i++) {
-    int a, b;
-    std::cin >> a >> b;
-    scc.add_edge(a, b);
-  }
-  scc.run();
-  int Q;
-  std::cin >> Q;
-  for (int i = 0; i < Q; i++) {
-    int u, v;
-    std::cin >> u >> v;
-    std::cout << (scc.cmp[u] == scc.cmp[v]) << std::endl;
+  if (!sat.run()) {
+    std::cout << "s UNSATISFIABLE" << std::endl;
+  } else {
+    std::cout << "s SATISFIABLE\nv ";
+    for (int i = 0; i < N; i++) {
+      std::cout << (sat.ans[i] ? i + 1 : -(i + 1)) << ' ';
+    }
+    std::cout << '0' << std::endl;
   }
 }
 
@@ -98,7 +106,6 @@ int main() {
   std::cin.tie(0);
   std::ios_base::sync_with_stdio(false);
 
-  // yosupo();
-  aoj();
+  yosupo();
   return 0;
 }

@@ -1,20 +1,21 @@
+#include <vector>
+
 template <typename T>
 struct Edge {
-  int src, dst; T weight;
+  int src, dst;
+  T weight;
 
-  Edge(int src, int dst, T weight) : src(src), dst(dst), weight(weight) { }
+  Edge(int src, int dst, T weight) : src(src), dst(dst), weight(weight) {}
 
-  bool operator < (const Edge<T> &e) const {
-    return weight < e.weight;
-  }
+  bool operator<(const Edge<T> &e) const { return weight < e.weight; }
 };
 
 template <typename T>
 struct Graph {
   int V;
-  vector<Edge<T>> E;
+  std::vector<Edge<T>> E;
 
-  Graph(int V) : V(V) { }
+  Graph(int V) : V(V) {}
 
   void add_edge(int src, int dst, T weight) {
     E.emplace_back(src, dst, weight);
@@ -22,7 +23,7 @@ struct Graph {
 };
 
 struct DisjointSet {
-  vector<int> parent, rank;
+  std::vector<int> parent, rank;
 
   DisjointSet(int N) {
     parent.resize(N), rank.resize(N, 0);
@@ -39,7 +40,7 @@ struct DisjointSet {
 
   void unite(int x, int y) {
     x = find(x), y = find(y);
-    if (x == y) return ;
+    if (x == y) return;
     if (rank[x] < rank[y]) {
       parent[x] = y;
     } else {
@@ -54,10 +55,10 @@ struct DisjointSet {
 template <typename T>
 struct MinimumSpanningTree {
   Graph<T> g;
-  vector<Edge<T>> mst;
+  std::vector<Edge<T>> mst;
   T mincost;
 
-  MinimumSpanningTree(const Graph<T> &g) : g(g) { }
+  MinimumSpanningTree(const Graph<T> &g) : g(g) {}
 
   T run() {
     mincost = 0;

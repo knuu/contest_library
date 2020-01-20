@@ -1,4 +1,5 @@
 #include <cmath>
+#include <iostream>
 #include <utility>
 #include <vector>
 
@@ -9,11 +10,13 @@ struct LowestCommonAncestor {
   std::vector<std::vector<int>> parent;
   std::vector<int> depth;
 
-  LowestCommonAncestor(int V) : V(V), log_V(std::ceil(std::log2(V)) + 1) {
-    edge.resize(V);
-    parent.resize(log_V);
+  LowestCommonAncestor(int V)
+      : V(V),
+        log_V(std::ceil(std::log2(V)) + 1),
+        edge(V),
+        parent(log_V),
+        depth(V) {
     for (int i = 0; i < log_V; i++) parent[i].resize(V);
-    depth.resize(V);
   }
 
   void add_edge(int a, int b) {
@@ -71,3 +74,27 @@ struct LowestCommonAncestor {
     return v;
   }
 };
+
+void yosupo() {
+  int N, Q;
+  std::cin >> N >> Q;
+  LowestCommonAncestor lca(N);
+  for (int i = 1; i < N; i++) {
+    int p;
+    std::cin >> p;
+    lca.add_edge(p, i);
+  }
+  lca.build(0);
+  for (int i = 0; i < Q; i++) {
+    int u, v;
+    std::cin >> u >> v;
+    std::cout << lca.run(u, v) << std::endl;
+  }
+}
+
+int main() {
+  std::cin.tie(0);
+  std::ios_base::sync_with_stdio(false);
+  yosupo();
+  return 0;
+}
