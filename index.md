@@ -71,3 +71,8 @@ layout: default
 * :warning: <a href="library/c++-library/warshall_floyd.cpp.html">c++-library/warshall_floyd.cpp</a>
 
 
+## Verify Files
+
+* :x: <a href="verify/c++-library/example.test.cpp.html">c++-library/example.test.cpp</a>
+
+
