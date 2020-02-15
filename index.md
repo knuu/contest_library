@@ -86,9 +86,9 @@ layout: default
 * :heavy_check_mark: <a href="library/python_library/data_structures/matrix.py.html">python_library/data_structures/matrix.py</a>
 * :warning: <a href="library/python_library/data_structures/range_min_query_seg.py.html">python_library/data_structures/range_min_query_seg.py</a>
 * :warning: <a href="library/python_library/data_structures/range_tree_2d.py.html">python_library/data_structures/range_tree_2d.py</a>
-* :x: <a href="library/python_library/data_structures/segment_tree.py.html">python_library/data_structures/segment_tree.py</a>
-* :x: <a href="library/python_library/data_structures/unionfind.py.html">python_library/data_structures/unionfind.py</a>
-* :x: <a href="library/python_library/data_structures/weighted_unionfind.py.html">python_library/data_structures/weighted_unionfind.py</a>
+* :heavy_check_mark: <a href="library/python_library/data_structures/segment_tree.py.html">python_library/data_structures/segment_tree.py</a>
+* :heavy_check_mark: <a href="library/python_library/data_structures/unionfind.py.html">python_library/data_structures/unionfind.py</a>
+* :heavy_check_mark: <a href="library/python_library/data_structures/weighted_unionfind.py.html">python_library/data_structures/weighted_unionfind.py</a>
 
 
 <div id="aa415874213902fc17e0d0a11c5743d4"></div>
@@ -115,7 +115,7 @@ layout: default
 * :warning: <a href="library/python_library/graph/dijkstra.py.html">python_library/graph/dijkstra.py</a>
 * :warning: <a href="library/python_library/graph/dinic.py.html">python_library/graph/dinic.py</a>
 * :warning: <a href="library/python_library/graph/ford_fulkerson.py.html">python_library/graph/ford_fulkerson.py</a>
-* :x: <a href="library/python_library/graph/graph.py.html">python_library/graph/graph.py</a>
+* :heavy_check_mark: <a href="library/python_library/graph/graph.py.html">python_library/graph/graph.py</a>
 * :warning: <a href="library/python_library/graph/graph2.py.html">python_library/graph/graph2.py</a>
 * :warning: <a href="library/python_library/graph/heavy_light_decomposition.py.html">python_library/graph/heavy_light_decomposition.py</a>
 * :warning: <a href="library/python_library/graph/kruskal.py.html">python_library/graph/kruskal.py</a>
@@ -123,8 +123,8 @@ layout: default
 * :warning: <a href="library/python_library/graph/prim.py.html">python_library/graph/prim.py</a>
 * :warning: <a href="library/python_library/graph/primal_dual.py.html">python_library/graph/primal_dual.py</a>
 * :warning: <a href="library/python_library/graph/scc.py.html">python_library/graph/scc.py</a>
-* :x: <a href="library/python_library/graph/tree_diameter.py.html">python_library/graph/tree_diameter.py</a>
-* :x: <a href="library/python_library/graph/two_sat.py.html">python_library/graph/two_sat.py</a>
+* :heavy_check_mark: <a href="library/python_library/graph/tree_diameter.py.html">python_library/graph/tree_diameter.py</a>
+* :heavy_check_mark: <a href="library/python_library/graph/two_sat.py.html">python_library/graph/two_sat.py</a>
 * :warning: <a href="library/python_library/graph/warshall_floyd.py.html">python_library/graph/warshall_floyd.py</a>
 
 
@@ -133,15 +133,15 @@ layout: default
 ### python_library/math
 
 * :warning: <a href="library/python_library/math/combinations.py.html">python_library/math/combinations.py</a>
-* :warning: <a href="library/python_library/math/disc_log.py.html">python_library/math/disc_log.py</a>
+* :heavy_check_mark: <a href="library/python_library/math/disc_log.py.html">python_library/math/disc_log.py</a>
 * :warning: <a href="library/python_library/math/divisor.py.html">python_library/math/divisor.py</a>
-* :warning: <a href="library/python_library/math/euler_totient.py.html">python_library/math/euler_totient.py</a>
-* :warning: <a href="library/python_library/math/extgcd.py.html">python_library/math/extgcd.py</a>
+* :heavy_check_mark: <a href="library/python_library/math/euler_totient.py.html">python_library/math/euler_totient.py</a>
+* :heavy_check_mark: <a href="library/python_library/math/extgcd.py.html">python_library/math/extgcd.py</a>
 * :warning: <a href="library/python_library/math/givens.py.html">python_library/math/givens.py</a>
 * :warning: <a href="library/python_library/math/lcm.py.html">python_library/math/lcm.py</a>
 * :warning: <a href="library/python_library/math/linear_recursion_solver.py.html">python_library/math/linear_recursion_solver.py</a>
 * :warning: <a href="library/python_library/math/pascalsTriangle.py.html">python_library/math/pascalsTriangle.py</a>
-* :warning: <a href="library/python_library/math/prime.py.html">python_library/math/prime.py</a>
+* :heavy_check_mark: <a href="library/python_library/math/prime.py.html">python_library/math/prime.py</a>
 
 
 <div id="b234f801618f71357e46912cecf08ace"></div>
@@ -226,24 +226,30 @@ layout: default
 
 ## Verify Files
 
+* :heavy_check_mark: <a href="verify/tests/disc_log.test.py.html">tests/disc_log.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/euler_totient.test.py.html">tests/euler_totient.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/example.test.cpp.html">tests/example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/tests/example.test.py.html">tests/example.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/extgcd.test.py.html">tests/extgcd.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/fenwick_tree_aoj.test.py.html">tests/fenwick_tree_aoj.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/fenwick_tree_yosupo.test.py.html">tests/fenwick_tree_yosupo.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/largest_rect_hist.test.py.html">tests/largest_rect_hist.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/largest_rect_rect.test.py.html">tests/largest_rect_rect.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/lca.test.cpp.html">tests/lca.test.cpp</a>
+* :heavy_check_mark: <a href="verify/tests/lcm.test.py.html">tests/lcm.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/matrix_determinant.test.py.html">tests/matrix_determinant.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/matrix_mult.test.py.html">tests/matrix_mult.test.py</a>
-* :x: <a href="verify/tests/range_tree_2d.test.py.html">tests/range_tree_2d.test.py</a>
-* :x: <a href="verify/tests/segment_tree_point_add_range_sum.test.py.html">tests/segment_tree_point_add_range_sum.test.py</a>
-* :x: <a href="verify/tests/segment_tree_point_set_range_composite.test.py.html">tests/segment_tree_point_set_range_composite.test.py</a>
-* :x: <a href="verify/tests/segment_tree_range_min_query.test.py.html">tests/segment_tree_range_min_query.test.py</a>
-* :x: <a href="verify/tests/segment_tree_staticrmq.test.py.html">tests/segment_tree_staticrmq.test.py</a>
-* :x: <a href="verify/tests/tree_diameter.test.py.html">tests/tree_diameter.test.py</a>
-* :x: <a href="verify/tests/two_sat.test.py.html">tests/two_sat.test.py</a>
-* :x: <a href="verify/tests/union_find.test.py.html">tests/union_find.test.py</a>
-* :x: <a href="verify/tests/weighted_unionfind.test.py.html">tests/weighted_unionfind.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/miller_rabbin.test.py.html">tests/miller_rabbin.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/prime_factorization.test.py.html">tests/prime_factorization.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/range_tree_2d.test.py.html">tests/range_tree_2d.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/segment_tree_point_add_range_sum.test.py.html">tests/segment_tree_point_add_range_sum.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/segment_tree_point_set_range_composite.test.py.html">tests/segment_tree_point_set_range_composite.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/segment_tree_range_min_query.test.py.html">tests/segment_tree_range_min_query.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/segment_tree_staticrmq.test.py.html">tests/segment_tree_staticrmq.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/tree_diameter.test.py.html">tests/tree_diameter.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/two_sat.test.py.html">tests/two_sat.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/union_find.test.py.html">tests/union_find.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/weighted_unionfind.test.py.html">tests/weighted_unionfind.test.py</a>
 * :x: <a href="verify/tests/z_algorithm.test.py.html">tests/z_algorithm.test.py</a>
 
 

@@ -21,19 +21,23 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: python_library_typed/graph/ford_fulkerson.py
+# :heavy_check_mark: tests/lcm.test.py
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#2a7e3e97022ce18b59747afed7368880">python_library_typed/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/python_library_typed/graph/ford_fulkerson.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/tests/lcm.test.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 06:11:47+09:00
 
 
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="../../library/python_library/math/extgcd.py.html">python_library/math/extgcd.py</a>
 
 
 ## Code
@@ -41,53 +45,23 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-class FordFulkerson:
-    """Ford-Fulkerson Algorithm: find max-flow
-       complexity: O(FE) (F: max flow)
-       used in GRL6A(AOJ)
-    """
-    class edge:
-        def __init__(self, to, cap, rev):
-            self.to, self.cap, self.rev = to, cap, rev
+# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_C
+# @import python_library/math/extgcd.py
+import sys
 
-    def __init__(self, V, E, source, sink):
-        """ V: the number of vertexes
-            E: adjacency list
-            source: start point
-            sink: goal point
-        """
-        self.V = V
-        self.E = [[] for _ in range(V)]
-        for fr in range(V):
-            for to, cap in E[fr]:
-                self.E[fr].append(self.edge(to, cap, len(self.E[to])))
-                self.E[to].append(self.edge(fr, 0, len(self.E[fr])-1))
-        self.maxflow = self.ford_fulkerson(source, sink)
+sys.path.insert(0, ".")
+input = sys.stdin.buffer.readline
 
-    def ford_fulkerson(self, source, sink, INF=10**9):
-        """find max-flow"""
-        maxflow = 0
-        while True:
-            self.used = [False] * self.V
-            flow = self.dfs(source, sink, INF)
-            if flow == 0:
-                return maxflow
-            else:
-                maxflow += flow
+from python_library.math.lcm import lcm
 
-    def dfs(self, vertex, sink, flow):
-        """find augmenting path"""
-        if vertex == sink:
-            return flow
-        self.used[vertex] = True
-        for e in self.E[vertex]:
-            if not self.used[e.to] and e.cap > 0:
-                d = self.dfs(e.to, sink, min(flow, e.cap))
-                if d > 0:
-                    e.cap -= d
-                    self.E[e.to][e.rev].cap += d
-                    return d
-        return 0
+
+def main() -> None:
+    _ = int(input())
+    print(lcm([int(x) for x in input().split()]))
+
+
+if __name__ == "__main__":
+    main()
 
 ```
 {% endraw %}
@@ -120,5 +94,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 

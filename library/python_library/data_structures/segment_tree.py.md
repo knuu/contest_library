@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: python_library/data_structures/segment_tree.py
+# :heavy_check_mark: python_library/data_structures/segment_tree.py
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -38,10 +38,10 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../../verify/tests/segment_tree_point_add_range_sum.test.py.html">tests/segment_tree_point_add_range_sum.test.py</a>
-* :x: <a href="../../../verify/tests/segment_tree_point_set_range_composite.test.py.html">tests/segment_tree_point_set_range_composite.test.py</a>
-* :x: <a href="../../../verify/tests/segment_tree_range_min_query.test.py.html">tests/segment_tree_range_min_query.test.py</a>
-* :x: <a href="../../../verify/tests/segment_tree_staticrmq.test.py.html">tests/segment_tree_staticrmq.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/segment_tree_point_add_range_sum.test.py.html">tests/segment_tree_point_add_range_sum.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/segment_tree_point_set_range_composite.test.py.html">tests/segment_tree_point_set_range_composite.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/segment_tree_range_min_query.test.py.html">tests/segment_tree_range_min_query.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/segment_tree_staticrmq.test.py.html">tests/segment_tree_staticrmq.test.py</a>
 
 
 ## Code
@@ -119,7 +119,7 @@ Traceback (most recent call last):
     onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
     raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/range_tree_2d.test.py']
+Exception: 1 tests failed: ['tests/z_algorithm.test.py']
 
 During handling of the above exception, another exception occurred:
 

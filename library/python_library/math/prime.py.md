@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/math/prime.py
+# :heavy_check_mark: python_library/math/prime.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#fcc812ea527936762e2a2536e11e6960">python_library/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/math/prime.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 06:11:47+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/tests/miller_rabbin.test.py.html">tests/miller_rabbin.test.py</a>
 
 
 ## Code
@@ -48,24 +53,24 @@ class Prime:
     """
 
     def __init__(self, n):
-        assert(n >= 1)
-        self.is_prime = [True for _ in range(n+1)]
+        assert n >= 1
+        self.is_prime = [True for _ in range(n + 1)]
         self.primeList = []
         self.is_prime[0] = self.is_prime[1] = False
-        for i in range(2, int(pow(n, 0.5))+1):
-            if self.is_prime[i] == True:
+        for i in range(2, int(pow(n, 0.5)) + 1):
+            if self.is_prime[i]:
                 self.primeList.append(i)
-                for j in range(2*i, n+1, i):
+                for j in range(2 * i, n + 1, i):
                     self.is_prime[j] = False
-        for i in range(int(pow(n, 0.5))+1, n+1):
-            if self.is_prime[i] == True:
+        for i in range(int(pow(n, 0.5)) + 1, n + 1):
+            if self.is_prime[i]:
                 self.primeList.append(i)
 
     def isPrime(self, n):
         return self.is_prime[n]
 
     def nthPrime(self, n):
-        return self.primeList[n-1]
+        return self.primeList[n - 1]
 
 
 def miller_rabin(n):
@@ -74,7 +79,7 @@ def miller_rabin(n):
         a = 2, 3, 5, 7, 11, 13, 17, 19, and 23.
         Complexity: O(log^3 n)
     """
-    assert(n >= 1)
+    assert n >= 1
     if n == 2:
         return True
     if n <= 1 or not n & 1:
@@ -115,7 +120,7 @@ Traceback (most recent call last):
     onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
     raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/range_tree_2d.test.py']
+Exception: 1 tests failed: ['tests/z_algorithm.test.py']
 
 During handling of the above exception, another exception occurred:
 

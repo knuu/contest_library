@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fcc812ea527936762e2a2536e11e6960">python_library/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/math/divisor.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 06:11:47+09:00
 
 
 
@@ -51,13 +51,13 @@ class Divisor:
             complexity: O(n^(1/2))
             used in ProjectEuler No.12, yukicoder No.36
         """
-        assert(n >= 1)
+        assert n >= 1
         number = n
         if number == 1:
             self.primeFactorization = {1: 1}
         else:
             self.primeFactorization = {}
-            for i in range(2, int(n**0.5)+1):
+            for i in range(2, int(n ** 0.5) + 1):
                 cnt = 0
                 while number % i == 0:
                     cnt += 1
@@ -76,21 +76,27 @@ class Divisor:
             return 1
         numDiv = 1
         for _, cnt in self.primeFactorization.items():
-            numDiv *= cnt+1
+            numDiv *= cnt + 1
         return numDiv
 
     def sumDivisors(self):
-        return reduce(lambda x, y: x * y, [sum(p**i for i in range(n+1)) for p, n in self.primeFactorization.items()])
+        return reduce(
+            lambda x, y: x * y,
+            [
+                sum(p ** i for i in range(n + 1))
+                for p, n in self.primeFactorization.items()
+            ],
+        )
 
 
 def divisorsList(n):
-    assert(n >= 1)
+    assert n >= 1
     divsList = []
-    for i in range(1, int(n**0.5)+1):
+    for i in range(1, int(n ** 0.5) + 1):
         if n % i == 0:
             divsList.append(i)
             if n // i != i:
-                divsList.append(n//i)
+                divsList.append(n // i)
     return sorted(divsList)
 
 
@@ -125,7 +131,7 @@ Traceback (most recent call last):
     onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
     raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/range_tree_2d.test.py']
+Exception: 1 tests failed: ['tests/z_algorithm.test.py']
 
 During handling of the above exception, another exception occurred:
 

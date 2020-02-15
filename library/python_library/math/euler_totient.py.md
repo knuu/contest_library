@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/math/euler_totient.py
+# :heavy_check_mark: python_library/math/euler_totient.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#fcc812ea527936762e2a2536e11e6960">python_library/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/math/euler_totient.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 06:11:47+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/tests/euler_totient.test.py.html">tests/euler_totient.test.py</a>
 
 
 ## Code
@@ -56,14 +61,6 @@ def euler_totient(n):
         ans -= ans // n
     return ans
 
-
-def aoj():
-    print(euler_totient(int(input())))
-
-
-if __name__ == "__main__":
-    aoj()
-
 ```
 {% endraw %}
 
@@ -77,7 +74,7 @@ Traceback (most recent call last):
     onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
     raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/range_tree_2d.test.py']
+Exception: 1 tests failed: ['tests/z_algorithm.test.py']
 
 During handling of the above exception, another exception occurred:
 
