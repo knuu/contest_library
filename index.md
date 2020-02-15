@@ -167,7 +167,7 @@ layout: default
 * :warning: <a href="library/python-library/graph/prim.py.html">python-library/graph/prim.py</a>
 * :warning: <a href="library/python-library/graph/primal_dual.py.html">python-library/graph/primal_dual.py</a>
 * :warning: <a href="library/python-library/graph/scc.py.html">python-library/graph/scc.py</a>
-* :warning: <a href="library/python-library/graph/tree_diameter.py.html">python-library/graph/tree_diameter.py</a>
+* :x: <a href="library/python-library/graph/tree_diameter.py.html">python-library/graph/tree_diameter.py</a>
 * :warning: <a href="library/python-library/graph/warshall_floyd.py.html">python-library/graph/warshall_floyd.py</a>
 
 
@@ -214,5 +214,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/tests/example.test.cpp.html">tests/example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/tests/example.test.py.html">tests/example.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/lca.test.cpp.html">tests/lca.test.cpp</a>
+* :x: <a href="verify/tests/tree_diameter.test.py.html">tests/tree_diameter.test.py</a>
 
 

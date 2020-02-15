@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python-library/graph/tree_diameter.py
+# :x: python-library/graph/tree_diameter.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#5d2e77d5b1ea9b487eb85cc662584fbc">python-library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python-library/graph/tree_diameter.py">View this file on GitHub</a>
-    - Last commit date: 2020-01-21 04:11:11+09:00
+    - Last commit date: 2020-02-16 02:43:15+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../verify/tests/tree_diameter.test.py.html">tests/tree_diameter.test.py</a>
 
 
 ## Code
@@ -97,27 +102,23 @@ class TreeDiameter:
 
         return dists[target]
 
-
-def aoj():
-    N = int(input())
-    graph = Graph(N)
-    for _ in range(N-1):
-        s, t, w = map(int, input().split())
-        graph.add_edge(s, t, w)
-        graph.add_edge(t, s, w)
-    diam = TreeDiameter(graph)
-    print(diam.run())
-
-
-if __name__ == "__main__":
-    aoj()
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 181, in main
+    subcommand_run(paths=[], jobs=parsed.jobs)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 59, in subcommand_run
+    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
+  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
+    raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
+Exception: 1 tests failed: ['tests/tree_diameter.test.py']
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)
