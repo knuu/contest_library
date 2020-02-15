@@ -1,6 +1,6 @@
 # Library for Competitive Programming
 
-[![Actions Status](https://github.com/beet-aizu/library/workflows/verify/badge.svg)](https://github.com/beet-aizu/library/actions)
+[![Actions Status](https://github.com/knuu/contest_library/workflows/verify/badge.svg)](https://github.com/knuu/contest_library/actions)
 
 Library for Competitive Programming for C++, Python, Nim-lang
 
