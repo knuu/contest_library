@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: python_library/geometry/convex_hull.py
+# :heavy_check_mark: python_library/geometry/convex_hull.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#bb1189d107afaf50a8d799c22c656ecc">python_library/geometry</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/geometry/convex_hull.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 06:44:22+09:00
+    - Last commit date: 2020-02-16 07:26:24+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../../verify/tests/convex_hull.test.py.html">tests/convex_hull.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/convex_hull.test.py.html">tests/convex_hull.test.py</a>
 
 
 ## Code
@@ -74,48 +74,12 @@ class ConvexHull:
             qs.append(p)
         return qs
 
-
-def aoj():
-    N = int(input())
-    ps = []
-    for _ in range(N):
-        x, y = map(int, input().split())
-        ps.append(Point(x, y))
-    hull = ConvexHull(ps)
-    convex = hull.run()
-    print(len(convex))
-    min_idx = -1
-    min_x, min_y = 10001, 10001
-    for i, p in enumerate(convex):
-        if p.y < min_y or (p.y == min_y and p.x < min_x):
-            min_idx = i
-            min_x, min_y = p.x, p.y
-    for p in convex[min_idx:]:
-        print(p.x, p.y)
-    for p in convex[:min_idx]:
-        print(p.x, p.y)
-
-
-if __name__ == "__main__":
-    aoj()
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 181, in main
-    subcommand_run(paths=[], jobs=parsed.jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 59, in subcommand_run
-    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
-    raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/convex_hull.test.py']
-
-During handling of the above exception, another exception occurred:
-
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)

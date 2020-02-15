@@ -25,15 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/graph/heavy_light_decomposition.py
+# :heavy_check_mark: python_library/graph/heavy_light_decomposition.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#7e80885bc8a78dc63feed9f40126ba0e">python_library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/graph/heavy_light_decomposition.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 07:26:24+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/tests/hld_lca.test.py.html">tests/hld_lca.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/hld_vertex_add_path_sum.test.py.html">tests/hld_vertex_add_path_sum.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/hld_vertex_add_subtree_sum.test.py.html">tests/hld_vertex_add_subtree_sum.test.py</a>
 
 
 ## Code
@@ -42,86 +49,12 @@ layout: default
 {% raw %}
 ```cpp
 from collections import deque
-import sys
-input = sys.stdin.buffer.readline
 
-
-class SegmentTree:
-    """Segment Tree (Point Update & Range Query)
-
-    Query
-        1. update(i, val): update i-th value to val
-        2. query(low, high): find f(value) in [low, high)
-
-    Complexity
-        time complexity: O(log n)
-        space complexity: O(n)
-    """
-
-    def __init__(self, N, f, default):
-        self.N = 1 << (N-1).bit_length()
-        self.default = default
-        self.f = f
-        self.segtree = [self.default] * ((self.N << 1) - 1)
-
-    @classmethod
-    def create_from_array(cls, arr, f, default):
-        N = len(arr)
-        self = cls(N, f, default)
-        for i in range(N):
-            self.segtree[self.N - 1 + i] = arr[i]
-
-        for i in reversed(range(self.N - 1)):
-            self.segtree[i] = self.f(
-                self.segtree[(i << 1) + 1], self.segtree[(i << 1) + 2])
-        return self
-
-    def update(self, i, val):
-        i += self.N - 1
-        self.segtree[i] = val
-        while i > 0:
-            i = (i - 1) >> 1
-            self.segtree[i] = self.f(
-                self.segtree[(i << 1) + 1], self.segtree[(i << 1) + 2])
-
-    def __getitem__(self, k):
-        return self.segtree[self.N - 1 + k]
-
-    def query(self, low, high):
-        # query [l, r)
-        low, high = low + self.N, high + self.N
-        ret = self.default
-        while low < high:
-            if low & 1:
-                ret = self.f(ret, self.segtree[low-1])
-                low += 1
-            if high & 1:
-                high -= 1
-                ret = self.f(ret, self.segtree[high-1])
-            low, high = low >> 1, high >> 1
-        return ret
-
-
-class Edge:
-    def __init__(self, dst, weight):
-        self.dst, self.weight = dst, weight
-
-    def __lt__(self, e):
-        return self.weight > e.weight
-
-
-class Graph:
-    def __init__(self, V):
-        self.V = V
-        self.E = [[] for _ in range(V)]
-
-    def add_edge(self, src, dst, weight):
-        self.E[src].append(Edge(dst, weight))
+from python_library.graph.graph import Graph
 
 
 class HeavyLightDecomposition:
-    def __init__(self, g: Graph, root: int = 0,
-                 need_subtree: bool = False) -> None:
+    def __init__(self, g: Graph, root: int = 0, need_subtree: bool = False) -> None:
         self.g = g
         self.vid, self.head = [-1] * g.V, [0] * g.V
         self.heavy, self.parent = [-1] * g.V, [0] * g.V
@@ -140,8 +73,7 @@ class HeavyLightDecomposition:
             if not flag:
                 self.parent[v] = par
                 stack.append((v, par, True))
-                stack.extend((e.dst, v, False)
-                             for e in self.g.E[v] if e.dst != par)
+                stack.extend((e.dst, v, False) for e in self.g.E[v] if e.dst != par)
             else:
                 if par != -1:
                     sub[par] += sub[v]
@@ -203,78 +135,7 @@ class HeavyLightDecomposition:
                 break
             left = merge(query(self.vid[self.head[v]], self.vid[v] + 1), left)
             v = self.parent[self.head[v]]
-        return merge(merge(query(self.vid[u] + edge, self.vid[v] + 1),
-                           left), right)
-
-
-def yosupo():
-    # https://judge.yosupo.jp/problem/lca
-    N, Q = map(int, input().split())
-    graph = Graph(N)
-    for i, p in enumerate(map(int, input().split())):
-        graph.add_edge(p, i+1, 1)
-    hld = HeavyLightDecomposition(graph)
-    ans = [hld.lca(*map(int, input().split())) for _ in range(Q)]
-    print(*ans, sep="\n")
-
-
-def yosupo2():
-    # https://judge.yosupo.jp/problem/vertex_add_path_sum
-    import operator
-    N, Q = map(int, input().split())
-    weights = [int(x) for x in input().split()]
-    graph = Graph(N)
-    for _ in range(N-1):
-        u, v = map(int, input().split())
-        graph.add_edge(u, v, 1)
-        graph.add_edge(v, u, 1)
-    hld = HeavyLightDecomposition(graph)
-    new_weights = [0] * N
-    for i in range(N):
-        new_weights[hld.vid[i]] = weights[i]
-    rsq = SegmentTree.create_from_array(new_weights, operator.add, 0)
-
-    ans = []
-    for _ in range(Q):
-        t, a, b = map(int, input().split())
-        if t == 0:
-            rsq.update(hld.vid[a], rsq[hld.vid[a]] + b)
-        else:
-            ans.append(hld.query_path(a, b, 0, rsq.query, operator.add))
-    print(*ans, sep="\n")
-
-
-def yosupo3():
-    # https://judge.yosupo.jp/problem/vertex_add_subtree_sum
-    import operator
-    N, Q = map(int, input().split())
-    weights = [int(x) for x in input().split()]
-    graph = Graph(N)
-    for i, v in enumerate(map(int, input().split())):
-        graph.add_edge(i+1, v, 1)
-        graph.add_edge(v, i+1, 1)
-    hld = HeavyLightDecomposition(graph, 0, True)
-    new_weights = [0] * N
-    for i in range(N):
-        new_weights[hld.vid[i]] = weights[i]
-    rsq = SegmentTree.create_from_array(new_weights, operator.add, 0)
-
-    ans = []
-    for _ in range(Q):
-        query = [int(x) for x in input().split()]
-        if query[0] == 0:
-            a, b = query[1:]
-            rsq.update(hld.vid[a], rsq[hld.vid[a]] + b)
-        else:
-            u = query[1]
-            ans.append(rsq.query(hld.vid[u], hld.tail[u]))
-    print(*ans, sep="\n")
-
-
-if __name__ == "__main__":
-    # yosupo()
-    # yosupo2()
-    yosupo3()
+        return merge(merge(query(self.vid[u] + edge, self.vid[v] + 1), left), right)
 
 ```
 {% endraw %}
@@ -282,17 +143,6 @@ if __name__ == "__main__":
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 181, in main
-    subcommand_run(paths=[], jobs=parsed.jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 59, in subcommand_run
-    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
-    raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/convex_hull.test.py']
-
-During handling of the above exception, another exception occurred:
-
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)

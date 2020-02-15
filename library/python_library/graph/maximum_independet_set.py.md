@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/graph/maximum_independet_set.py
+# :heavy_check_mark: python_library/graph/maximum_independet_set.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#7e80885bc8a78dc63feed9f40126ba0e">python_library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/graph/maximum_independet_set.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 07:26:24+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/tests/maximum_independet_set.test.py.html">tests/maximum_independet_set.test.py</a>
 
 
 ## Code
@@ -41,19 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-import sys
-import ctypes
-
-
-def popcount(N):
-    if sys.platform.startswith('linux'):
-        libc = ctypes.cdll.LoadLibrary('libc.so.6')
-        return libc.__sched_cpucount(ctypes.sizeof(ctypes.c_long), (ctypes.c_long * 1)(N))
-    elif sys.platform == 'darwin':
-        libc = ctypes.cdll.LoadLibrary('libSystem.dylib')
-        return libc.__popcountdi2(N)
-    else:
-        assert(False)
+from python_library.misc.popcount import popcount
 
 
 def maximum_independet_set(v: int, bad: int, adj_mat):
@@ -74,7 +67,7 @@ def maximum_independet_set(v: int, bad: int, adj_mat):
     # use v
     if (bad >> v & 1) == 0:
         new_bad = bad | (1 << v) | (adj_mat[v] & ~bad)
-        cand, cand_set = maximum_independet_set(v+1, new_bad, adj_mat)
+        cand, cand_set = maximum_independet_set(v + 1, new_bad, adj_mat)
         if cand + 1 > ret:
             ret, ret_set = cand + 1, cand_set | (1 << v)
 
@@ -82,29 +75,12 @@ def maximum_independet_set(v: int, bad: int, adj_mat):
     if deg > 1 or (bad >> v & 1):
         new_bad = bad
         if (bad >> v & 1) == 0:
-            new_bad |= (1 << v)
-        cand, cand_set = maximum_independet_set(v+1, new_bad, adj_mat)
+            new_bad |= 1 << v
+        cand, cand_set = maximum_independet_set(v + 1, new_bad, adj_mat)
         if cand > ret:
             ret, ret_set = cand, cand_set
 
     return ret, ret_set
-
-
-def yosupo():
-    # https://judge.yosupo.jp/problem/maximum_independent_set
-    N, M = map(int, input().split())
-    adj_mat = [0] * N
-    for _ in range(M):
-        u, v = map(int, input().split())
-        adj_mat[u] |= 1 << v
-        adj_mat[v] |= 1 << u
-    size, mis = maximum_independet_set(0, 0, adj_mat)
-    print(size)
-    print(*[i for i in range(N) if mis >> i & 1])
-
-
-if __name__ == "__main__":
-    yosupo()
 
 ```
 {% endraw %}
@@ -112,17 +88,6 @@ if __name__ == "__main__":
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 181, in main
-    subcommand_run(paths=[], jobs=parsed.jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 59, in subcommand_run
-    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
-    raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/convex_hull.test.py']
-
-During handling of the above exception, another exception occurred:
-
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)

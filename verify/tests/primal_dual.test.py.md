@@ -25,19 +25,19 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/lcm.test.py
+# :heavy_check_mark: tests/primal_dual.test.py
 
 <a href="../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/lcm.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 06:44:22+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/tests/primal_dual.test.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 07:26:24+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/python_library/math/lcm.py.html">python_library/math/lcm.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/graph/dinic.py.html">python_library/graph/dinic.py</a>
 
 
 ## Code
@@ -45,19 +45,23 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_C
-# @import python_library/math/lcm.py
+# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B
+# @import python_library/graph/dinic.py
 import sys
 
 sys.path.insert(0, ".")
 input = sys.stdin.buffer.readline
 
-from python_library.math.lcm import lcm
+from python_library.graph.primal_dual import MinCostFlow
 
 
 def main() -> None:
-    _ = int(input())
-    print(lcm([int(x) for x in input().split()]))
+    V, E, F = map(int, input().split())
+    mcf = MinCostFlow(V)
+    for _ in range(E):
+        u, v, c, d = map(int, input().split())
+        mcf.add_edge(u, v, c, d)
+    print(mcf.run(0, V - 1, F))
 
 
 if __name__ == "__main__":

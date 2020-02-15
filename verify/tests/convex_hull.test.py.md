@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: tests/convex_hull.test.py
+# :heavy_check_mark: tests/convex_hull.test.py
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/tests/convex_hull.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 06:44:22+09:00
+    - Last commit date: 2020-02-16 07:26:24+09:00
 
 
 
 
 ## Depends on
 
-* :x: <a href="../../library/python_library/geometry/convex_hull.py.html">python_library/geometry/convex_hull.py</a>
-* :x: <a href="../../library/python_library/geometry/geometry.py.html">python_library/geometry/geometry.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/geometry/convex_hull.py.html">python_library/geometry/convex_hull.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/geometry/geometry.py.html">python_library/geometry/geometry.py</a>
 
 
 ## Code
@@ -46,7 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0068
+# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A
 # @import python_library/geometry/geometry.py
 # @import python_library/geometry/convex_hull.py
 import sys
@@ -59,16 +59,24 @@ from python_library.geometry.convex_hull import ConvexHull
 
 
 def main() -> None:
-    while True:
-        n = int(input())
-        if n == 0:
-            break
-        points = []
-        for _ in range(n):
-            x, y = map(float, input().split(b","))
-            points.append(Point(x, y))
-        hull = ConvexHull(points)
-        print(len(points) - len(hull.run()))
+    N = int(input())
+    ps = []
+    for _ in range(N):
+        x, y = map(int, input().split())
+        ps.append(Point(x, y))
+    hull = ConvexHull(ps)
+    convex = hull.run()
+    print(len(convex))
+    min_idx = -1
+    min_x, min_y = 10001, 10001
+    for i, p in enumerate(convex):
+        if p.y < min_y or (p.y == min_y and p.x < min_x):
+            min_idx = i
+            min_x, min_y = p.x, p.y
+    for p in convex[min_idx:]:
+        print(p.x, p.y)
+    for p in convex[:min_idx]:
+        print(p.x, p.y)
 
 
 if __name__ == "__main__":
@@ -80,17 +88,6 @@ if __name__ == "__main__":
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 181, in main
-    subcommand_run(paths=[], jobs=parsed.jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 59, in subcommand_run
-    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
-    raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/convex_hull.test.py']
-
-During handling of the above exception, another exception occurred:
-
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)

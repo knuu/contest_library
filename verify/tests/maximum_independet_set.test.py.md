@@ -25,19 +25,19 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/lcm.test.py
+# :heavy_check_mark: tests/maximum_independet_set.test.py
 
 <a href="../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/lcm.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 06:44:22+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/tests/maximum_independet_set.test.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 07:26:24+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/python_library/math/lcm.py.html">python_library/math/lcm.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/graph/maximum_independet_set.py.html">python_library/graph/maximum_independet_set.py</a>
 
 
 ## Code
@@ -45,19 +45,26 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_C
-# @import python_library/math/lcm.py
+# verify-helper: PROBLEM https://judge.yosupo.jp/problem/maximum_independent_set
+# @import python_library/graph/maximum_independet_set.py
 import sys
 
 sys.path.insert(0, ".")
 input = sys.stdin.buffer.readline
 
-from python_library.math.lcm import lcm
+from python_library.graph.maximum_independet_set import maximum_independet_set
 
 
 def main() -> None:
-    _ = int(input())
-    print(lcm([int(x) for x in input().split()]))
+    N, M = map(int, input().split())
+    adj_mat = [0] * N
+    for _ in range(M):
+        u, v = map(int, input().split())
+        adj_mat[u] |= 1 << v
+        adj_mat[v] |= 1 << u
+    size, mis = maximum_independet_set(0, 0, adj_mat)
+    print(size)
+    print(*[i for i in range(N) if mis >> i & 1])
 
 
 if __name__ == "__main__":

@@ -38,6 +38,9 @@ layout: default
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../../verify/tests/hld_lca.test.py.html">tests/hld_lca.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/hld_vertex_add_path_sum.test.py.html">tests/hld_vertex_add_path_sum.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/hld_vertex_add_subtree_sum.test.py.html">tests/hld_vertex_add_subtree_sum.test.py</a>
 * :heavy_check_mark: <a href="../../../verify/tests/tree_diameter.test.py.html">tests/tree_diameter.test.py</a>
 
 
@@ -68,17 +71,6 @@ class Graph:
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 181, in main
-    subcommand_run(paths=[], jobs=parsed.jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/main.py", line 59, in subcommand_run
-    onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
-  File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
-    raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/convex_hull.test.py']
-
-During handling of the above exception, another exception occurred:
-
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 347, in write_contents
     bundled_code = language.bundle(self.file_class.file_path, basedir=self.cpp_source_path)

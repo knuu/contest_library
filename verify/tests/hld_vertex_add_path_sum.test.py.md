@@ -25,19 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/lcm.test.py
+# :heavy_check_mark: tests/hld_vertex_add_path_sum.test.py
 
 <a href="../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/lcm.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 06:44:22+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/tests/hld_vertex_add_path_sum.test.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 07:26:24+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/python_library/math/lcm.py.html">python_library/math/lcm.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/data_structures/segment_tree.py.html">python_library/data_structures/segment_tree.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/graph/graph.py.html">python_library/graph/graph.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/graph/heavy_light_decomposition.py.html">python_library/graph/heavy_light_decomposition.py</a>
 
 
 ## Code
@@ -45,19 +47,43 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_C
-# @import python_library/math/lcm.py
+# verify-helper: PROBLEM https://judge.yosupo.jp/problem/vertex_add_path_sum
+# @import python_library/data_structures/segment_tree.py
+# @import python_library/graph/graph.py
+# @import python_library/graph/heavy_light_decomposition.py
+import operator
 import sys
 
 sys.path.insert(0, ".")
 input = sys.stdin.buffer.readline
 
-from python_library.math.lcm import lcm
+from python_library.data_structures.segment_tree import SegmentTree
+from python_library.graph.graph import Graph
+from python_library.graph.heavy_light_decomposition import HeavyLightDecomposition
 
 
 def main() -> None:
-    _ = int(input())
-    print(lcm([int(x) for x in input().split()]))
+    N, Q = map(int, input().split())
+    weights = [int(x) for x in input().split()]
+    graph = Graph(N)
+    for _ in range(N - 1):
+        u, v = map(int, input().split())
+        graph.add_edge(u, v, 1)
+        graph.add_edge(v, u, 1)
+    hld = HeavyLightDecomposition(graph)
+    new_weights = [0] * N
+    for i in range(N):
+        new_weights[hld.vid[i]] = weights[i]
+    rsq = SegmentTree.create_from_array(new_weights, operator.add, 0)
+
+    ans = []
+    for _ in range(Q):
+        t, a, b = map(int, input().split())
+        if t == 0:
+            rsq.update(hld.vid[a], rsq[hld.vid[a]] + b)
+        else:
+            ans.append(hld.query_path(a, b, 0, rsq.query, operator.add))
+    print(*ans, sep="\n")
 
 
 if __name__ == "__main__":

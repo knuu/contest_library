@@ -25,19 +25,19 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/lcm.test.py
+# :heavy_check_mark: tests/dinic_bimatch.test.py
 
 <a href="../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/lcm.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 06:44:22+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/tests/dinic_bimatch.test.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 07:26:24+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/python_library/math/lcm.py.html">python_library/math/lcm.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/graph/dinic.py.html">python_library/graph/dinic.py</a>
 
 
 ## Code
@@ -45,19 +45,33 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_C
-# @import python_library/math/lcm.py
+# verify-helper: PROBLEM https://judge.yosupo.jp/problem/bipartitematching
+# @import python_library/graph/dinic.py
 import sys
 
 sys.path.insert(0, ".")
 input = sys.stdin.buffer.readline
 
-from python_library.math.lcm import lcm
+from python_library.graph.dinic import MaxFlow
 
 
 def main() -> None:
-    _ = int(input())
-    print(lcm([int(x) for x in input().split()]))
+    L, R, M = map(int, input().split())
+    source, sink = L + R, L + R + 1
+    mf = MaxFlow(L + R + 2)
+    for _ in range(M):
+        a, b = map(int, input().split())
+        mf.add_edge(a, L + b, 1)
+    for i in range(L):
+        mf.add_edge(source, i, 1)
+    for i in range(R):
+        mf.add_edge(L + i, sink, 1)
+    print(mf.run(source, sink))
+
+    for i in range(L):
+        for e in mf.E[i]:
+            if e.cap == 0 and e.to < L + R:
+                print(i, e.to - L)
 
 
 if __name__ == "__main__":
