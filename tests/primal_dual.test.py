@@ -1,5 +1,5 @@
 # verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B
-# @import python_library/graph/dinic.py
+# @import python_library/graph/primal_dual.py
 import sys
 
 sys.path.insert(0, ".")

@@ -1,6 +1,4 @@
-# used in AOJ No.68, yukicoder No.199
-# complexity: O(n^(1/2))
-
+# @import python_library/geometry/geometry.py
 from python_library.geometry.geometry import Point
 
 
