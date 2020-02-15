@@ -1,5 +1,5 @@
 # verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A
-# @import python_library/math/extgcd.py
+# @import python_library/math/divisor.py
 import sys
 
 sys.path.insert(0, ".")

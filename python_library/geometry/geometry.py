@@ -1,7 +1,4 @@
-eps = 1e-10
-
-
-def add(a, b):
+def add(a, b, eps=1e-10):
     return 0 if abs(a + b) < eps * (abs(a) + abs(b)) else a + b
 
 
@@ -18,6 +15,9 @@ class Point:
 
     def __mul__(self, d):
         return Point(self.x * d, self.y * d)
+
+    def __lt__(self, p):
+        return (self.x, self.y) < (p.x, p.y)
 
     def dot(self, p):
         return add(self.x * p.x, self.y * p.y)

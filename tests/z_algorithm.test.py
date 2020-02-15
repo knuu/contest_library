@@ -9,7 +9,7 @@ from python_library.string.z_algorithm import z_algorithm
 
 
 def main() -> None:
-    print(*z_algorithm(input()))
+    print(*z_algorithm(input().strip()))
 
 
 if __name__ == "__main__":
