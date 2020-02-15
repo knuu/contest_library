@@ -51,7 +51,7 @@ layout: default
 * :warning: <a href="library/c++-library/kd_tree.cpp.html">An implementation of kd-tree <small>(c++-library/kd_tree.cpp)</small></a>
 * :warning: <a href="library/c++-library/kd_tree_inner.cpp.html">An implementation of kd-tree <small>(c++-library/kd_tree_inner.cpp)</small></a>
 * :warning: <a href="library/c++-library/kruskal.cpp.html">c++-library/kruskal.cpp</a>
-* :warning: <a href="library/c++-library/lca.cpp.html">c++-library/lca.cpp</a>
+* :heavy_check_mark: <a href="library/c++-library/lca.cpp.html">c++-library/lca.cpp</a>
 * :warning: <a href="library/c++-library/matrix.cpp.html">c++-library/matrix.cpp</a>
 * :warning: <a href="library/c++-library/minimum_ratio_spanning_tree.cpp.html">c++-library/minimum_ratio_spanning_tree.cpp</a>
 * :warning: <a href="library/c++-library/prim.cpp.html">c++-library/prim.cpp</a>
@@ -74,5 +74,6 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/tests/example.test.cpp.html">tests/example.test.cpp</a>
+* :heavy_check_mark: <a href="verify/tests/lca.test.cpp.html">tests/lca.test.cpp</a>
 
 
