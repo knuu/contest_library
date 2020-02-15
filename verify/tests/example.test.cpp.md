@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: c++-library/example.test.cpp
+# :heavy_check_mark: tests/example.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/c++-library/example.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 01:17:56+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/tests/example.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 01:47:02+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/aplusb">https://judge.yosupo.jp/problem/aplusb</a>
@@ -56,7 +56,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "c++-library/example.test.cpp"
+#line 1 "tests/example.test.cpp"
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 #include <iostream>
 
