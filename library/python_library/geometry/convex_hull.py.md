@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/geometry/convex_hull.py
+# :x: python_library/geometry/convex_hull.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#bb1189d107afaf50a8d799c22c656ecc">python_library/geometry</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/geometry/convex_hull.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 06:44:22+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../verify/tests/convex_hull.test.py.html">tests/convex_hull.test.py</a>
 
 
 ## Code
@@ -43,55 +48,31 @@ layout: default
 ```cpp
 # used in AOJ No.68, yukicoder No.199
 # complexity: O(n^(1/2))
-eps = 1e-10
+
+from python_library.geometry.geometry import Point
 
 
-def add(a, b):
-    return 0 if abs(a + b) < eps * (abs(a) + abs(b)) else a + b
+class ConvexHull:
+    def __init__(self, points) -> None:
+        self.ps = points
 
+    def run(self):
+        ps = sorted(self.ps)
+        lower_hull = self.get_bounds(ps)
+        ps = ps[::-1]
+        upper_hull = self.get_bounds(ps)
+        del upper_hull[-1]
+        del lower_hull[-1]
+        lower_hull.extend(upper_hull)
+        return lower_hull
 
-class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def __add__(self, p):
-        return Point(add(self.x, p.x), add(self.y, p.y))
-
-    def __sub__(self, p):
-        return Point(add(self.x, -p.x), add(self.y, -p.y))
-
-    def __mul__(self, d):
-        return Point(self.x * d, self.y * d)
-
-    def dot(self, p):
-        return add(self.x * p.x, self.y * p.y)
-
-    def det(self, p):
-        return add(self.x * p.y, -self.y * p.x)
-
-    def __str__(self):
-        return "({}, {})".format(self.x, self.y)
-
-
-def convex_hull(ps):
-    ps = [Point(x, y) for x, y in sorted([(p.x, p.y) for p in ps])]
-    lower_hull = get_bounds(ps)
-    ps = ps[::-1]
-    upper_hull = get_bounds(ps)
-    del upper_hull[-1]
-    del lower_hull[-1]
-    lower_hull.extend(upper_hull)
-    return lower_hull
-
-
-def get_bounds(ps):
-    qs = [ps[0], ps[1]]
-    for p in ps[2:]:
-        while len(qs) > 1 and (qs[-1] - qs[-2]).det(p - qs[-1]) < 0:
-            del qs[-1]
-        qs.append(p)
-    return qs
+    def get_bounds(self, ps):
+        qs = [ps[0], ps[1]]
+        for p in ps[2:]:
+            while len(qs) > 1 and (qs[-1] - qs[-2]).det(p - qs[-1]) < 0:
+                del qs[-1]
+            qs.append(p)
+        return qs
 
 
 def aoj():
@@ -100,7 +81,8 @@ def aoj():
     for _ in range(N):
         x, y = map(int, input().split())
         ps.append(Point(x, y))
-    convex = convex_hull(ps)
+    hull = ConvexHull(ps)
+    convex = hull.run()
     print(len(convex))
     min_idx = -1
     min_x, min_y = 10001, 10001
@@ -114,7 +96,7 @@ def aoj():
         print(p.x, p.y)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     aoj()
 
 ```
@@ -130,7 +112,7 @@ Traceback (most recent call last):
     onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
     raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/z_algorithm.test.py']
+Exception: 1 tests failed: ['tests/convex_hull.test.py']
 
 During handling of the above exception, another exception occurred:
 

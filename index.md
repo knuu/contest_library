@@ -102,8 +102,8 @@ layout: default
 
 ### python_library/geometry
 
-* :warning: <a href="library/python_library/geometry/convex_hull.py.html">python_library/geometry/convex_hull.py</a>
-* :warning: <a href="library/python_library/geometry/geometry.py.html">python_library/geometry/geometry.py</a>
+* :x: <a href="library/python_library/geometry/convex_hull.py.html">python_library/geometry/convex_hull.py</a>
+* :x: <a href="library/python_library/geometry/geometry.py.html">python_library/geometry/geometry.py</a>
 
 
 <div id="7e80885bc8a78dc63feed9f40126ba0e"></div>
@@ -134,11 +134,11 @@ layout: default
 
 * :warning: <a href="library/python_library/math/combinations.py.html">python_library/math/combinations.py</a>
 * :heavy_check_mark: <a href="library/python_library/math/disc_log.py.html">python_library/math/disc_log.py</a>
-* :warning: <a href="library/python_library/math/divisor.py.html">python_library/math/divisor.py</a>
+* :heavy_check_mark: <a href="library/python_library/math/divisor.py.html">python_library/math/divisor.py</a>
 * :heavy_check_mark: <a href="library/python_library/math/euler_totient.py.html">python_library/math/euler_totient.py</a>
 * :heavy_check_mark: <a href="library/python_library/math/extgcd.py.html">python_library/math/extgcd.py</a>
 * :warning: <a href="library/python_library/math/givens.py.html">python_library/math/givens.py</a>
-* :warning: <a href="library/python_library/math/lcm.py.html">python_library/math/lcm.py</a>
+* :heavy_check_mark: <a href="library/python_library/math/lcm.py.html">python_library/math/lcm.py</a>
 * :warning: <a href="library/python_library/math/linear_recursion_solver.py.html">python_library/math/linear_recursion_solver.py</a>
 * :warning: <a href="library/python_library/math/pascalsTriangle.py.html">python_library/math/pascalsTriangle.py</a>
 * :heavy_check_mark: <a href="library/python_library/math/prime.py.html">python_library/math/prime.py</a>
@@ -163,7 +163,7 @@ layout: default
 
 ### python_library/string
 
-* :x: <a href="library/python_library/string/z_algorithm.py.html">python_library/string/z_algorithm.py</a>
+* :heavy_check_mark: <a href="library/python_library/string/z_algorithm.py.html">python_library/string/z_algorithm.py</a>
 
 
 <div id="1bd6c8bcf0a034068d4ecd4538188ccf"></div>
@@ -226,6 +226,7 @@ layout: default
 
 ## Verify Files
 
+* :x: <a href="verify/tests/convex_hull.test.py.html">tests/convex_hull.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/disc_log.test.py.html">tests/disc_log.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/euler_totient.test.py.html">tests/euler_totient.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/example.test.cpp.html">tests/example.test.cpp</a>
@@ -250,6 +251,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/tests/two_sat.test.py.html">tests/two_sat.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/union_find.test.py.html">tests/union_find.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/weighted_unionfind.test.py.html">tests/weighted_unionfind.test.py</a>
-* :x: <a href="verify/tests/z_algorithm.test.py.html">tests/z_algorithm.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/z_algorithm.test.py.html">tests/z_algorithm.test.py</a>
 
 

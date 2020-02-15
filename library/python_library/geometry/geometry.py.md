@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/geometry/geometry.py
+# :x: python_library/geometry/geometry.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#bb1189d107afaf50a8d799c22c656ecc">python_library/geometry</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/geometry/geometry.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 06:44:22+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../verify/tests/convex_hull.test.py.html">tests/convex_hull.test.py</a>
 
 
 ## Code
@@ -41,10 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-eps = 1e-10
-
-
-def add(a, b):
+def add(a, b, eps=1e-10):
     return 0 if abs(a + b) < eps * (abs(a) + abs(b)) else a + b
 
 
@@ -61,6 +63,9 @@ class Point:
 
     def __mul__(self, d):
         return Point(self.x * d, self.y * d)
+
+    def __lt__(self, p):
+        return (self.x, self.y) < (p.x, p.y)
 
     def dot(self, p):
         return add(self.x * p.x, self.y * p.y)
@@ -84,7 +89,7 @@ Traceback (most recent call last):
     onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
     raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/z_algorithm.test.py']
+Exception: 1 tests failed: ['tests/convex_hull.test.py']
 
 During handling of the above exception, another exception occurred:
 

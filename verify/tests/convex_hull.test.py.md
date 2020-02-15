@@ -21,19 +21,24 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/misc/fast_read.py
+# :x: tests/convex_hull.test.py
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#b234f801618f71357e46912cecf08ace">python_library/misc</a>
-* <a href="{{ site.github.repository_url }}/blob/master/python_library/misc/fast_read.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/tests/convex_hull.test.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 06:44:22+09:00
 
 
+
+
+## Depends on
+
+* :x: <a href="../../library/python_library/geometry/convex_hull.py.html">python_library/geometry/convex_hull.py</a>
+* :x: <a href="../../library/python_library/geometry/geometry.py.html">python_library/geometry/geometry.py</a>
 
 
 ## Code
@@ -41,19 +46,33 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# see: https://twitter.com/maspy_stars/status/1179226257982185472
+# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0068
+# @import python_library/geometry/geometry.py
+# @import python_library/geometry/convex_hull.py
 import sys
-read = sys.stdin.buffer.read
-readline = sys.stdin.buffer.readline
-readlines = sys.stdin.buffer.readlines
+
+sys.path.insert(0, ".")
+input = sys.stdin.buffer.readline
+
+from python_library.geometry.geometry import Point
+from python_library.geometry.convex_hull import ConvexHull
 
 
-def use_fast_io():
-    global input
-    import io
-    import sys
-    f = io.BytesIO(sys.stdin.buffer.read())
-    input = f.readline
+def main() -> None:
+    while True:
+        n = int(input())
+        if n == 0:
+            break
+        points = []
+        for _ in range(n):
+            x, y = map(float, input().split(b","))
+            points.append(Point(x, y))
+        hull = ConvexHull(points)
+        print(len(points) - len(hull.run()))
+
+
+if __name__ == "__main__":
+    main()
 
 ```
 {% endraw %}
@@ -86,5 +105,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 

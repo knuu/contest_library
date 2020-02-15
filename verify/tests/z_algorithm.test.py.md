@@ -25,19 +25,19 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: tests/z_algorithm.test.py
+# :heavy_check_mark: tests/z_algorithm.test.py
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/tests/z_algorithm.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 05:33:07+09:00
+    - Last commit date: 2020-02-16 06:44:22+09:00
 
 
 
 
 ## Depends on
 
-* :x: <a href="../../library/python_library/string/z_algorithm.py.html">python_library/string/z_algorithm.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/string/z_algorithm.py.html">python_library/string/z_algorithm.py</a>
 
 
 ## Code
@@ -56,7 +56,7 @@ from python_library.string.z_algorithm import z_algorithm
 
 
 def main() -> None:
-    print(*z_algorithm(input()))
+    print(*z_algorithm(input().strip()))
 
 
 if __name__ == "__main__":
@@ -75,7 +75,7 @@ Traceback (most recent call last):
     onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
     raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/z_algorithm.test.py']
+Exception: 1 tests failed: ['tests/convex_hull.test.py']
 
 During handling of the above exception, another exception occurred:
 

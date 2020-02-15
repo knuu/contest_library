@@ -30,14 +30,14 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/tests/prime_factorization.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 06:11:47+09:00
+    - Last commit date: 2020-02-16 06:44:22+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/python_library/math/extgcd.py.html">python_library/math/extgcd.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/math/divisor.py.html">python_library/math/divisor.py</a>
 
 
 ## Code
@@ -46,7 +46,7 @@ layout: default
 {% raw %}
 ```cpp
 # verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A
-# @import python_library/math/extgcd.py
+# @import python_library/math/divisor.py
 import sys
 
 sys.path.insert(0, ".")
@@ -78,7 +78,7 @@ Traceback (most recent call last):
     onlinejudge_verify.verify.main(paths, marker=marker, timeout=timeout, jobs=jobs)
   File "/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/onlinejudge_verify/verify.py", line 133, in main
     raise Exception('{} tests failed: {}'.format(len(failed_test_paths), [str(path.relative_to(pathlib.Path.cwd())) for path in failed_test_paths]))
-Exception: 1 tests failed: ['tests/z_algorithm.test.py']
+Exception: 1 tests failed: ['tests/convex_hull.test.py']
 
 During handling of the above exception, another exception occurred:
 
