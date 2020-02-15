@@ -53,18 +53,3 @@ class TreeDiameter:
                 dists[v] = (ret_dist, ret_v)
 
         return dists[target]
-
-
-def aoj():
-    N = int(input())
-    graph = Graph(N)
-    for _ in range(N-1):
-        s, t, w = map(int, input().split())
-        graph.add_edge(s, t, w)
-        graph.add_edge(t, s, w)
-    diam = TreeDiameter(graph)
-    print(diam.run())
-
-
-if __name__ == "__main__":
-    aoj()
