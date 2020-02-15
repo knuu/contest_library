@@ -108,7 +108,7 @@ layout: default
 * :warning: <a href="library/python_library/graph/dijkstra.py.html">python_library/graph/dijkstra.py</a>
 * :warning: <a href="library/python_library/graph/dinic.py.html">python_library/graph/dinic.py</a>
 * :warning: <a href="library/python_library/graph/ford_fulkerson.py.html">python_library/graph/ford_fulkerson.py</a>
-* :warning: <a href="library/python_library/graph/graph.py.html">python_library/graph/graph.py</a>
+* :heavy_check_mark: <a href="library/python_library/graph/graph.py.html">python_library/graph/graph.py</a>
 * :warning: <a href="library/python_library/graph/graph2.py.html">python_library/graph/graph2.py</a>
 * :warning: <a href="library/python_library/graph/heavy_light_decomposition.py.html">python_library/graph/heavy_light_decomposition.py</a>
 * :warning: <a href="library/python_library/graph/kruskal.py.html">python_library/graph/kruskal.py</a>
@@ -116,7 +116,7 @@ layout: default
 * :warning: <a href="library/python_library/graph/prim.py.html">python_library/graph/prim.py</a>
 * :warning: <a href="library/python_library/graph/primal_dual.py.html">python_library/graph/primal_dual.py</a>
 * :warning: <a href="library/python_library/graph/scc.py.html">python_library/graph/scc.py</a>
-* :warning: <a href="library/python_library/graph/tree_diameter.py.html">python_library/graph/tree_diameter.py</a>
+* :heavy_check_mark: <a href="library/python_library/graph/tree_diameter.py.html">python_library/graph/tree_diameter.py</a>
 * :warning: <a href="library/python_library/graph/warshall_floyd.py.html">python_library/graph/warshall_floyd.py</a>
 
 

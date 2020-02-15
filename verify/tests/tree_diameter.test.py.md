@@ -30,9 +30,15 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/tests/tree_diameter.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 03:12:33+09:00
+    - Last commit date: 2020-02-16 03:36:14+09:00
 
 
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="../../library/python_library/graph/graph.py.html">python_library/graph/graph.py</a>
+* :heavy_check_mark: <a href="../../library/python_library/graph/tree_diameter.py.html">python_library/graph/tree_diameter.py</a>
 
 
 ## Code
@@ -41,8 +47,8 @@ layout: default
 {% raw %}
 ```cpp
 # verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
-# @import python-library/graph/graph.py
-# @import python-library/graph/tree_diameter.py
+# @import python_library/graph/graph.py
+# @import python_library/graph/tree_diameter.py
 import sys
 
 sys.path.insert(0, ".")
