@@ -5,24 +5,24 @@ class Prime:
     """
 
     def __init__(self, n):
-        assert(n >= 1)
-        self.is_prime = [True for _ in range(n+1)]
+        assert n >= 1
+        self.is_prime = [True for _ in range(n + 1)]
         self.primeList = []
         self.is_prime[0] = self.is_prime[1] = False
-        for i in range(2, int(pow(n, 0.5))+1):
-            if self.is_prime[i] == True:
+        for i in range(2, int(pow(n, 0.5)) + 1):
+            if self.is_prime[i]:
                 self.primeList.append(i)
-                for j in range(2*i, n+1, i):
+                for j in range(2 * i, n + 1, i):
                     self.is_prime[j] = False
-        for i in range(int(pow(n, 0.5))+1, n+1):
-            if self.is_prime[i] == True:
+        for i in range(int(pow(n, 0.5)) + 1, n + 1):
+            if self.is_prime[i]:
                 self.primeList.append(i)
 
     def isPrime(self, n):
         return self.is_prime[n]
 
     def nthPrime(self, n):
-        return self.primeList[n-1]
+        return self.primeList[n - 1]
 
 
 def miller_rabin(n):
@@ -31,7 +31,7 @@ def miller_rabin(n):
         a = 2, 3, 5, 7, 11, 13, 17, 19, and 23.
         Complexity: O(log^3 n)
     """
-    assert(n >= 1)
+    assert n >= 1
     if n == 2:
         return True
     if n <= 1 or not n & 1:

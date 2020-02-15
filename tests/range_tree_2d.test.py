@@ -1,4 +1,5 @@
 # verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C
+# verify-helper: IGNORE
 # @import python_library/data_structres/range_tree_2d.py
 import sys
 

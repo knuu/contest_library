@@ -12,11 +12,3 @@ def euler_totient(n):
     if n > 1:
         ans -= ans // n
     return ans
-
-
-def aoj():
-    print(euler_totient(int(input())))
-
-
-if __name__ == "__main__":
-    aoj()

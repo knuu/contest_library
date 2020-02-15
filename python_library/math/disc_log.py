@@ -28,13 +28,3 @@ def solve_discrete_logarithm(g: int, y: int, m: int) -> int:
             x = a * sqrt_m - b
             return x if pow(g, x, m) == y else -1
     return -1
-
-
-def yosupo():
-    # https://judge.yosupo.jp/problem/discrete_logarithm_mod
-    for _ in range(int(input())):
-        print(solve_discrete_logarithm(*map(int, input().split())))
-
-
-if __name__ == "__main__":
-    yosupo()
