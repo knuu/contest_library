@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/graph/2sat.py
+# :x: python_library/graph/two_sat.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#7e80885bc8a78dc63feed9f40126ba0e">python_library/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/python_library/graph/2sat.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/python_library/graph/two_sat.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 04:55:42+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../verify/tests/two_sat.test.py.html">tests/two_sat.test.py</a>
 
 
 ## Code
@@ -41,11 +46,6 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-import sys
-input = sys.stdin.buffer.readline
-sys.setrecursionlimit(10 ** 6 + 100)
-
-
 class StronglyConnectedComponets:
     def __init__(self, n: int) -> None:
         self.n = n
@@ -110,28 +110,8 @@ class TwoSat(StronglyConnectedComponets):
         for i in range(self.num_var):
             if self.order[i + 1] == self.order[i + self.num_var + 1]:
                 return False
-            self.ans.append(self.order[i + 1] >
-                            self.order[i + self.num_var + 1])
+            self.ans.append(self.order[i + 1] > self.order[i + self.num_var + 1])
         return True
-
-
-def yosupo():
-    # https://judge.yosupo.jp/problem/two_sat
-    _, _, *NM = input().split()
-    N, M = map(int, NM)
-    sat = TwoSat(N)
-    for _ in range(M):
-        u, v, _ = map(int, input().split())
-        sat.add_constraint(u, v)
-    if sat.run():
-        print("s SATISFIABLE")
-        print("v", *[i+1 if sat.ans[i] else -(i+1) for i in range(N)], 0)
-    else:
-        print("s UNSATISFIABLE")
-
-
-if __name__ == "__main__":
-    yosupo()
 
 ```
 {% endraw %}

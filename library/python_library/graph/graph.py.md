@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: python_library/graph/graph.py
+# :x: python_library/graph/graph.py
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/tests/tree_diameter.test.py.html">tests/tree_diameter.test.py</a>
+* :x: <a href="../../../verify/tests/tree_diameter.test.py.html">tests/tree_diameter.test.py</a>
 
 
 ## Code

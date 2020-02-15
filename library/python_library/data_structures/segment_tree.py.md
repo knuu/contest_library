@@ -25,15 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/data_structures/segment_tree.py
+# :x: python_library/data_structures/segment_tree.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#4f7277da04114aac533381a4614f94a3">python_library/data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/data_structures/segment_tree.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 04:55:42+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../verify/tests/segment_tree_point_add_range_sum.test.py.html">tests/segment_tree_point_add_range_sum.test.py</a>
+* :x: <a href="../../../verify/tests/segment_tree_point_set_range_composite.test.py.html">tests/segment_tree_point_set_range_composite.test.py</a>
+* :x: <a href="../../../verify/tests/segment_tree_range_min_query.test.py.html">tests/segment_tree_range_min_query.test.py</a>
+* :x: <a href="../../../verify/tests/segment_tree_staticrmq.test.py.html">tests/segment_tree_staticrmq.test.py</a>
 
 
 ## Code
@@ -41,10 +49,6 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-import sys
-input = sys.stdin.readline
-
-
 class SegmentTree:
     """Segment Tree (Point Update & Range Query)
 
@@ -58,7 +62,7 @@ class SegmentTree:
     """
 
     def __init__(self, N, f, default):
-        self.N = 1 << (N-1).bit_length()
+        self.N = 1 << (N - 1).bit_length()
         self.default = default
         self.f = f
         self.segtree = [self.default] * ((self.N << 1) - 1)
@@ -72,7 +76,8 @@ class SegmentTree:
 
         for i in reversed(range(self.N - 1)):
             self.segtree[i] = self.f(
-                self.segtree[(i << 1) + 1], self.segtree[(i << 1) + 2])
+                self.segtree[(i << 1) + 1], self.segtree[(i << 1) + 2]
+            )
         return self
 
     def update(self, i, val):
@@ -81,7 +86,8 @@ class SegmentTree:
         while i > 0:
             i = (i - 1) >> 1
             self.segtree[i] = self.f(
-                self.segtree[(i << 1) + 1], self.segtree[(i << 1) + 2])
+                self.segtree[(i << 1) + 1], self.segtree[(i << 1) + 2]
+            )
 
     def __getitem__(self, k):
         return self.segtree[self.N - 1 + k]
@@ -89,63 +95,16 @@ class SegmentTree:
     def query(self, low, high):
         # query [l, r)
         low, high = low + self.N, high + self.N
-        ret = self.default
+        left_ret, right_ret = self.default, self.default
         while low < high:
             if low & 1:
-                ret = self.f(ret, self.segtree[low-1])
+                left_ret = self.f(left_ret, self.segtree[low - 1])
                 low += 1
             if high & 1:
                 high -= 1
-                ret = self.f(ret, self.segtree[high-1])
+                right_ret = self.f(self.segtree[high - 1], right_ret)
             low, high = low >> 1, high >> 1
-        return ret
-
-
-def yosupo1():
-    # https://judge.yosupo.jp/problem/staticrmq
-    _, Q = map(int, input().split())
-    A = [int(x) for x in input().split()]
-    rmq = SegmentTree.create_from_array(A, min, 10**9)
-    ans = []
-    for _ in range(Q):
-        l, r = map(int, input().split())
-        ans.append(rmq.query(l, r))
-    print(*ans, sep="\n")
-
-
-def yosupo2():
-    # https://judge.yosupo.jp/problem/point_add_range_sum
-    import operator
-    _, Q = map(int, input().split())
-    A = [int(x) for x in input().split()]
-    rsq = SegmentTree.create_from_array(A, operator.add, 0)
-    ans = []
-    for _ in range(Q):
-        type_, l, r = map(int, input().split())
-        if type_ == 0:
-            rsq.update(l, rsq[l] + r)
-        else:
-            ans.append(rsq.query(l, r))
-    print(*ans, sep="\n")
-
-
-def aoj():
-    # https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A
-    N, Q = map(int, input().split())
-    default = (1 << 31) - 1
-    rmq = SegmentTree(N, min, default)
-    for _ in range(Q):
-        com, x, y = map(int, input().split())
-        if com == 0:
-            rmq.update(x, y)
-        else:
-            print(rmq.query(x, y+1))
-
-
-if __name__ == '__main__':
-    # yosupo1()
-    yosupo2()
-    # aoj()
+        return self.f(left_ret, right_ret)
 
 ```
 {% endraw %}

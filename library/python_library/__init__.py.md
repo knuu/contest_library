@@ -21,24 +21,19 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: python_library/data_structures/unionfind.py
+# :warning: python_library/__init__.py
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#4f7277da04114aac533381a4614f94a3">python_library/data_structures</a>
-* <a href="{{ site.github.repository_url }}/blob/master/python_library/data_structures/unionfind.py">View this file on GitHub</a>
+* category: <a href="../../index.html#b459ba9a518a9515299d3a04822af451">python_library</a>
+* <a href="{{ site.github.repository_url }}/blob/master/python_library/__init__.py">View this file on GitHub</a>
     - Last commit date: 2020-02-16 04:55:42+09:00
 
 
-
-
-## Verified with
-
-* :x: <a href="../../../verify/tests/union_find.test.py.html">tests/union_find.test.py</a>
 
 
 ## Code
@@ -46,40 +41,6 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-class UnionFindTree:
-    """Disjoint-Set Data Structure
-
-    Union-Find Tree
-
-    complexity:
-        - init: O(n)
-        - find, unite, same: O(alpha(n))
-    """
-
-    def __init__(self, n):
-        self.par = list(range(n))  # parent
-        self.rank = [0] * n  # depth of tree
-
-    def find(self, x):
-        if self.par[x] == x:
-            return x
-        else:
-            self.par[x] = self.find(self.par[x])
-            return self.par[x]
-
-    def unite(self, x, y):
-        x, y = self.find(x), self.find(y)
-        if x == y:
-            return
-        if self.rank[x] < self.rank[y]:
-            self.par[x] = y
-        else:
-            self.par[y] = x
-            if self.rank[x] == self.rank[y]:
-                self.rank[x] += 1
-
-    def is_same(self, x, y):
-        return self.find(x) == self.find(y)
 
 ```
 {% endraw %}
@@ -101,5 +62,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 

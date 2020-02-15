@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: python_library/graph/tree_diameter.py
+# :x: python_library/graph/tree_diameter.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#7e80885bc8a78dc63feed9f40126ba0e">python_library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/graph/tree_diameter.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 04:55:42+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/tests/tree_diameter.test.py.html">tests/tree_diameter.test.py</a>
+* :x: <a href="../../../verify/tests/tree_diameter.test.py.html">tests/tree_diameter.test.py</a>
 
 
 ## Code
@@ -46,21 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-class Edge:
-    def __init__(self, dst, weight):
-        self.dst, self.weight = dst, weight
-
-    def __lt__(self, e):
-        return self.weight > e.weight
-
-
-class Graph:
-    def __init__(self, V):
-        self.V = V
-        self.E = [[] for _ in range(V)]
-
-    def add_edge(self, src, dst, weight):
-        self.E[src].append(Edge(dst, weight))
+from python_library.graph.graph import Graph
 
 
 class TreeDiameter:

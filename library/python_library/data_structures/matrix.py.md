@@ -25,15 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/data_structures/matrix.py
+# :heavy_check_mark: python_library/data_structures/matrix.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#4f7277da04114aac533381a4614f94a3">python_library/data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/data_structures/matrix.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 04:55:42+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/tests/matrix_determinant.test.py.html">tests/matrix_determinant.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/matrix_mult.test.py.html">tests/matrix_mult.test.py</a>
 
 
 ## Code
@@ -49,7 +55,7 @@ class Matrix:
     ONE = 1
 
     def __init__(self, mat, copy: bool = True):
-        assert(len(mat) and len(mat[0]))
+        assert len(mat) and len(mat[0])
         if copy:
             self.mat = deepcopy(mat)
         else:
@@ -64,8 +70,7 @@ class Matrix:
         return Matrix(ret)
 
     def __pow__(self, k):
-        ret = Matrix([[self.ZERO] * len(self.mat[0])
-                      for _ in range(len(self.mat))])
+        ret = Matrix([[self.ZERO] * len(self.mat[0]) for _ in range(len(self.mat))])
         for i in range(len(self.mat)):
             ret.mat[i][i] = self.ONE
         n = Matrix(deepcopy(self.mat))
@@ -82,7 +87,7 @@ class Matrix:
         return len(self.mat), len(self.mat[0])
 
     def __str__(self):
-        return '[{}]\n'.format('\n'.join(str(row) for row in self.mat))
+        return "[{}]\n".format("\n".join(str(row) for row in self.mat))
 
 
 def det(mat: Matrix, mod: int = 998244353) -> int:
@@ -91,7 +96,7 @@ def det(mat: Matrix, mod: int = 998244353) -> int:
     N = mat.shape[0]
     for i in range(N):
         pivot = i
-        for j in range(i+1, N):
+        for j in range(i + 1, N):
             if abs(mat.mat[j][i]) > abs(mat.mat[pivot][i]):
                 pivot = j
         mat.mat[i], mat.mat[pivot] = mat.mat[pivot], mat.mat[i]
@@ -99,38 +104,12 @@ def det(mat: Matrix, mod: int = 998244353) -> int:
         ret %= mod
         if not mat.mat[i][i]:
             break
-        inv = pow(mat.mat[i][i], mod-2, mod)
-        for j in range(i+1, N):
+        inv = pow(mat.mat[i][i], mod - 2, mod)
+        for j in range(i + 1, N):
             for k in reversed(range(i, N)):
-                mat.mat[j][k] += mod - mat.mat[i][k] * \
-                    mat.mat[j][i] % mod * inv % mod
+                mat.mat[j][k] += mod - mat.mat[i][k] * mat.mat[j][i] % mod * inv % mod
                 mat.mat[j][k] %= mod
     return ret
-
-
-def yosupo():
-    # https://judge.yosupo.jp/problem/matrix_det
-    N = int(input())
-    mat = [[int(x) for x in input().split()] for _ in range(N)]
-    print(det(Matrix(mat)))
-
-
-def aoj_matmul():
-    # https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/all/ITP1_7_D
-    N, M, L = map(int, input().split())
-    mat1, mat2 = [], []
-    for _ in range(N):
-        mat1.append([int(x) for x in input().split()])
-    for _ in range(M):
-        mat2.append([int(x) for x in input().split()])
-    A, B = Matrix(mat1, False), Matrix(mat2, False)
-    for row in (A @ B).mat:
-        print(*row)
-
-
-if __name__ == '__main__':
-    # yosupo()
-    aoj_matmul()
 
 ```
 {% endraw %}

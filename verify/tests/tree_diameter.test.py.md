@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/tree_diameter.test.py
+# :x: tests/tree_diameter.test.py
 
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/tests/tree_diameter.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 03:36:14+09:00
+    - Last commit date: 2020-02-16 04:55:42+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/python_library/graph/graph.py.html">python_library/graph/graph.py</a>
-* :heavy_check_mark: <a href="../../library/python_library/graph/tree_diameter.py.html">python_library/graph/tree_diameter.py</a>
+* :x: <a href="../../library/python_library/graph/graph.py.html">python_library/graph/graph.py</a>
+* :x: <a href="../../library/python_library/graph/tree_diameter.py.html">python_library/graph/tree_diameter.py</a>
 
 
 ## Code
@@ -57,7 +57,7 @@ from python_library.graph.graph import Graph
 from python_library.graph.tree_diameter import TreeDiameter
 
 
-def aoj():
+def main() -> None:
     N = int(input())
     graph = Graph(N)
     for _ in range(N - 1):
@@ -69,7 +69,7 @@ def aoj():
 
 
 if __name__ == "__main__":
-    aoj()
+    main()
 
 ```
 {% endraw %}

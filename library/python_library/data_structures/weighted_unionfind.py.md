@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/data_structures/weigeted_unionfind.py
+# :x: python_library/data_structures/weighted_unionfind.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#4f7277da04114aac533381a4614f94a3">python_library/data_structures</a>
-* <a href="{{ site.github.repository_url }}/blob/master/python_library/data_structures/weigeted_unionfind.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/python_library/data_structures/weighted_unionfind.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 04:55:42+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../verify/tests/weighted_unionfind.test.py.html">tests/weighted_unionfind.test.py</a>
 
 
 ## Code
@@ -80,24 +85,6 @@ class WeightedUnionFindTree:
 
     def diff(self, x, y):
         return self.weights[x] - self.weights[y]
-
-
-def aoj():
-    # https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_B
-    N, Q = map(int, input().split())
-    uft = WeightedUnionFindTree(N)
-    ans = []
-    for _ in range(Q):
-        type_, u, v, *weight = map(int, input().split())
-        if type_ == 0:
-            uft.unite(u, v, weight[0])
-        else:
-            ans.append(uft.diff(u, v) if uft.is_same(u, v) else '?')
-    print('\n'.join(map(str, ans)))
-
-
-if __name__ == '__main__':
-    aoj()
 
 ```
 {% endraw %}
