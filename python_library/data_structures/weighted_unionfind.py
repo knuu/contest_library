@@ -37,21 +37,3 @@ class WeightedUnionFindTree:
 
     def diff(self, x, y):
         return self.weights[x] - self.weights[y]
-
-
-def aoj():
-    # https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_B
-    N, Q = map(int, input().split())
-    uft = WeightedUnionFindTree(N)
-    ans = []
-    for _ in range(Q):
-        type_, u, v, *weight = map(int, input().split())
-        if type_ == 0:
-            uft.unite(u, v, weight[0])
-        else:
-            ans.append(uft.diff(u, v) if uft.is_same(u, v) else '?')
-    print('\n'.join(map(str, ans)))
-
-
-if __name__ == '__main__':
-    aoj()

@@ -6,7 +6,7 @@ RangeType = Tuple[int, int]
 
 
 class RangeTreeNode:
-    def __init__(self, inf=10**10):
+    def __init__(self, inf=10 ** 10):
         self._inf = inf
         self.range_ = (inf, inf)
         self.indices = []
@@ -15,16 +15,19 @@ class RangeTreeNode:
     @classmethod
     def merge(cls, node1: "RangeTreeNode", node2: "RangeTreeNode", data):
         merged_node = cls()
-        merged_node.range_ = (min(node1.range_[0], node2.range_[0]),
-                              max(node1.range_[1], node2.range_[1]))
+        merged_node.range_ = (
+            min(node1.range_[0], node2.range_[0]),
+            max(node1.range_[1], node2.range_[1]),
+        )
         sentinel = node1._inf
         node1.assoc.append(sentinel)
         node2.assoc.append(sentinel)
         i = j = 0
         while min(node1.assoc[i], node2.assoc[j]) < sentinel:
-            if node1.assoc[i] < node2.assoc[j] or \
-               (node1.assoc[i] == node2.assoc[j] and
-                    data[node1.indices[i]][0] < data[node2.indices[j]][0]):
+            if node1.assoc[i] < node2.assoc[j] or (
+                node1.assoc[i] == node2.assoc[j]
+                and data[node1.indices[i]][0] < data[node2.indices[j]][0]
+            ):
                 merged_node.assoc.append(node1.assoc[i])
                 merged_node.indices.append(node1.indices[i])
                 i += 1
@@ -38,7 +41,7 @@ class RangeTreeNode:
 
 
 class RangeTree2D:
-    def __init__(self, inf=10**10):
+    def __init__(self, inf=10 ** 10):
         self._inf = inf
 
     def build(self, points_: List[Tuple[int, int]]) -> None:
@@ -53,14 +56,18 @@ class RangeTree2D:
             self._data[self._size - 1 + i].assoc.append(y)
         for i in reversed(range(self._size - 1)):
             self._data[i] = RangeTreeNode.merge(
-                self._data[2 * i + 1], self._data[2 * i + 2], points)
+                self._data[2 * i + 1], self._data[2 * i + 2], points
+            )
 
-    def query(self, range_x: RangeType, range_y: RangeType,
-              output: List[int], idx: int = 0) -> None:
+    def query(
+        self, range_x: RangeType, range_y: RangeType, output: List[int], idx: int = 0
+    ) -> None:
         if idx >= 2 * self._size - 1:
             return
-        elif (range_x[0] <= self._data[idx].range_[0]
-                and self._data[idx].range_[1] <= range_x[1]):
+        elif (
+            range_x[0] <= self._data[idx].range_[0]
+            and self._data[idx].range_[1] <= range_x[1]
+        ):
             low = bisect.bisect_left(self._data[idx].assoc, range_y[0])
             high = bisect.bisect_left(self._data[idx].assoc, range_y[1] + 1)
 
@@ -74,35 +81,14 @@ class RangeTree2D:
     def count(self, range_x, range_y, idx=0):
         if idx >= 2 * self._size - 1:
             return 0
-        elif (range_x[0] <= self._data[idx].range_[0]
-                and self._data[idx].range_[1] <= range_x[1]):
+        elif (
+            range_x[0] <= self._data[idx].range_[0]
+            and self._data[idx].range_[1] <= range_x[1]
+        ):
             low = bisect.bisect_left(self._data[idx].assoc, range_y[0])
             high = bisect.bisect_left(self._data[idx].assoc, range_y[1] + 1)
             return high - low
         else:
-            return (self.count(range_x, range_y, 2 * idx + 1)
-                    + self.count(range_x, range_y, 2 * idx + 2))
-
-
-def yosupo():
-    N, Q = map(int, input().split())
-
-
-def sample():
-    N = int(input())
-    points = [tuple(map(int, input().split())) for _ in range(N)]
-    rt = RangeTree2D()
-    rt.build(points)
-    for _ in range(int(input())):
-        x1, x2, y1, y2 = map(int, input().split())
-        output = []
-        rt.query((x1, x2), (y1, y2), output)
-        if output:
-            output.sort()
-            print(*output, sep='\n')
-        print()
-
-
-if __name__ == '__main__':
-    yosupo()
-    # sample()
+            return self.count(range_x, range_y, 2 * idx + 1) + self.count(
+                range_x, range_y, 2 * idx + 2
+            )

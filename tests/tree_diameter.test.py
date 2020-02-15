@@ -9,7 +9,7 @@ from python_library.graph.graph import Graph
 from python_library.graph.tree_diameter import TreeDiameter
 
 
-def aoj():
+def main() -> None:
     N = int(input())
     graph = Graph(N)
     for _ in range(N - 1):
@@ -21,4 +21,4 @@ def aoj():
 
 
 if __name__ == "__main__":
-    aoj()
+    main()

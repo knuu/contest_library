@@ -32,19 +32,3 @@ class UnionFindTree:
 
     def is_same(self, x, y):
         return self.find(x) == self.find(y)
-
-
-def yosupo_judge():
-    # https://judge.yosupo.jp/problem/unionfind
-    N, Q = map(int, input().split())
-    uft = UnionFindTree(N)
-    for _ in range(Q):
-        t, u, v = map(int, input().split())
-        if t == 0:
-            uft.unite(u, v)
-        else:
-            print(int(uft.is_same(u, v)))
-
-
-if __name__ == '__main__':
-    yosupo_judge()
