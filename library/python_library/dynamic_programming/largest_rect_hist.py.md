@@ -25,15 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/dynamic_programming/largest_rect_hist.py
+# :heavy_check_mark: python_library/dynamic_programming/largest_rect_hist.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#aa415874213902fc17e0d0a11c5743d4">python_library/dynamic_programming</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/dynamic_programming/largest_rect_hist.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 05:33:07+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/tests/largest_rect_hist.test.py.html">tests/largest_rect_hist.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/largest_rect_rect.test.py.html">tests/largest_rect_rect.test.py</a>
 
 
 ## Code
@@ -54,30 +60,6 @@ def calc_largest_rect_in_hist(heights):
         stack.append(i)
     heights.pop()
     return ans
-
-
-def aoj_hist():
-    # https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_3_C
-    input()
-    print(calc_largest_rect_in_hist([int(x) for x in input().split()]))
-
-
-def aoj_rect():
-    # https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_3_B
-    H, W = map(int, input().split())
-    board = [[int(x) for x in input().split()] for _ in range(H)]
-    dp = [0] * W
-    ret = 0
-    for r in range(H):
-        for c in range(W):
-            dp[c] = dp[c] + 1 if board[r][c] == 0 else 0
-        ret = max(ret, calc_largest_rect_in_hist(dp))
-    print(ret)
-
-
-if __name__ == "__main__":
-    # aoj_hist()
-    aoj_rect()
 
 ```
 {% endraw %}

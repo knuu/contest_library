@@ -95,7 +95,7 @@ layout: default
 
 ### python_library/dynamic_programming
 
-* :warning: <a href="library/python_library/dynamic_programming/largest_rect_hist.py.html">python_library/dynamic_programming/largest_rect_hist.py</a>
+* :heavy_check_mark: <a href="library/python_library/dynamic_programming/largest_rect_hist.py.html">python_library/dynamic_programming/largest_rect_hist.py</a>
 
 
 <div id="bb1189d107afaf50a8d799c22c656ecc"></div>
@@ -163,7 +163,7 @@ layout: default
 
 ### python_library/string
 
-* :warning: <a href="library/python_library/string/z_algorithm.py.html">python_library/string/z_algorithm.py</a>
+* :x: <a href="library/python_library/string/z_algorithm.py.html">python_library/string/z_algorithm.py</a>
 
 
 <div id="1bd6c8bcf0a034068d4ecd4538188ccf"></div>
@@ -230,6 +230,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/tests/example.test.py.html">tests/example.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/fenwick_tree_aoj.test.py.html">tests/fenwick_tree_aoj.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/fenwick_tree_yosupo.test.py.html">tests/fenwick_tree_yosupo.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/largest_rect_hist.test.py.html">tests/largest_rect_hist.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/largest_rect_rect.test.py.html">tests/largest_rect_rect.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/lca.test.cpp.html">tests/lca.test.cpp</a>
 * :heavy_check_mark: <a href="verify/tests/matrix_determinant.test.py.html">tests/matrix_determinant.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/matrix_mult.test.py.html">tests/matrix_mult.test.py</a>
@@ -242,5 +244,6 @@ layout: default
 * :x: <a href="verify/tests/two_sat.test.py.html">tests/two_sat.test.py</a>
 * :x: <a href="verify/tests/union_find.test.py.html">tests/union_find.test.py</a>
 * :x: <a href="verify/tests/weighted_unionfind.test.py.html">tests/weighted_unionfind.test.py</a>
+* :x: <a href="verify/tests/z_algorithm.test.py.html">tests/z_algorithm.test.py</a>
 
 

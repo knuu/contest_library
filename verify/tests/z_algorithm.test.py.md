@@ -21,24 +21,23 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: python_library/string/z_algorithm.py
+# :x: tests/z_algorithm.test.py
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#a280567310207d0ec287bcfac252dc53">python_library/string</a>
-* <a href="{{ site.github.repository_url }}/blob/master/python_library/string/z_algorithm.py">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/tests/z_algorithm.test.py">View this file on GitHub</a>
     - Last commit date: 2020-02-16 05:33:07+09:00
 
 
 
 
-## Verified with
+## Depends on
 
-* :x: <a href="../../../verify/tests/z_algorithm.test.py.html">tests/z_algorithm.test.py</a>
+* :x: <a href="../../library/python_library/string/z_algorithm.py.html">python_library/string/z_algorithm.py</a>
 
 
 ## Code
@@ -46,23 +45,22 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-def z_algorithm(S: str):
-    ret = [0] * len(S)
-    ret[0] = len(S)
-    i, j = 1, 0
-    while i < len(S):
-        while i + j < len(S) and S[j] == S[i + j]:
-            j += 1
-        ret[i] = j
-        if j == 0:
-            i += 1
-            continue
-        k = 1
-        while i + k < len(S) and k + ret[k] < j:
-            ret[i + k] = ret[k]
-            k += 1
-        i, j = i + k, j - k
-    return ret
+# verify-helper: PROBLEM https://judge.yosupo.jp/problem/zalgorithm
+# @import python_library/string/z_algorithm.py
+import sys
+
+sys.path.insert(0, ".")
+input = sys.stdin.buffer.readline
+
+from python_library.string.z_algorithm import z_algorithm
+
+
+def main() -> None:
+    print(*z_algorithm(input()))
+
+
+if __name__ == "__main__":
+    main()
 
 ```
 {% endraw %}
@@ -95,5 +93,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
