@@ -21,16 +21,17 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/tree_diameter.test.py
+# :warning: python_library/misc/fast_read.py
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/tree_diameter.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 03:12:33+09:00
+* category: <a href="../../../index.html#b234f801618f71357e46912cecf08ace">python_library/misc</a>
+* <a href="{{ site.github.repository_url }}/blob/master/python_library/misc/fast_read.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 02:53:38+09:00
 
 
 
@@ -40,30 +41,19 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
-# @import python-library/graph/graph.py
-# @import python-library/graph/tree_diameter.py
+# see: https://twitter.com/maspy_stars/status/1179226257982185472
 import sys
-
-sys.path.insert(0, ".")
-
-from python_library.graph.graph import Graph
-from python_library.graph.tree_diameter import TreeDiameter
+read = sys.stdin.buffer.read
+readline = sys.stdin.buffer.readline
+readlines = sys.stdin.buffer.readlines
 
 
-def aoj():
-    N = int(input())
-    graph = Graph(N)
-    for _ in range(N - 1):
-        s, t, w = map(int, input().split())
-        graph.add_edge(s, t, w)
-        graph.add_edge(t, s, w)
-    diam = TreeDiameter(graph)
-    print(diam.run())
-
-
-if __name__ == "__main__":
-    aoj()
+def use_fast_io():
+    global input
+    import io
+    import sys
+    f = io.BytesIO(sys.stdin.buffer.read())
+    input = f.readline
 
 ```
 {% endraw %}
@@ -85,5 +75,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

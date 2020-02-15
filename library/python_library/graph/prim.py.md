@@ -21,16 +21,17 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/tree_diameter.test.py
+# :warning: python_library/graph/prim.py
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/tree_diameter.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 03:12:33+09:00
+* category: <a href="../../../index.html#7e80885bc8a78dc63feed9f40126ba0e">python_library/graph</a>
+* <a href="{{ site.github.repository_url }}/blob/master/python_library/graph/prim.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 02:53:38+09:00
 
 
 
@@ -40,30 +41,39 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
-# @import python-library/graph/graph.py
-# @import python-library/graph/tree_diameter.py
-import sys
-
-sys.path.insert(0, ".")
-
-from python_library.graph.graph import Graph
-from python_library.graph.tree_diameter import TreeDiameter
+import heapq
 
 
-def aoj():
-    N = int(input())
-    graph = Graph(N)
-    for _ in range(N - 1):
-        s, t, w = map(int, input().split())
-        graph.add_edge(s, t, w)
-        graph.add_edge(t, s, w)
-    diam = TreeDiameter(graph)
-    print(diam.run())
+class MinimumSpanningTree:
+    """ Prim's algorithm: find minimum spanning tree
+        Complexity: O(E log(V))
+        used in GRL2A(AOJ)
+    """
 
+    def __init__(self, V, E, start=0, INF=10**9):
+        """ V: the number of vertexes
+            E: adjacency list (undirected graph)
+            start: start vertex
+            INF: Infinity cost
+        """
+        self.prim(V, E, start, INF)
 
-if __name__ == "__main__":
-    aoj()
+    def prim(self, V, E, start=0, INF=10**9):
+        used = [False] * V
+        self.mincost = 0
+        que = []
+        heapq.heappush(que, (0, 0))
+        while len(que) > 0:
+            cost, v = heapq.heappop(que)
+            if used[v]:
+                continue
+            used[v] = True
+            self.mincost += cost
+            for to, c in E[v]:
+                heapq.heappush(que, (c, to))
+
+    def minCost(self):
+        return self.mincost
 
 ```
 {% endraw %}
@@ -85,5 +95,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

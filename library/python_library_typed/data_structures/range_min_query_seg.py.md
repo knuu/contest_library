@@ -21,16 +21,17 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/tree_diameter.test.py
+# :warning: python_library_typed/data_structures/range_min_query_seg.py
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/tree_diameter.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 03:12:33+09:00
+* category: <a href="../../../index.html#1bd6c8bcf0a034068d4ecd4538188ccf">python_library_typed/data_structures</a>
+* <a href="{{ site.github.repository_url }}/blob/master/python_library_typed/data_structures/range_min_query_seg.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 02:53:38+09:00
 
 
 
@@ -40,30 +41,37 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
-# @import python-library/graph/graph.py
-# @import python-library/graph/tree_diameter.py
-import sys
+import math
+from typing import List, Generic, TypeVar
 
-sys.path.insert(0, ".")
-
-from python_library.graph.graph import Graph
-from python_library.graph.tree_diameter import TreeDiameter
+T = TypeVar('T', int, float, complex)
 
 
-def aoj():
-    N = int(input())
-    graph = Graph(N)
-    for _ in range(N - 1):
-        s, t, w = map(int, input().split())
-        graph.add_edge(s, t, w)
-        graph.add_edge(t, s, w)
-    diam = TreeDiameter(graph)
-    print(diam.run())
+class RangeMinimumQuery(Generic[T]):
+    def __init__(self, N: int, INF: T = 10**9) -> None:
+        self.N: int = 1 << math.ceil(math.log(N, 2))
+        self.INF: T = INF
+        self.segtree: List[T] = [self.INF] * (self.N * 2 - 1)
 
+    def update(self, idx: int, val: int) -> None:
+        idx += self.N - 1
+        self.segtree[idx] = val
+        while idx > 0:
+            idx = (idx - 1) // 2
+            self.segtree[idx] = min(self.segtree[2 * idx + 1], self.segtree[2 * idx + 2])
 
-if __name__ == "__main__":
-    aoj()
+    def query(self, low: int, high: int, k: int = 0, left: int = 0, right: int = -1) -> T:
+        if right == -1:
+            right = self.N
+        if right <= low or high <= left:
+            return self.INF
+
+        if low <= left and right <= high:
+            return self.segtree[k]
+        else:
+            mid: int = (left + right) // 2
+            return min(self.query(low, high, 2*k+1, left, mid),
+                       self.query(low, high, 2*k+2, mid, right))
 
 ```
 {% endraw %}
@@ -85,5 +93,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

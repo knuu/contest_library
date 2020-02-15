@@ -21,16 +21,17 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/tree_diameter.test.py
+# :warning: python_library/graph/kruskal.py
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/tree_diameter.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 03:12:33+09:00
+* category: <a href="../../../index.html#7e80885bc8a78dc63feed9f40126ba0e">python_library/graph</a>
+* <a href="{{ site.github.repository_url }}/blob/master/python_library/graph/kruskal.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 02:53:38+09:00
 
 
 
@@ -40,30 +41,40 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
-# @import python-library/graph/graph.py
-# @import python-library/graph/tree_diameter.py
-import sys
+class MinimumSpanningTree:
+    """ Kruskal's algorithm: find minimum spanning tree
+        Complexity: O(E log(V))
+        used in GRL2A(AOJ)
+    """
 
-sys.path.insert(0, ".")
+    def __init__(self, V, E, start=0, INF=10**9):
+        """ V: the number of vertexes
+            E: adjacency list (undirected graph)
+        """
+        self.kruskal(V, E)
 
-from python_library.graph.graph import Graph
-from python_library.graph.tree_diameter import TreeDiameter
+    def kruskal(self, V, E):
+        edges = []
+        for v1 in range(V):
+            for v2, cost in E[v1]:
+                if v1 < v2:
+                    edges.append((cost, v1, v2))
+        edges.sort(reverse=True)
+        self.mincost = 0
+        self.minSpanningTree = []
+        uf = UnionFindTree(V)
+        while len(self.minSpanningTree) < V-1:
+            cost, v1, v2 = edges.pop()
+            if uf.same(v1, v2) == False:
+                self.mincost += cost
+                uf.unite(v1, v2)
+                self.minSpanningTree.append((v1, v2, cost))
 
+    def minCost(self):
+        return self.mincost
 
-def aoj():
-    N = int(input())
-    graph = Graph(N)
-    for _ in range(N - 1):
-        s, t, w = map(int, input().split())
-        graph.add_edge(s, t, w)
-        graph.add_edge(t, s, w)
-    diam = TreeDiameter(graph)
-    print(diam.run())
-
-
-if __name__ == "__main__":
-    aoj()
+    def getMinSpanningTree(self):
+        return sorted(self.minSpanningTree)
 
 ```
 {% endraw %}
@@ -85,5 +96,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

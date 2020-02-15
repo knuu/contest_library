@@ -21,16 +21,17 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/tree_diameter.test.py
+# :warning: python_library_typed/math/givens.py
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/tree_diameter.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 03:12:33+09:00
+* category: <a href="../../../index.html#769bec8a7401b9ea69076e29f833e3d2">python_library_typed/math</a>
+* <a href="{{ site.github.repository_url }}/blob/master/python_library_typed/math/givens.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 02:53:38+09:00
 
 
 
@@ -40,30 +41,33 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
-# @import python-library/graph/graph.py
-# @import python-library/graph/tree_diameter.py
-import sys
+from typing import List, TypeVar, Tuple
 
-sys.path.insert(0, ".")
+def givens(A: List[List[float]], b: List[float]) -> List[float]:
+    """ solve linear equation
+        cf. http://www.slideshare.net/tmaehara/ss-18244588
+        complexity: O(n^3)
+        used in kupc2012_C
+    """
+    def mkrot(x: float, y: float) -> Tuple[float, float]:
+        r = pow(x ** 2 + y ** 2, 0.5)
+        return x/r, y/r
 
-from python_library.graph.graph import Graph
-from python_library.graph.tree_diameter import TreeDiameter
+    def rot(x: float, y: float, c: float, s: float) -> Tuple[float, float]:
+        return c*x+s*y, -s*x+c*y
 
-
-def aoj():
-    N = int(input())
-    graph = Graph(N)
-    for _ in range(N - 1):
-        s, t, w = map(int, input().split())
-        graph.add_edge(s, t, w)
-        graph.add_edge(t, s, w)
-    diam = TreeDiameter(graph)
-    print(diam.run())
-
-
-if __name__ == "__main__":
-    aoj()
+    n = len(b)
+    for i in range(n):
+        for j in range(i+1, n):
+            c, s = mkrot(A[i][i], A[j][i])
+            b[i], b[j] = rot(b[i], b[j], c, s)
+            for k in range(i, n):
+                A[i][k], A[j][k] = rot(A[i][k], A[j][k], c, s)
+    for i in reversed(range(n)):
+        for j in range(i+1, n):
+            b[i] -= A[i][j] * b[j]
+        b[i] /= A[i][i]
+    return b
 
 ```
 {% endraw %}
@@ -85,5 +89,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

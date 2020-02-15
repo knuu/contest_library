@@ -21,16 +21,17 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/tree_diameter.test.py
+# :warning: python_library/string/z_algorithm.py
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/tree_diameter.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 03:12:33+09:00
+* category: <a href="../../../index.html#a280567310207d0ec287bcfac252dc53">python_library/string</a>
+* <a href="{{ site.github.repository_url }}/blob/master/python_library/string/z_algorithm.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 02:53:38+09:00
 
 
 
@@ -40,30 +41,31 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
-# @import python-library/graph/graph.py
-# @import python-library/graph/tree_diameter.py
-import sys
+def z_algorithm(S: str):
+    ret = [0] * len(S)
+    ret[0] = len(S)
+    i, j = 1, 0
+    while i < len(S):
+        while i + j < len(S) and S[j] == S[i+j]:
+            j += 1
+        ret[i] = j
+        if j == 0:
+            i += 1
+            continue
+        k = 1
+        while i + k < len(S) and k + ret[k] < j:
+            ret[i+k] = ret[k]
+            k += 1
+        i, j = i + k, j - k
+    return ret
 
-sys.path.insert(0, ".")
 
-from python_library.graph.graph import Graph
-from python_library.graph.tree_diameter import TreeDiameter
-
-
-def aoj():
-    N = int(input())
-    graph = Graph(N)
-    for _ in range(N - 1):
-        s, t, w = map(int, input().split())
-        graph.add_edge(s, t, w)
-        graph.add_edge(t, s, w)
-    diam = TreeDiameter(graph)
-    print(diam.run())
+def yosupo_judge():
+    print(*z_algorithm(input()))
 
 
 if __name__ == "__main__":
-    aoj()
+    yosupo_judge()
 
 ```
 {% endraw %}
@@ -85,5 +87,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

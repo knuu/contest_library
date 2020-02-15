@@ -21,16 +21,17 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: tests/tree_diameter.test.py
+# :warning: python_library/math/linear_recursion_solver.py
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/tests/tree_diameter.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 03:12:33+09:00
+* category: <a href="../../../index.html#fcc812ea527936762e2a2536e11e6960">python_library/math</a>
+* <a href="{{ site.github.repository_url }}/blob/master/python_library/math/linear_recursion_solver.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 02:53:38+09:00
 
 
 
@@ -40,30 +41,34 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-# verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
-# @import python-library/graph/graph.py
-# @import python-library/graph/tree_diameter.py
+from copy import deepcopy
 import sys
-
-sys.path.insert(0, ".")
-
-from python_library.graph.graph import Graph
-from python_library.graph.tree_diameter import TreeDiameter
+if sys.version[0] == '2':
+    range, input = xrange, raw_input
 
 
-def aoj():
-    N = int(input())
-    graph = Graph(N)
-    for _ in range(N - 1):
-        s, t, w = map(int, input().split())
-        graph.add_edge(s, t, w)
-        graph.add_edge(t, s, w)
-    diam = TreeDiameter(graph)
-    print(diam.run())
+def linear_recursion_solver(a, x, k, e0=0, e1=1):
+    def rec(k):
+        c = [e0] * n
+        if k < n:
+            c[k] = e1
+            return c[:]
+        b = rec(k // 2)
+        t = [e0] * (2 * n + 1)
+        for i in range(n):
+            for j in range(n):
+                t[i + j + (k & 1)] += b[i] * b[j]
+        for i in reversed(range(n, 2*n)):
+            for j in range(n):
+                t[i - n + j] += a[j] * t[i]
+        for i in range(n):
+            c[i] = t[i]
+        return c[:]
+    n = len(a)
+    c = rec(k)
+    return sum(ci * xi for ci, xi in zip(c, x))
 
-
-if __name__ == "__main__":
-    aoj()
+assert(linear_recursion_solver([1, 2, 3], [6, 5, 4], 10) == 220696)
 
 ```
 {% endraw %}
@@ -85,5 +90,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
