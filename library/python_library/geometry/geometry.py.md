@@ -36,6 +36,11 @@ layout: default
 
 
 
+## Required by
+
+* :heavy_check_mark: <a href="convex_hull.py.html">python_library/geometry/convex_hull.py</a>
+
+
 ## Verified with
 
 * :heavy_check_mark: <a href="../../../verify/tests/convex_hull.test.py.html">tests/convex_hull.test.py</a>

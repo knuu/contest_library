@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/graph/primal_dual.py
+# :heavy_check_mark: python_library/graph/primal_dual.py
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2020-02-16 02:53:38+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/tests/primal_dual.test.py.html">tests/primal_dual.test.py</a>
 
 
 ## Code

@@ -21,24 +21,23 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/misc/popcount.py
+# :heavy_check_mark: tests/scc_yosupo.test.py
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#b234f801618f71357e46912cecf08ace">python_library/misc</a>
-* <a href="{{ site.github.repository_url }}/blob/master/python_library/misc/popcount.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
-
+* <a href="{{ site.github.repository_url }}/blob/master/tests/scc_yosupo.test.py">View this file on GitHub</a>
+    - Last commit date: 2020-02-16 07:49:55+09:00
 
 
 
-## Required by
 
-* :heavy_check_mark: <a href="../graph/maximum_independet_set.py.html">python_library/graph/maximum_independet_set.py</a>
+## Depends on
+
+* :heavy_check_mark: <a href="../../library/python_library/graph/scc.py.html">python_library/graph/scc.py</a>
 
 
 ## Code
@@ -46,19 +45,35 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+# verify-helper: PROBLEM https://judge.yosupo.jp/problem/scc
+# @import python_library/graph/scc.py
 import sys
-import ctypes
+
+sys.path.insert(0, ".")
+input = sys.stdin.buffer.readline
+sys.setrecursionlimit(6 * 10 ** 5)
+
+from python_library.graph.scc import StronglyConnectedComponets
 
 
-def popcount(N):
-    if sys.platform.startswith('linux'):
-        libc = ctypes.cdll.LoadLibrary('libc.so.6')
-        return libc.__sched_cpucount(ctypes.sizeof(ctypes.c_long), (ctypes.c_long * 1)(N))
-    elif sys.platform == 'darwin':
-        libc = ctypes.cdll.LoadLibrary('libSystem.dylib')
-        return libc.__popcountdi2(N)
-    else:
-        assert(False)
+def main() -> None:
+    N, M = map(int, input().split())
+    scc = StronglyConnectedComponets(N)
+    for _ in range(M):
+        u, v = map(int, input().split())
+        scc.add_edge(u, v)
+    scc.run()
+    ans_size = max(scc.order) + 1
+    ans = [[] for _ in range(ans_size)]
+    for i, c in enumerate(scc.order):
+        ans[c].append(i)
+    print(ans_size)
+    for row in ans:
+        print(len(row), *row)
+
+
+if __name__ == "__main__":
+    main()
 
 ```
 {% endraw %}
@@ -80,5 +95,5 @@ subprocess.CalledProcessError: Command '['false']' returned non-zero exit status
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 

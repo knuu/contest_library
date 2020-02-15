@@ -31,9 +31,14 @@ layout: default
 
 * category: <a href="../../../index.html#7e80885bc8a78dc63feed9f40126ba0e">python_library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/graph/maximum_independet_set.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 07:26:24+09:00
+    - Last commit date: 2020-02-16 07:49:55+09:00
 
 
+
+
+## Depends on
+
+* :warning: <a href="../misc/popcount.py.html">python_library/misc/popcount.py</a>
 
 
 ## Verified with
@@ -46,6 +51,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+# @import python_library/misc/popcount.py
 from python_library.misc.popcount import popcount
 
 

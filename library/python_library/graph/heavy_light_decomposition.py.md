@@ -31,9 +31,14 @@ layout: default
 
 * category: <a href="../../../index.html#7e80885bc8a78dc63feed9f40126ba0e">python_library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/graph/heavy_light_decomposition.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 07:26:24+09:00
+    - Last commit date: 2020-02-16 07:49:55+09:00
 
 
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="graph.py.html">python_library/graph/graph.py</a>
 
 
 ## Verified with
@@ -48,6 +53,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+# @import python_library/graph/graph.py
 from collections import deque
 
 from python_library.graph.graph import Graph

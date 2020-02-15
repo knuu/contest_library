@@ -40,7 +40,6 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../verify/tests/dinic_bimatch.test.py.html">tests/dinic_bimatch.test.py</a>
 * :heavy_check_mark: <a href="../../../verify/tests/dinic_max_flow.test.py.html">tests/dinic_max_flow.test.py</a>
-* :heavy_check_mark: <a href="../../../verify/tests/primal_dual.test.py.html">tests/primal_dual.test.py</a>
 
 
 ## Code

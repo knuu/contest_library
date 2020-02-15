@@ -25,15 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: python_library/graph/scc.py
+# :heavy_check_mark: python_library/graph/scc.py
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#7e80885bc8a78dc63feed9f40126ba0e">python_library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/python_library/graph/scc.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 02:53:38+09:00
+    - Last commit date: 2020-02-16 07:49:55+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/tests/scc_aoj.test.py.html">tests/scc_aoj.test.py</a>
+* :heavy_check_mark: <a href="../../../verify/tests/scc_yosupo.test.py.html">tests/scc_yosupo.test.py</a>
 
 
 ## Code
@@ -41,11 +47,6 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-import sys
-input = sys.stdin.buffer.readline
-sys.setrecursionlimit(6 * 10 ** 5)
-
-
 class StronglyConnectedComponets:
     def __init__(self, n: int) -> None:
         self.n = n
@@ -86,41 +87,6 @@ class StronglyConnectedComponets:
                 self.rdfs(v, k)
                 k += 1
         return k
-
-
-def yosupo():
-    # https://judge.yosupo.jp/problem/scc
-    N, M = map(int, input().split())
-    scc = StronglyConnectedComponets(N)
-    for _ in range(M):
-        u, v = map(int, input().split())
-        scc.add_edge(u, v)
-    scc.run()
-    ans_size = max(scc.order) + 1
-    ans = [[] for _ in range(ans_size)]
-    for i, c in enumerate(scc.order):
-        ans[c].append(i)
-    print(ans_size)
-    for row in ans:
-        print(len(row), *row)
-
-
-def aoj():
-    # https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/3/GRL_3_C
-    V, E = map(int, input().split())
-    scc = StronglyConnectedComponets(V)
-    for _ in range(E):
-        u, v = map(int, input().split())
-        scc.add_edge(u, v)
-    scc.run()
-    for _ in range(int(input())):
-        u, v = map(int, input().split())
-        print(int(scc.order[u] == scc.order[v]))
-
-
-if __name__ == "__main__":
-    yosupo()
-    # aoj()
 
 ```
 {% endraw %}

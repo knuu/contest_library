@@ -120,8 +120,8 @@ layout: default
 * :warning: <a href="library/python_library/graph/kruskal.py.html">python_library/graph/kruskal.py</a>
 * :heavy_check_mark: <a href="library/python_library/graph/maximum_independet_set.py.html">python_library/graph/maximum_independet_set.py</a>
 * :warning: <a href="library/python_library/graph/prim.py.html">python_library/graph/prim.py</a>
-* :warning: <a href="library/python_library/graph/primal_dual.py.html">python_library/graph/primal_dual.py</a>
-* :warning: <a href="library/python_library/graph/scc.py.html">python_library/graph/scc.py</a>
+* :heavy_check_mark: <a href="library/python_library/graph/primal_dual.py.html">python_library/graph/primal_dual.py</a>
+* :heavy_check_mark: <a href="library/python_library/graph/scc.py.html">python_library/graph/scc.py</a>
 * :heavy_check_mark: <a href="library/python_library/graph/tree_diameter.py.html">python_library/graph/tree_diameter.py</a>
 * :heavy_check_mark: <a href="library/python_library/graph/two_sat.py.html">python_library/graph/two_sat.py</a>
 * :warning: <a href="library/python_library/graph/warshall_floyd.py.html">python_library/graph/warshall_floyd.py</a>
@@ -249,6 +249,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/tests/primal_dual.test.py.html">tests/primal_dual.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/prime_factorization.test.py.html">tests/prime_factorization.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/range_tree_2d.test.py.html">tests/range_tree_2d.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/scc_aoj.test.py.html">tests/scc_aoj.test.py</a>
+* :heavy_check_mark: <a href="verify/tests/scc_yosupo.test.py.html">tests/scc_yosupo.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/segment_tree_point_add_range_sum.test.py.html">tests/segment_tree_point_add_range_sum.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/segment_tree_point_set_range_composite.test.py.html">tests/segment_tree_point_set_range_composite.test.py</a>
 * :heavy_check_mark: <a href="verify/tests/segment_tree_range_min_query.test.py.html">tests/segment_tree_range_min_query.test.py</a>

@@ -30,7 +30,7 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/tests/hld_lca.test.py">View this file on GitHub</a>
-    - Last commit date: 2020-02-16 07:26:24+09:00
+    - Last commit date: 2020-02-16 07:49:55+09:00
 
 
 
