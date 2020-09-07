@@ -15,15 +15,15 @@ data:
     \ input().split())) for _ in range(Q)]\n    print(*ans, sep=\"\\n\")\n\n\nif __name__\
     \ == \"__main__\":\n    main()\n"
   dependsOn:
-  - python_library/graph/graph.py
   - python_library/graph/heavy_light_decomposition.py
+  - python_library/graph/graph.py
   extendedDependsOn:
-  - icon: ':question:'
-    path: python_library/graph/graph.py
-    title: python_library/graph/graph.py
   - icon: ':heavy_check_mark:'
     path: python_library/graph/heavy_light_decomposition.py
     title: python_library/graph/heavy_light_decomposition.py
+  - icon: ':heavy_check_mark:'
+    path: python_library/graph/graph.py
+    title: python_library/graph/graph.py
   extendedRequiredBy: []
   extendedVerifiedWith: []
   isVerificationFile: true

@@ -26,20 +26,20 @@ data:
   dependsOn:
   - python_library/graph/graph.py
   extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: python_library/graph/graph.py
     title: python_library/graph/graph.py
   extendedRequiredBy: []
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/tree_diameter.test.py
     title: tests/python/tree_diameter.test.py
   isVerificationFile: false
   path: python_library/graph/tree_diameter.py
   requiredBy: []
   timestamp: '2020-02-16 07:49:55+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/python/tree_diameter.test.py
 documentation_of: python_library/graph/tree_diameter.py

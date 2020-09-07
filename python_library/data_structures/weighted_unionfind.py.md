@@ -25,15 +25,15 @@ data:
   extendedDependsOn: []
   extendedRequiredBy: []
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/weighted_unionfind.test.py
     title: tests/python/weighted_unionfind.test.py
   isVerificationFile: false
   path: python_library/data_structures/weighted_unionfind.py
   requiredBy: []
   timestamp: '2020-02-16 04:55:42+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/python/weighted_unionfind.test.py
 documentation_of: python_library/data_structures/weighted_unionfind.py

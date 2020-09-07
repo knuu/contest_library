@@ -96,7 +96,7 @@ data:
     - icon: ':warning:'
       path: c++-library/segtree_rangeadd.cpp
       title: c++-library/segtree_rangeadd.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: c++-library/suffix_array.cpp
       title: c++-library/suffix_array.cpp
     - icon: ':warning:'
@@ -156,13 +156,13 @@ data:
     - icon: ':x:'
       path: python_library/data_structures/range_tree_2d.py
       title: python_library/data_structures/range_tree_2d.py
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: python_library/data_structures/segment_tree.py
       title: python_library/data_structures/segment_tree.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/data_structures/unionfind.py
       title: python_library/data_structures/unionfind.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/data_structures/weighted_unionfind.py
       title: python_library/data_structures/weighted_unionfind.py
   - name: python_library/dynamic_programming
@@ -198,7 +198,7 @@ data:
     - icon: ':warning:'
       path: python_library/graph/ford_fulkerson.py
       title: python_library/graph/ford_fulkerson.py
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: python_library/graph/graph.py
       title: python_library/graph/graph.py
     - icon: ':warning:'
@@ -222,10 +222,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: python_library/graph/scc.py
       title: python_library/graph/scc.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/graph/tree_diameter.py
       title: python_library/graph/tree_diameter.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/graph/two_sat.py
       title: python_library/graph/two_sat.py
     - icon: ':warning:'
@@ -387,6 +387,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/cpp/lca.test.cpp
       title: tests/cpp/lca.test.cpp
+    - icon: ':x:'
+      path: tests/cpp/suffix_array.test.cpp
+      title: tests/cpp/suffix_array.test.cpp
   - name: tests/python
     pages:
     - icon: ':heavy_check_mark:'
@@ -470,22 +473,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/python/segment_tree_point_set_range_composite.test.py
       title: tests/python/segment_tree_point_set_range_composite.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/segment_tree_range_min_query.test.py
       title: tests/python/segment_tree_range_min_query.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/segment_tree_staticrmq.test.py
       title: tests/python/segment_tree_staticrmq.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/tree_diameter.test.py
       title: tests/python/tree_diameter.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/two_sat.test.py
       title: tests/python/two_sat.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/union_find.test.py
       title: tests/python/union_find.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/weighted_unionfind.test.py
       title: tests/python/weighted_unionfind.test.py
     - icon: ':x:'

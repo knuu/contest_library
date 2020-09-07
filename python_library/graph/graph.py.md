@@ -13,11 +13,11 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/graph/tree_diameter.py
     title: python_library/graph/tree_diameter.py
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/tree_diameter.test.py
     title: tests/python/tree_diameter.test.py
   - icon: ':heavy_check_mark:'
@@ -28,8 +28,8 @@ data:
   requiredBy:
   - python_library/graph/tree_diameter.py
   timestamp: '2020-02-16 02:53:38+09:00'
-  verificationStatus: LIBRARY_SOME_WA
-  verificationStatusIcon: ':question:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/python/tree_diameter.test.py
   - tests/python/hld_lca.test.py

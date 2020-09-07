@@ -17,10 +17,10 @@ data:
   - python_library/graph/graph.py
   - python_library/graph/tree_diameter.py
   extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: python_library/graph/graph.py
     title: python_library/graph/graph.py
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/graph/tree_diameter.py
     title: python_library/graph/tree_diameter.py
   extendedRequiredBy: []
@@ -29,8 +29,8 @@ data:
   path: tests/python/tree_diameter.test.py
   requiredBy: []
   timestamp: '2020-09-08 04:10:45+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/python/tree_diameter.test.py
 layout: document

@@ -31,10 +31,10 @@ data:
   extendedDependsOn: []
   extendedRequiredBy: []
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/segment_tree_range_min_query.test.py
     title: tests/python/segment_tree_range_min_query.test.py
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/segment_tree_staticrmq.test.py
     title: tests/python/segment_tree_staticrmq.test.py
   - icon: ':heavy_check_mark:'
@@ -44,8 +44,8 @@ data:
   path: python_library/data_structures/segment_tree.py
   requiredBy: []
   timestamp: '2020-02-16 04:55:42+09:00'
-  verificationStatus: LIBRARY_SOME_WA
-  verificationStatusIcon: ':question:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/python/segment_tree_range_min_query.test.py
   - tests/python/segment_tree_staticrmq.test.py

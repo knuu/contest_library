@@ -17,7 +17,7 @@ data:
   dependsOn:
   - python_library/graph/two_sat.py
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/graph/two_sat.py
     title: python_library/graph/two_sat.py
   extendedRequiredBy: []
@@ -26,8 +26,8 @@ data:
   path: tests/python/two_sat.test.py
   requiredBy: []
   timestamp: '2020-09-08 06:49:11+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/python/two_sat.test.py
 layout: document

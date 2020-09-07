@@ -17,7 +17,7 @@ data:
   dependsOn:
   - python_library/data_structures/weighted_unionfind.py
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/data_structures/weighted_unionfind.py
     title: python_library/data_structures/weighted_unionfind.py
   extendedRequiredBy: []
@@ -26,8 +26,8 @@ data:
   path: tests/python/weighted_unionfind.test.py
   requiredBy: []
   timestamp: '2020-09-08 04:10:45+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/python/weighted_unionfind.test.py
 layout: document

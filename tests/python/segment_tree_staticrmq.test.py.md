@@ -16,7 +16,7 @@ data:
   dependsOn:
   - python_library/data_structures/segment_tree.py
   extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: python_library/data_structures/segment_tree.py
     title: python_library/data_structures/segment_tree.py
   extendedRequiredBy: []
@@ -25,8 +25,8 @@ data:
   path: tests/python/segment_tree_staticrmq.test.py
   requiredBy: []
   timestamp: '2020-09-08 04:10:45+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/python/segment_tree_staticrmq.test.py
 layout: document

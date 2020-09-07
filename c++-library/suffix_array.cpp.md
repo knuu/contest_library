@@ -67,14 +67,18 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy: []
-  extendedVerifiedWith: []
+  extendedVerifiedWith:
+  - icon: ':x:'
+    path: tests/cpp/suffix_array.test.cpp
+    title: tests/cpp/suffix_array.test.cpp
   isVerificationFile: false
   path: c++-library/suffix_array.cpp
   requiredBy: []
   timestamp: '2020-09-08 04:11:21+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verificationStatusIcon: ':x:'
+  verifiedWith:
+  - tests/cpp/suffix_array.test.cpp
 documentation_of: c++-library/suffix_array.cpp
 layout: document
 redirect_from:

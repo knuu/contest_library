@@ -25,15 +25,15 @@ data:
     title: python_library/graph/scc.py
   extendedRequiredBy: []
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/two_sat.test.py
     title: tests/python/two_sat.test.py
   isVerificationFile: false
   path: python_library/graph/two_sat.py
   requiredBy: []
   timestamp: '2020-09-08 06:49:11+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/python/two_sat.test.py
 documentation_of: python_library/graph/two_sat.py

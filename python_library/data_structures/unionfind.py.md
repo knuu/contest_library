@@ -21,15 +21,15 @@ data:
   extendedDependsOn: []
   extendedRequiredBy: []
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/union_find.test.py
     title: tests/python/union_find.test.py
   isVerificationFile: false
   path: python_library/data_structures/unionfind.py
   requiredBy: []
   timestamp: '2020-09-08 06:49:11+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/python/union_find.test.py
 documentation_of: python_library/data_structures/unionfind.py

@@ -24,7 +24,7 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/graph/two_sat.py
     title: python_library/graph/two_sat.py
   extendedVerifiedWith:
