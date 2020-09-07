@@ -35,7 +35,7 @@ data:
   extendedDependsOn: []
   extendedRequiredBy: []
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/matrix_determinant.test.py
     title: tests/python/matrix_determinant.test.py
   - icon: ':x:'
@@ -45,8 +45,8 @@ data:
   path: python_library/data_structures/matrix.py
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
+  verificationStatus: LIBRARY_SOME_WA
+  verificationStatusIcon: ':question:'
   verifiedWith:
   - tests/python/matrix_determinant.test.py
   - tests/python/matrix_mult.test.py

@@ -17,7 +17,7 @@ data:
   dependsOn:
   - python_library/data_structures/matrix.py
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: python_library/data_structures/matrix.py
     title: python_library/data_structures/matrix.py
   extendedRequiredBy: []

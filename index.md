@@ -150,7 +150,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: python_library/data_structures/fenwick_tree.py
       title: python_library/data_structures/fenwick_tree.py
-    - icon: ':x:'
+    - icon: ':question:'
       path: python_library/data_structures/matrix.py
       title: python_library/data_structures/matrix.py
     - icon: ':x:'
@@ -167,7 +167,7 @@ data:
       title: python_library/data_structures/weighted_unionfind.py
   - name: python_library/dynamic_programming
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/dynamic_programming/largest_rect_hist.py
       title: python_library/dynamic_programming/largest_rect_hist.py
   - name: python_library/geometry
@@ -251,10 +251,10 @@ data:
     - icon: ':warning:'
       path: python_library/math/givens.py
       title: python_library/math/givens.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/math/kth_root.py
       title: python_library/math/kth_root.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/math/lcm.py
       title: python_library/math/lcm.py
     - icon: ':warning:'
@@ -425,19 +425,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/python/hld_vertex_add_subtree_sum.test.py
       title: tests/python/hld_vertex_add_subtree_sum.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/kth_root.test.py
       title: tests/python/kth_root.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/largest_rect_hist.test.py
       title: tests/python/largest_rect_hist.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/largest_rect_rect.test.py
       title: tests/python/largest_rect_rect.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/lcm.test.py
       title: tests/python/lcm.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/matrix_determinant.test.py
       title: tests/python/matrix_determinant.test.py
     - icon: ':x:'

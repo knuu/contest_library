@@ -11,15 +11,15 @@ data:
   extendedDependsOn: []
   extendedRequiredBy: []
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/lcm.test.py
     title: tests/python/lcm.test.py
   isVerificationFile: false
   path: python_library/math/lcm.py
   requiredBy: []
   timestamp: '2020-02-16 06:11:47+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/python/lcm.test.py
 documentation_of: python_library/math/lcm.py

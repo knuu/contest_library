@@ -18,15 +18,15 @@ data:
     \       print(p.x, p.y)\n    for p in convex[:min_idx]:\n        print(p.x, p.y)\n\
     \n\nif __name__ == \"__main__\":\n    main()\n"
   dependsOn:
-  - python_library/geometry/geometry.py
   - python_library/geometry/convex_hull.py
+  - python_library/geometry/geometry.py
   extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: python_library/geometry/geometry.py
-    title: python_library/geometry/geometry.py
   - icon: ':heavy_check_mark:'
     path: python_library/geometry/convex_hull.py
     title: python_library/geometry/convex_hull.py
+  - icon: ':heavy_check_mark:'
+    path: python_library/geometry/geometry.py
+    title: python_library/geometry/geometry.py
   extendedRequiredBy: []
   extendedVerifiedWith: []
   isVerificationFile: true

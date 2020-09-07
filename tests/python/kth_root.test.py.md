@@ -14,7 +14,7 @@ data:
   dependsOn:
   - python_library/math/kth_root.py
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/math/kth_root.py
     title: python_library/math/kth_root.py
   extendedRequiredBy: []
@@ -23,8 +23,8 @@ data:
   path: tests/python/kth_root.test.py
   requiredBy: []
   timestamp: '2020-09-08 04:11:21+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/python/kth_root.test.py
 layout: document
