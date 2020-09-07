@@ -14,7 +14,7 @@ data:
   dependsOn:
   - python_library/data_structures/matrix.py
   extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: python_library/data_structures/matrix.py
     title: python_library/data_structures/matrix.py
   extendedRequiredBy: []

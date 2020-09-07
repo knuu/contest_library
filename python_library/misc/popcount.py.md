@@ -13,7 +13,7 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/graph/maximum_independet_set.py
     title: python_library/graph/maximum_independet_set.py
   extendedVerifiedWith: []

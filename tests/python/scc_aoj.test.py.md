@@ -17,7 +17,7 @@ data:
   dependsOn:
   - python_library/graph/scc.py
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/graph/scc.py
     title: python_library/graph/scc.py
   extendedRequiredBy: []
@@ -25,9 +25,9 @@ data:
   isVerificationFile: true
   path: tests/python/scc_aoj.test.py
   requiredBy: []
-  timestamp: '2020-09-08 04:10:45+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  timestamp: '2020-09-08 06:49:11+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/python/scc_aoj.test.py
 layout: document

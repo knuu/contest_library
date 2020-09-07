@@ -9,10 +9,10 @@ data:
   code: "# verify-helper: PROBLEM https://judge.yosupo.jp/problem/unionfind\nimport\
     \ sys\n\nfrom python_library.data_structures.unionfind import UnionFindTree\n\n\
     input = sys.stdin.buffer.readline\n\n\ndef main() -> None:\n    N, Q = map(int,\
-    \ input().split())\n    uft = UnionFindTree(N)\n    for _ in range(Q):\n     \
-    \   t, u, v = map(int, input().split())\n        if t == 0:\n            uft.unite(u,\
-    \ v)\n        else:\n            print(int(uft.is_same(u, v)))\n\n\nif __name__\
-    \ == \"__main__\":\n    main()\n"
+    \ input().split())\n    uft = UnionFindTree(N)\n    ans = []\n    for _ in range(Q):\n\
+    \        t, u, v = map(int, input().split())\n        if t == 0:\n           \
+    \ uft.unite(u, v)\n        else:\n            ans.append(int(uft.is_same(u, v)))\n\
+    \    print(*ans, sep=\"\\n\")\n\n\nif __name__ == \"__main__\":\n    main()\n"
   dependsOn:
   - python_library/data_structures/unionfind.py
   extendedDependsOn:
@@ -24,7 +24,7 @@ data:
   isVerificationFile: true
   path: tests/python/union_find.test.py
   requiredBy: []
-  timestamp: '2020-09-08 04:10:45+09:00'
+  timestamp: '2020-09-08 06:49:11+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verificationStatusIcon: ':x:'
   verifiedWith: []

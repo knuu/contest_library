@@ -16,7 +16,7 @@ data:
   dependsOn:
   - python_library/data_structures/segment_tree.py
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: python_library/data_structures/segment_tree.py
     title: python_library/data_structures/segment_tree.py
   extendedRequiredBy: []

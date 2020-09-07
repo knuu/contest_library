@@ -14,7 +14,7 @@ data:
   dependsOn:
   - python_library/math/divisor.py
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/math/divisor.py
     title: python_library/math/divisor.py
   extendedRequiredBy: []
@@ -23,8 +23,8 @@ data:
   path: tests/python/prime_factorization.test.py
   requiredBy: []
   timestamp: '2020-09-08 04:10:45+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/python/prime_factorization.test.py
 layout: document

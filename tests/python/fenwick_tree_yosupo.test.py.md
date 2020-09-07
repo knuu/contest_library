@@ -25,7 +25,7 @@ data:
   isVerificationFile: true
   path: tests/python/fenwick_tree_yosupo.test.py
   requiredBy: []
-  timestamp: '2020-09-08 04:10:45+09:00'
+  timestamp: '2020-09-08 06:49:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []

@@ -38,15 +38,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/python/matrix_determinant.test.py
     title: tests/python/matrix_determinant.test.py
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/matrix_mult.test.py
     title: tests/python/matrix_mult.test.py
   isVerificationFile: false
   path: python_library/data_structures/matrix.py
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_SOME_WA
-  verificationStatusIcon: ':question:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/python/matrix_determinant.test.py
   - tests/python/matrix_mult.test.py

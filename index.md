@@ -150,13 +150,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: python_library/data_structures/fenwick_tree.py
       title: python_library/data_structures/fenwick_tree.py
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: python_library/data_structures/matrix.py
       title: python_library/data_structures/matrix.py
     - icon: ':x:'
       path: python_library/data_structures/range_tree_2d.py
       title: python_library/data_structures/range_tree_2d.py
-    - icon: ':x:'
+    - icon: ':question:'
       path: python_library/data_structures/segment_tree.py
       title: python_library/data_structures/segment_tree.py
     - icon: ':x:'
@@ -210,16 +210,16 @@ data:
     - icon: ':warning:'
       path: python_library/graph/kruskal.py
       title: python_library/graph/kruskal.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/graph/maximum_independet_set.py
       title: python_library/graph/maximum_independet_set.py
     - icon: ':warning:'
       path: python_library/graph/prim.py
       title: python_library/graph/prim.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/graph/primal_dual.py
       title: python_library/graph/primal_dual.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/graph/scc.py
       title: python_library/graph/scc.py
     - icon: ':x:'
@@ -239,7 +239,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: python_library/math/disc_log.py
       title: python_library/math/disc_log.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/math/divisor.py
       title: python_library/math/divisor.py
     - icon: ':heavy_check_mark:'
@@ -263,7 +263,7 @@ data:
     - icon: ':warning:'
       path: python_library/math/pascalsTriangle.py
       title: python_library/math/pascalsTriangle.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/math/prime.py
       title: python_library/math/prime.py
   - name: python_library/misc
@@ -440,34 +440,34 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/python/matrix_determinant.test.py
       title: tests/python/matrix_determinant.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/matrix_mult.test.py
       title: tests/python/matrix_mult.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/maximum_independet_set.test.py
       title: tests/python/maximum_independet_set.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/miller_rabbin.test.py
       title: tests/python/miller_rabbin.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/primal_dual.test.py
       title: tests/python/primal_dual.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/prime_factorization.test.py
       title: tests/python/prime_factorization.test.py
     - icon: ':x:'
       path: tests/python/range_tree_2d.test.py
       title: tests/python/range_tree_2d.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/scc_aoj.test.py
       title: tests/python/scc_aoj.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/scc_yosupo.test.py
       title: tests/python/scc_yosupo.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/segment_tree_point_add_range_sum.test.py
       title: tests/python/segment_tree_point_add_range_sum.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/segment_tree_point_set_range_composite.test.py
       title: tests/python/segment_tree_point_set_range_composite.test.py
     - icon: ':x:'

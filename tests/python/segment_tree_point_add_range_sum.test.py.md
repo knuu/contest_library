@@ -23,8 +23,8 @@ data:
   path: tests/python/segment_tree_point_add_range_sum.test.py
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/python/segment_tree_point_add_range_sum.test.py
 layout: document

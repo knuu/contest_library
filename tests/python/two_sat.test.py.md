@@ -25,7 +25,7 @@ data:
   isVerificationFile: true
   path: tests/python/two_sat.test.py
   requiredBy: []
-  timestamp: '2020-09-08 04:11:21+09:00'
+  timestamp: '2020-09-08 06:49:11+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verificationStatusIcon: ':x:'
   verifiedWith: []

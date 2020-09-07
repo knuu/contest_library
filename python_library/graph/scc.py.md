@@ -10,16 +10,17 @@ data:
     \ = [[] for _ in range(n)]\n        self.vs = []\n        self.order = [0] * n\n\
     \        self.used = [False] * n\n\n    def add_edge(self, from_v: int, to_v:\
     \ int) -> None:\n        self.edges[from_v].append(to_v)\n        self.rev_edeges[to_v].append(from_v)\n\
-    \n    def dfs(self, v) -> None:\n        self.used[v] = True\n        for child\
-    \ in self.edges[v]:\n            if not self.used[child]:\n                self.dfs(child)\n\
-    \        self.vs.append(v)\n\n    def rdfs(self, v, k) -> None:\n        self.used[v]\
-    \ = True\n        self.order[v] = k\n        for child in self.rev_edeges[v]:\n\
-    \            if not self.used[child]:\n                self.rdfs(child, k)\n\n\
-    \    def run(self) -> int:\n        self.used = [False] * self.n\n        self.vs.clear()\n\
-    \        for v in range(self.n):\n            if not self.used[v]:\n         \
-    \       self.dfs(v)\n        self.used = [False] * self.n\n        k = 0\n   \
-    \     for v in reversed(self.vs):\n            if not self.used[v]:\n        \
-    \        self.rdfs(v, k)\n                k += 1\n        return k\n"
+    \n    def dfs(self, v: int) -> None:\n        self.used[v] = True\n        for\
+    \ child in self.edges[v]:\n            if not self.used[child]:\n            \
+    \    self.dfs(child)\n        self.vs.append(v)\n\n    def rdfs(self, v: int,\
+    \ k: int) -> None:\n        self.used[v] = True\n        self.order[v] = k\n \
+    \       for child in self.rev_edeges[v]:\n            if not self.used[child]:\n\
+    \                self.rdfs(child, k)\n\n    def run(self) -> int:\n        self.used\
+    \ = [False] * self.n\n        self.vs.clear()\n        for v in range(self.n):\n\
+    \            if not self.used[v]:\n                self.dfs(v)\n        self.used\
+    \ = [False] * self.n\n        k = 0\n        for v in reversed(self.vs):\n   \
+    \         if not self.used[v]:\n                self.rdfs(v, k)\n            \
+    \    k += 1\n        return k\n"
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy:
@@ -27,19 +28,19 @@ data:
     path: python_library/graph/two_sat.py
     title: python_library/graph/two_sat.py
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/scc_aoj.test.py
     title: tests/python/scc_aoj.test.py
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/scc_yosupo.test.py
     title: tests/python/scc_yosupo.test.py
   isVerificationFile: false
   path: python_library/graph/scc.py
   requiredBy:
   - python_library/graph/two_sat.py
-  timestamp: '2020-02-16 07:49:55+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
+  timestamp: '2020-09-08 06:49:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/python/scc_aoj.test.py
   - tests/python/scc_yosupo.test.py

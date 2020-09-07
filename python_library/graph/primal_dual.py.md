@@ -32,15 +32,15 @@ data:
   extendedDependsOn: []
   extendedRequiredBy: []
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/primal_dual.test.py
     title: tests/python/primal_dual.test.py
   isVerificationFile: false
   path: python_library/graph/primal_dual.py
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/python/primal_dual.test.py
 documentation_of: python_library/graph/primal_dual.py

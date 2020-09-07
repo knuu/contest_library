@@ -37,15 +37,15 @@ data:
   - icon: ':x:'
     path: tests/python/segment_tree_staticrmq.test.py
     title: tests/python/segment_tree_staticrmq.test.py
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/python/segment_tree_point_set_range_composite.test.py
     title: tests/python/segment_tree_point_set_range_composite.test.py
   isVerificationFile: false
   path: python_library/data_structures/segment_tree.py
   requiredBy: []
   timestamp: '2020-02-16 04:55:42+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
+  verificationStatus: LIBRARY_SOME_WA
+  verificationStatusIcon: ':question:'
   verifiedWith:
   - tests/python/segment_tree_range_min_query.test.py
   - tests/python/segment_tree_staticrmq.test.py

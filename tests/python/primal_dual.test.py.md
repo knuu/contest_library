@@ -15,7 +15,7 @@ data:
   dependsOn:
   - python_library/graph/primal_dual.py
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/graph/primal_dual.py
     title: python_library/graph/primal_dual.py
   extendedRequiredBy: []
@@ -24,8 +24,8 @@ data:
   path: tests/python/primal_dual.test.py
   requiredBy: []
   timestamp: '2020-09-08 04:10:45+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/python/primal_dual.test.py
 layout: document

@@ -14,15 +14,15 @@ data:
     \ TreeDiameter(graph)\n    print(diam.run())\n\n\nif __name__ == \"__main__\"\
     :\n    main()\n"
   dependsOn:
-  - python_library/graph/tree_diameter.py
   - python_library/graph/graph.py
+  - python_library/graph/tree_diameter.py
   extendedDependsOn:
-  - icon: ':x:'
-    path: python_library/graph/tree_diameter.py
-    title: python_library/graph/tree_diameter.py
   - icon: ':question:'
     path: python_library/graph/graph.py
     title: python_library/graph/graph.py
+  - icon: ':x:'
+    path: python_library/graph/tree_diameter.py
+    title: python_library/graph/tree_diameter.py
   extendedRequiredBy: []
   extendedVerifiedWith: []
   isVerificationFile: true

@@ -13,7 +13,7 @@ data:
   dependsOn:
   - python_library/math/prime.py
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: python_library/math/prime.py
     title: python_library/math/prime.py
   extendedRequiredBy: []
@@ -22,8 +22,8 @@ data:
   path: tests/python/miller_rabbin.test.py
   requiredBy: []
   timestamp: '2020-09-08 04:10:45+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/python/miller_rabbin.test.py
 layout: document

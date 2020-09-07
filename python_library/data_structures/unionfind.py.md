@@ -7,15 +7,16 @@ data:
     , line 84, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "class UnionFindTree:\n    \"\"\"Disjoint-Set Data Structure\n\n    Union-Find\
     \ Tree\n\n    complexity:\n        - init: O(n)\n        - find, unite, same:\
-    \ O(alpha(n))\n    \"\"\"\n\n    def __init__(self, n):\n        self.par = list(range(n))\
-    \  # parent\n        self.rank = [0] * n  # depth of tree\n\n    def find(self,\
-    \ x):\n        if self.par[x] == x:\n            return x\n        else:\n   \
-    \         self.par[x] = self.find(self.par[x])\n            return self.par[x]\n\
-    \n    def unite(self, x, y):\n        x, y = self.find(x), self.find(y)\n    \
-    \    if x == y:\n            return\n        if self.rank[x] < self.rank[y]:\n\
-    \            self.par[x] = y\n        else:\n            self.par[y] = x\n   \
-    \         if self.rank[x] == self.rank[y]:\n                self.rank[x] += 1\n\
-    \n    def is_same(self, x, y):\n        return self.find(x) == self.find(y)\n"
+    \ O(alpha(n))\n    \"\"\"\n\n    def __init__(self, n: int) -> None:\n       \
+    \ self.par = list(range(n))  # parent\n        self.rank = [0] * n  # depth of\
+    \ tree\n\n    def find(self, x: int) -> int:\n        if self.par[x] == x:\n \
+    \           return x\n        else:\n            self.par[x] = self.find(self.par[x])\n\
+    \            return self.par[x]\n\n    def unite(self, x: int, y: int) -> None:\n\
+    \        x, y = self.find(x), self.find(y)\n        if x == y:\n            return\n\
+    \        if self.rank[x] < self.rank[y]:\n            self.par[x] = y\n      \
+    \  else:\n            self.par[y] = x\n            if self.rank[x] == self.rank[y]:\n\
+    \                self.rank[x] += 1\n\n    def is_same(self, x: int, y: int) ->\
+    \ bool:\n        return self.find(x) == self.find(y)\n"
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy: []
@@ -26,7 +27,7 @@ data:
   isVerificationFile: false
   path: python_library/data_structures/unionfind.py
   requiredBy: []
-  timestamp: '2020-02-16 04:55:42+09:00'
+  timestamp: '2020-09-08 06:49:11+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verificationStatusIcon: ':x:'
   verifiedWith:
