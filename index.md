@@ -1,264 +1,495 @@
 ---
-layout: default
+data:
+  libraryCategories:
+  - name: c++-library
+    pages:
+    - icon: ':warning:'
+      path: c++-library/2sat.cpp
+      title: c++-library/2sat.cpp
+    - icon: ':warning:'
+      path: c++-library/bellman_ford.cpp
+      title: c++-library/bellman_ford.cpp
+    - icon: ':warning:'
+      path: c++-library/bipartite_matching.cpp
+      title: c++-library/bipartite_matching.cpp
+    - icon: ':warning:'
+      path: c++-library/boost.cpp
+      title: c++-library/boost.cpp
+    - icon: ':warning:'
+      path: c++-library/combination.cpp
+      title: c++-library/combination.cpp
+    - icon: ':warning:'
+      path: c++-library/dijkstra.cpp
+      title: c++-library/dijkstra.cpp
+    - icon: ':warning:'
+      path: c++-library/dinic.cpp
+      title: c++-library/dinic.cpp
+    - icon: ':warning:'
+      path: c++-library/fenwick_tree.cpp
+      title: ange Sum Query by FenwickTree(Binary Indexed Tree)
+    - icon: ':warning:'
+      path: c++-library/graph.cpp
+      title: c++-library/graph.cpp
+    - icon: ':warning:'
+      path: c++-library/graph2.cpp
+      title: c++-library/graph2.cpp
+    - icon: ':warning:'
+      path: c++-library/heavy_light_decomposition.cpp
+      title: c++-library/heavy_light_decomposition.cpp
+    - icon: ':warning:'
+      path: c++-library/kd_tree.cpp
+      title: An implementation of kd-tree
+    - icon: ':warning:'
+      path: c++-library/kd_tree_inner.cpp
+      title: An implementation of kd-tree
+    - icon: ':warning:'
+      path: c++-library/kruskal.cpp
+      title: c++-library/kruskal.cpp
+    - icon: ':heavy_check_mark:'
+      path: c++-library/lca.cpp
+      title: c++-library/lca.cpp
+    - icon: ':warning:'
+      path: c++-library/manhattan_mst.cpp
+      title: c++-library/manhattan_mst.cpp
+    - icon: ':warning:'
+      path: c++-library/matrix.cpp
+      title: c++-library/matrix.cpp
+    - icon: ':warning:'
+      path: c++-library/maximum_clique.cpp
+      title: c++-library/maximum_clique.cpp
+    - icon: ':warning:'
+      path: c++-library/minimum_ratio_spanning_tree.cpp
+      title: c++-library/minimum_ratio_spanning_tree.cpp
+    - icon: ':warning:'
+      path: c++-library/modint.cpp
+      title: c++-library/modint.cpp
+    - icon: ':warning:'
+      path: c++-library/prim.cpp
+      title: c++-library/prim.cpp
+    - icon: ':warning:'
+      path: c++-library/primal_dual.cpp
+      title: c++-library/primal_dual.cpp
+    - icon: ':warning:'
+      path: c++-library/prime.cpp
+      title: c++-library/prime.cpp
+    - icon: ':warning:'
+      path: c++-library/range_tree.cpp
+      title: An implementation of range tree
+    - icon: ':warning:'
+      path: c++-library/range_tree_2d.cpp
+      title: c++-library/range_tree_2d.cpp
+    - icon: ':warning:'
+      path: c++-library/range_tree_inner.cpp
+      title: An implementation of range tree
+    - icon: ':warning:'
+      path: c++-library/scc.cpp
+      title: c++-library/scc.cpp
+    - icon: ':warning:'
+      path: c++-library/segment_tree.cpp
+      title: c++-library/segment_tree.cpp
+    - icon: ':warning:'
+      path: c++-library/segtree_pointupdate_rangemax.cpp
+      title: c++-library/segtree_pointupdate_rangemax.cpp
+    - icon: ':warning:'
+      path: c++-library/segtree_pointupdate_rangemin.cpp
+      title: c++-library/segtree_pointupdate_rangemin.cpp
+    - icon: ':warning:'
+      path: c++-library/segtree_rangeadd.cpp
+      title: c++-library/segtree_rangeadd.cpp
+    - icon: ':warning:'
+      path: c++-library/suffix_array.cpp
+      title: c++-library/suffix_array.cpp
+    - icon: ':warning:'
+      path: c++-library/treap.cpp
+      title: c++-library/treap.cpp
+    - icon: ':warning:'
+      path: c++-library/union_find_tree.cpp
+      title: c++-library/union_find_tree.cpp
+    - icon: ':warning:'
+      path: c++-library/warshall_floyd.cpp
+      title: c++-library/warshall_floyd.cpp
+  - name: nim-library
+    pages:
+    - icon: ':warning:'
+      path: nim-library/convex_hull.nim
+      title: nim-library/convex_hull.nim
+    - icon: ':warning:'
+      path: nim-library/fenwick_tree.nim
+      title: nim-library/fenwick_tree.nim
+    - icon: ':warning:'
+      path: nim-library/heap.nim
+      title: nim-library/heap.nim
+    - icon: ':warning:'
+      path: nim-library/pair_enum.nim
+      title: nim-library/pair_enum.nim
+    - icon: ':warning:'
+      path: nim-library/popcount.nim
+      title: nim-library/popcount.nim
+    - icon: ':warning:'
+      path: nim-library/powmod.nim
+      title: nim-library/powmod.nim
+    - icon: ':warning:'
+      path: nim-library/priority_queue.nim
+      title: nim-library/priority_queue.nim
+    - icon: ':warning:'
+      path: nim-library/scc.nim
+      title: nim-library/scc.nim
+    - icon: ':warning:'
+      path: nim-library/segment_tree.nim
+      title: nim-library/segment_tree.nim
+    - icon: ':warning:'
+      path: nim-library/union_find.nim
+      title: nim-library/union_find.nim
+  - name: python_library
+    pages:
+    - icon: ':warning:'
+      path: python_library/__init__.py
+      title: python_library/__init__.py
+  - name: python_library/data_structures
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: python_library/data_structures/fenwick_tree.py
+      title: python_library/data_structures/fenwick_tree.py
+    - icon: ':x:'
+      path: python_library/data_structures/matrix.py
+      title: python_library/data_structures/matrix.py
+    - icon: ':x:'
+      path: python_library/data_structures/range_tree_2d.py
+      title: python_library/data_structures/range_tree_2d.py
+    - icon: ':x:'
+      path: python_library/data_structures/segment_tree.py
+      title: python_library/data_structures/segment_tree.py
+    - icon: ':x:'
+      path: python_library/data_structures/unionfind.py
+      title: python_library/data_structures/unionfind.py
+    - icon: ':x:'
+      path: python_library/data_structures/weighted_unionfind.py
+      title: python_library/data_structures/weighted_unionfind.py
+  - name: python_library/dynamic_programming
+    pages:
+    - icon: ':x:'
+      path: python_library/dynamic_programming/largest_rect_hist.py
+      title: python_library/dynamic_programming/largest_rect_hist.py
+  - name: python_library/geometry
+    pages:
+    - icon: ':warning:'
+      path: python_library/geometry/argsort.py
+      title: python_library/geometry/argsort.py
+    - icon: ':heavy_check_mark:'
+      path: python_library/geometry/convex_hull.py
+      title: python_library/geometry/convex_hull.py
+    - icon: ':heavy_check_mark:'
+      path: python_library/geometry/geometry.py
+      title: python_library/geometry/geometry.py
+  - name: python_library/graph
+    pages:
+    - icon: ':warning:'
+      path: python_library/graph/__init__.py
+      title: python_library/graph/__init__.py
+    - icon: ':warning:'
+      path: python_library/graph/bellman_ford.py
+      title: python_library/graph/bellman_ford.py
+    - icon: ':warning:'
+      path: python_library/graph/dijkstra.py
+      title: python_library/graph/dijkstra.py
+    - icon: ':heavy_check_mark:'
+      path: python_library/graph/dinic.py
+      title: python_library/graph/dinic.py
+    - icon: ':warning:'
+      path: python_library/graph/ford_fulkerson.py
+      title: python_library/graph/ford_fulkerson.py
+    - icon: ':question:'
+      path: python_library/graph/graph.py
+      title: python_library/graph/graph.py
+    - icon: ':warning:'
+      path: python_library/graph/graph2.py
+      title: python_library/graph/graph2.py
+    - icon: ':heavy_check_mark:'
+      path: python_library/graph/heavy_light_decomposition.py
+      title: python_library/graph/heavy_light_decomposition.py
+    - icon: ':warning:'
+      path: python_library/graph/kruskal.py
+      title: python_library/graph/kruskal.py
+    - icon: ':x:'
+      path: python_library/graph/maximum_independet_set.py
+      title: python_library/graph/maximum_independet_set.py
+    - icon: ':warning:'
+      path: python_library/graph/prim.py
+      title: python_library/graph/prim.py
+    - icon: ':x:'
+      path: python_library/graph/primal_dual.py
+      title: python_library/graph/primal_dual.py
+    - icon: ':x:'
+      path: python_library/graph/scc.py
+      title: python_library/graph/scc.py
+    - icon: ':x:'
+      path: python_library/graph/tree_diameter.py
+      title: python_library/graph/tree_diameter.py
+    - icon: ':x:'
+      path: python_library/graph/two_sat.py
+      title: python_library/graph/two_sat.py
+    - icon: ':warning:'
+      path: python_library/graph/warshall_floyd.py
+      title: python_library/graph/warshall_floyd.py
+  - name: python_library/math
+    pages:
+    - icon: ':warning:'
+      path: python_library/math/combinations.py
+      title: python_library/math/combinations.py
+    - icon: ':heavy_check_mark:'
+      path: python_library/math/disc_log.py
+      title: python_library/math/disc_log.py
+    - icon: ':x:'
+      path: python_library/math/divisor.py
+      title: python_library/math/divisor.py
+    - icon: ':heavy_check_mark:'
+      path: python_library/math/euler_totient.py
+      title: python_library/math/euler_totient.py
+    - icon: ':heavy_check_mark:'
+      path: python_library/math/extgcd.py
+      title: python_library/math/extgcd.py
+    - icon: ':warning:'
+      path: python_library/math/givens.py
+      title: python_library/math/givens.py
+    - icon: ':x:'
+      path: python_library/math/kth_root.py
+      title: python_library/math/kth_root.py
+    - icon: ':x:'
+      path: python_library/math/lcm.py
+      title: python_library/math/lcm.py
+    - icon: ':warning:'
+      path: python_library/math/linear_recursion_solver.py
+      title: python_library/math/linear_recursion_solver.py
+    - icon: ':warning:'
+      path: python_library/math/pascalsTriangle.py
+      title: python_library/math/pascalsTriangle.py
+    - icon: ':x:'
+      path: python_library/math/prime.py
+      title: python_library/math/prime.py
+  - name: python_library/misc
+    pages:
+    - icon: ':warning:'
+      path: python_library/misc/fast_read.py
+      title: python_library/misc/fast_read.py
+    - icon: ':warning:'
+      path: python_library/misc/popcount.py
+      title: python_library/misc/popcount.py
+  - name: python_library/scipy
+    pages:
+    - icon: ':warning:'
+      path: python_library/scipy/graph.py
+      title: python_library/scipy/graph.py
+  - name: python_library/string
+    pages:
+    - icon: ':x:'
+      path: python_library/string/z_algorithm.py
+      title: python_library/string/z_algorithm.py
+  - name: python_library_typed/data_structures
+    pages:
+    - icon: ':warning:'
+      path: python_library_typed/data_structures/fenwick_tree.py
+      title: python_library_typed/data_structures/fenwick_tree.py
+    - icon: ':warning:'
+      path: python_library_typed/data_structures/matrix.py
+      title: python_library_typed/data_structures/matrix.py
+    - icon: ':warning:'
+      path: python_library_typed/data_structures/range_min_query_seg.py
+      title: python_library_typed/data_structures/range_min_query_seg.py
+    - icon: ':warning:'
+      path: python_library_typed/data_structures/segment_tree.py
+      title: python_library_typed/data_structures/segment_tree.py
+    - icon: ':warning:'
+      path: python_library_typed/data_structures/unionfind.py
+      title: python_library_typed/data_structures/unionfind.py
+  - name: python_library_typed/geometry
+    pages:
+    - icon: ':warning:'
+      path: python_library_typed/geometry/convex_hull.py
+      title: python_library_typed/geometry/convex_hull.py
+    - icon: ':warning:'
+      path: python_library_typed/geometry/geometry.py
+      title: python_library_typed/geometry/geometry.py
+  - name: python_library_typed/graph
+    pages:
+    - icon: ':warning:'
+      path: python_library_typed/graph/bellman_ford.py
+      title: python_library_typed/graph/bellman_ford.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/dijkstra.py
+      title: python_library_typed/graph/dijkstra.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/dinic.py
+      title: python_library_typed/graph/dinic.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/flow.py
+      title: python_library_typed/graph/flow.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/ford_fulkerson.py
+      title: python_library_typed/graph/ford_fulkerson.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/graph.py
+      title: python_library_typed/graph/graph.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/graph_adjlist.py
+      title: python_library_typed/graph/graph_adjlist.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/graph_adjmatrix.py
+      title: python_library_typed/graph/graph_adjmatrix.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/heavy_light_decomposition.py
+      title: python_library_typed/graph/heavy_light_decomposition.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/kruskal.py
+      title: python_library_typed/graph/kruskal.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/prim.py
+      title: python_library_typed/graph/prim.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/primal_dual.py
+      title: python_library_typed/graph/primal_dual.py
+    - icon: ':warning:'
+      path: python_library_typed/graph/warshall_floyd.py
+      title: python_library_typed/graph/warshall_floyd.py
+  - name: python_library_typed/math
+    pages:
+    - icon: ':warning:'
+      path: python_library_typed/math/combinations.py
+      title: python_library_typed/math/combinations.py
+    - icon: ':warning:'
+      path: python_library_typed/math/divisor.py
+      title: python_library_typed/math/divisor.py
+    - icon: ':warning:'
+      path: python_library_typed/math/extgcd.py
+      title: python_library_typed/math/extgcd.py
+    - icon: ':warning:'
+      path: python_library_typed/math/givens.py
+      title: python_library_typed/math/givens.py
+    - icon: ':warning:'
+      path: python_library_typed/math/linear_recursion_solver.py
+      title: python_library_typed/math/linear_recursion_solver.py
+    - icon: ':warning:'
+      path: python_library_typed/math/pascalsTriangle.py
+      title: python_library_typed/math/pascalsTriangle.py
+    - icon: ':warning:'
+      path: python_library_typed/math/prime.py
+      title: python_library_typed/math/prime.py
+  - name: tests/python
+    pages:
+    - icon: ':warning:'
+      path: tests/python/__init__.py
+      title: tests/python/__init__.py
+  verificationCategories:
+  - name: tests/cpp
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: tests/cpp/example.test.cpp
+      title: tests/cpp/example.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: tests/cpp/lca.test.cpp
+      title: tests/cpp/lca.test.cpp
+  - name: tests/python
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: tests/python/convex_hull.test.py
+      title: tests/python/convex_hull.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/dinic_bimatch.test.py
+      title: tests/python/dinic_bimatch.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/dinic_max_flow.test.py
+      title: tests/python/dinic_max_flow.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/disc_log.test.py
+      title: tests/python/disc_log.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/euler_totient.test.py
+      title: tests/python/euler_totient.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/example.test.py
+      title: tests/python/example.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/extgcd.test.py
+      title: tests/python/extgcd.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/fenwick_tree_aoj.test.py
+      title: tests/python/fenwick_tree_aoj.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/fenwick_tree_yosupo.test.py
+      title: tests/python/fenwick_tree_yosupo.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/hld_lca.test.py
+      title: tests/python/hld_lca.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/hld_vertex_add_path_sum.test.py
+      title: tests/python/hld_vertex_add_path_sum.test.py
+    - icon: ':heavy_check_mark:'
+      path: tests/python/hld_vertex_add_subtree_sum.test.py
+      title: tests/python/hld_vertex_add_subtree_sum.test.py
+    - icon: ':x:'
+      path: tests/python/kth_root.test.py
+      title: tests/python/kth_root.test.py
+    - icon: ':x:'
+      path: tests/python/largest_rect_hist.test.py
+      title: tests/python/largest_rect_hist.test.py
+    - icon: ':x:'
+      path: tests/python/largest_rect_rect.test.py
+      title: tests/python/largest_rect_rect.test.py
+    - icon: ':x:'
+      path: tests/python/lcm.test.py
+      title: tests/python/lcm.test.py
+    - icon: ':x:'
+      path: tests/python/matrix_determinant.test.py
+      title: tests/python/matrix_determinant.test.py
+    - icon: ':x:'
+      path: tests/python/matrix_mult.test.py
+      title: tests/python/matrix_mult.test.py
+    - icon: ':x:'
+      path: tests/python/maximum_independet_set.test.py
+      title: tests/python/maximum_independet_set.test.py
+    - icon: ':x:'
+      path: tests/python/miller_rabbin.test.py
+      title: tests/python/miller_rabbin.test.py
+    - icon: ':x:'
+      path: tests/python/primal_dual.test.py
+      title: tests/python/primal_dual.test.py
+    - icon: ':x:'
+      path: tests/python/prime_factorization.test.py
+      title: tests/python/prime_factorization.test.py
+    - icon: ':x:'
+      path: tests/python/range_tree_2d.test.py
+      title: tests/python/range_tree_2d.test.py
+    - icon: ':x:'
+      path: tests/python/scc_aoj.test.py
+      title: tests/python/scc_aoj.test.py
+    - icon: ':x:'
+      path: tests/python/scc_yosupo.test.py
+      title: tests/python/scc_yosupo.test.py
+    - icon: ':x:'
+      path: tests/python/segment_tree_point_add_range_sum.test.py
+      title: tests/python/segment_tree_point_add_range_sum.test.py
+    - icon: ':x:'
+      path: tests/python/segment_tree_point_set_range_composite.test.py
+      title: tests/python/segment_tree_point_set_range_composite.test.py
+    - icon: ':x:'
+      path: tests/python/segment_tree_range_min_query.test.py
+      title: tests/python/segment_tree_range_min_query.test.py
+    - icon: ':x:'
+      path: tests/python/segment_tree_staticrmq.test.py
+      title: tests/python/segment_tree_staticrmq.test.py
+    - icon: ':x:'
+      path: tests/python/tree_diameter.test.py
+      title: tests/python/tree_diameter.test.py
+    - icon: ':x:'
+      path: tests/python/two_sat.test.py
+      title: tests/python/two_sat.test.py
+    - icon: ':x:'
+      path: tests/python/union_find.test.py
+      title: tests/python/union_find.test.py
+    - icon: ':x:'
+      path: tests/python/weighted_unionfind.test.py
+      title: tests/python/weighted_unionfind.test.py
+    - icon: ':x:'
+      path: tests/python/z_algorithm.test.py
+      title: tests/python/z_algorithm.test.py
+layout: toppage
 ---
-
-<!-- mathjax config similar to math.stackexchange -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" }},
-    tex2jax: {
-      inlineMath: [ ['$','$'] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { matchFontHeight: false },
-    displayAlign: "left",
-    displayIndent: "2em"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="assets/css/copy-button.css" />
-
-
-# {{ site.title }}
-
-[![Actions Status]({{ site.github.repository_url }}/workflows/verify/badge.svg)]({{ site.github.repository_url }}/actions)
-<a href="{{ site.github.repository_url }}"><img src="https://img.shields.io/github/last-commit/{{ site.github.owner_name }}/{{ site.github.repository_name }}" /></a>
-
-{% if site.description %}{{ site.description }}{% else %}This documentation is automatically generated by <a href="https://github.com/kmyk/online-judge-verify-helper">online-judge-verify-helper</a>.{% endif %}
-
-## Library Files
-
-<div id="97d0d85922e0aae2441e69f2870930aa"></div>
-
-### c++-library
-
-* :warning: <a href="library/c++-library/2sat.cpp.html">c++-library/2sat.cpp</a>
-* :warning: <a href="library/c++-library/bellman_ford.cpp.html">c++-library/bellman_ford.cpp</a>
-* :warning: <a href="library/c++-library/bipartite_matching.cpp.html">c++-library/bipartite_matching.cpp</a>
-* :warning: <a href="library/c++-library/combination.cpp.html">c++-library/combination.cpp</a>
-* :warning: <a href="library/c++-library/dijkstra.cpp.html">c++-library/dijkstra.cpp</a>
-* :warning: <a href="library/c++-library/dinic.cpp.html">c++-library/dinic.cpp</a>
-* :warning: <a href="library/c++-library/fenwick_tree.cpp.html">ange Sum Query by FenwickTree(Binary Indexed Tree) <small>(c++-library/fenwick_tree.cpp)</small></a>
-* :warning: <a href="library/c++-library/graph.cpp.html">c++-library/graph.cpp</a>
-* :warning: <a href="library/c++-library/graph2.cpp.html">c++-library/graph2.cpp</a>
-* :warning: <a href="library/c++-library/heavy_light_decomposition.cpp.html">c++-library/heavy_light_decomposition.cpp</a>
-* :warning: <a href="library/c++-library/kd_tree.cpp.html">An implementation of kd-tree <small>(c++-library/kd_tree.cpp)</small></a>
-* :warning: <a href="library/c++-library/kd_tree_inner.cpp.html">An implementation of kd-tree <small>(c++-library/kd_tree_inner.cpp)</small></a>
-* :warning: <a href="library/c++-library/kruskal.cpp.html">c++-library/kruskal.cpp</a>
-* :heavy_check_mark: <a href="library/c++-library/lca.cpp.html">c++-library/lca.cpp</a>
-* :warning: <a href="library/c++-library/matrix.cpp.html">c++-library/matrix.cpp</a>
-* :warning: <a href="library/c++-library/minimum_ratio_spanning_tree.cpp.html">c++-library/minimum_ratio_spanning_tree.cpp</a>
-* :warning: <a href="library/c++-library/prim.cpp.html">c++-library/prim.cpp</a>
-* :warning: <a href="library/c++-library/primal_dual.cpp.html">c++-library/primal_dual.cpp</a>
-* :warning: <a href="library/c++-library/prime.cpp.html">c++-library/prime.cpp</a>
-* :warning: <a href="library/c++-library/range_tree.cpp.html">An implementation of range tree <small>(c++-library/range_tree.cpp)</small></a>
-* :warning: <a href="library/c++-library/range_tree_2d.cpp.html">c++-library/range_tree_2d.cpp</a>
-* :warning: <a href="library/c++-library/range_tree_inner.cpp.html">An implementation of range tree <small>(c++-library/range_tree_inner.cpp)</small></a>
-* :warning: <a href="library/c++-library/scc.cpp.html">c++-library/scc.cpp</a>
-* :warning: <a href="library/c++-library/segment_tree.cpp.html">c++-library/segment_tree.cpp</a>
-* :warning: <a href="library/c++-library/segtree_pointupdate_rangemax.cpp.html">c++-library/segtree_pointupdate_rangemax.cpp</a>
-* :warning: <a href="library/c++-library/segtree_pointupdate_rangemin.cpp.html">c++-library/segtree_pointupdate_rangemin.cpp</a>
-* :warning: <a href="library/c++-library/segtree_rangeadd.cpp.html">c++-library/segtree_rangeadd.cpp</a>
-* :warning: <a href="library/c++-library/suffix_array.cpp.html">c++-library/suffix_array.cpp</a>
-* :warning: <a href="library/c++-library/treap.cpp.html">c++-library/treap.cpp</a>
-* :warning: <a href="library/c++-library/union_find_tree.cpp.html">c++-library/union_find_tree.cpp</a>
-* :warning: <a href="library/c++-library/warshall_floyd.cpp.html">c++-library/warshall_floyd.cpp</a>
-
-
-<div id="b459ba9a518a9515299d3a04822af451"></div>
-
-### python_library
-
-* :warning: <a href="library/python_library/__init__.py.html">python_library/__init__.py</a>
-
-
-<div id="4f7277da04114aac533381a4614f94a3"></div>
-
-### python_library/data_structures
-
-* :heavy_check_mark: <a href="library/python_library/data_structures/fenwick_tree.py.html">python_library/data_structures/fenwick_tree.py</a>
-* :heavy_check_mark: <a href="library/python_library/data_structures/matrix.py.html">python_library/data_structures/matrix.py</a>
-* :warning: <a href="library/python_library/data_structures/range_tree_2d.py.html">python_library/data_structures/range_tree_2d.py</a>
-* :heavy_check_mark: <a href="library/python_library/data_structures/segment_tree.py.html">python_library/data_structures/segment_tree.py</a>
-* :heavy_check_mark: <a href="library/python_library/data_structures/unionfind.py.html">python_library/data_structures/unionfind.py</a>
-* :heavy_check_mark: <a href="library/python_library/data_structures/weighted_unionfind.py.html">python_library/data_structures/weighted_unionfind.py</a>
-
-
-<div id="aa415874213902fc17e0d0a11c5743d4"></div>
-
-### python_library/dynamic_programming
-
-* :heavy_check_mark: <a href="library/python_library/dynamic_programming/largest_rect_hist.py.html">python_library/dynamic_programming/largest_rect_hist.py</a>
-
-
-<div id="bb1189d107afaf50a8d799c22c656ecc"></div>
-
-### python_library/geometry
-
-* :heavy_check_mark: <a href="library/python_library/geometry/convex_hull.py.html">python_library/geometry/convex_hull.py</a>
-* :heavy_check_mark: <a href="library/python_library/geometry/geometry.py.html">python_library/geometry/geometry.py</a>
-
-
-<div id="7e80885bc8a78dc63feed9f40126ba0e"></div>
-
-### python_library/graph
-
-* :warning: <a href="library/python_library/graph/__init__.py.html">python_library/graph/__init__.py</a>
-* :warning: <a href="library/python_library/graph/bellman_ford.py.html">python_library/graph/bellman_ford.py</a>
-* :warning: <a href="library/python_library/graph/dijkstra.py.html">python_library/graph/dijkstra.py</a>
-* :heavy_check_mark: <a href="library/python_library/graph/dinic.py.html">python_library/graph/dinic.py</a>
-* :warning: <a href="library/python_library/graph/ford_fulkerson.py.html">python_library/graph/ford_fulkerson.py</a>
-* :heavy_check_mark: <a href="library/python_library/graph/graph.py.html">python_library/graph/graph.py</a>
-* :warning: <a href="library/python_library/graph/graph2.py.html">python_library/graph/graph2.py</a>
-* :heavy_check_mark: <a href="library/python_library/graph/heavy_light_decomposition.py.html">python_library/graph/heavy_light_decomposition.py</a>
-* :warning: <a href="library/python_library/graph/kruskal.py.html">python_library/graph/kruskal.py</a>
-* :heavy_check_mark: <a href="library/python_library/graph/maximum_independet_set.py.html">python_library/graph/maximum_independet_set.py</a>
-* :warning: <a href="library/python_library/graph/prim.py.html">python_library/graph/prim.py</a>
-* :heavy_check_mark: <a href="library/python_library/graph/primal_dual.py.html">python_library/graph/primal_dual.py</a>
-* :heavy_check_mark: <a href="library/python_library/graph/scc.py.html">python_library/graph/scc.py</a>
-* :heavy_check_mark: <a href="library/python_library/graph/tree_diameter.py.html">python_library/graph/tree_diameter.py</a>
-* :heavy_check_mark: <a href="library/python_library/graph/two_sat.py.html">python_library/graph/two_sat.py</a>
-* :warning: <a href="library/python_library/graph/warshall_floyd.py.html">python_library/graph/warshall_floyd.py</a>
-
-
-<div id="fcc812ea527936762e2a2536e11e6960"></div>
-
-### python_library/math
-
-* :warning: <a href="library/python_library/math/combinations.py.html">python_library/math/combinations.py</a>
-* :heavy_check_mark: <a href="library/python_library/math/disc_log.py.html">python_library/math/disc_log.py</a>
-* :heavy_check_mark: <a href="library/python_library/math/divisor.py.html">python_library/math/divisor.py</a>
-* :heavy_check_mark: <a href="library/python_library/math/euler_totient.py.html">python_library/math/euler_totient.py</a>
-* :heavy_check_mark: <a href="library/python_library/math/extgcd.py.html">python_library/math/extgcd.py</a>
-* :warning: <a href="library/python_library/math/givens.py.html">python_library/math/givens.py</a>
-* :heavy_check_mark: <a href="library/python_library/math/lcm.py.html">python_library/math/lcm.py</a>
-* :warning: <a href="library/python_library/math/linear_recursion_solver.py.html">python_library/math/linear_recursion_solver.py</a>
-* :warning: <a href="library/python_library/math/pascalsTriangle.py.html">python_library/math/pascalsTriangle.py</a>
-* :heavy_check_mark: <a href="library/python_library/math/prime.py.html">python_library/math/prime.py</a>
-
-
-<div id="b234f801618f71357e46912cecf08ace"></div>
-
-### python_library/misc
-
-* :warning: <a href="library/python_library/misc/fast_read.py.html">python_library/misc/fast_read.py</a>
-* :warning: <a href="library/python_library/misc/popcount.py.html">python_library/misc/popcount.py</a>
-
-
-<div id="f7e10c1794a092536156da086f3daa35"></div>
-
-### python_library/scipy
-
-* :warning: <a href="library/python_library/scipy/graph.py.html">python_library/scipy/graph.py</a>
-
-
-<div id="a280567310207d0ec287bcfac252dc53"></div>
-
-### python_library/string
-
-* :heavy_check_mark: <a href="library/python_library/string/z_algorithm.py.html">python_library/string/z_algorithm.py</a>
-
-
-<div id="1bd6c8bcf0a034068d4ecd4538188ccf"></div>
-
-### python_library_typed/data_structures
-
-* :warning: <a href="library/python_library_typed/data_structures/fenwick_tree.py.html">python_library_typed/data_structures/fenwick_tree.py</a>
-* :warning: <a href="library/python_library_typed/data_structures/matrix.py.html">python_library_typed/data_structures/matrix.py</a>
-* :warning: <a href="library/python_library_typed/data_structures/range_min_query_seg.py.html">python_library_typed/data_structures/range_min_query_seg.py</a>
-* :warning: <a href="library/python_library_typed/data_structures/segment_tree.py.html">python_library_typed/data_structures/segment_tree.py</a>
-* :warning: <a href="library/python_library_typed/data_structures/unionfind.py.html">python_library_typed/data_structures/unionfind.py</a>
-
-
-<div id="8f04bd9e27216e5afe99d60f70335c05"></div>
-
-### python_library_typed/geometry
-
-* :warning: <a href="library/python_library_typed/geometry/convex_hull.py.html">python_library_typed/geometry/convex_hull.py</a>
-* :warning: <a href="library/python_library_typed/geometry/geometry.py.html">python_library_typed/geometry/geometry.py</a>
-
-
-<div id="2a7e3e97022ce18b59747afed7368880"></div>
-
-### python_library_typed/graph
-
-* :warning: <a href="library/python_library_typed/graph/bellman_ford.py.html">python_library_typed/graph/bellman_ford.py</a>
-* :warning: <a href="library/python_library_typed/graph/dijkstra.py.html">python_library_typed/graph/dijkstra.py</a>
-* :warning: <a href="library/python_library_typed/graph/dinic.py.html">python_library_typed/graph/dinic.py</a>
-* :warning: <a href="library/python_library_typed/graph/flow.py.html">python_library_typed/graph/flow.py</a>
-* :warning: <a href="library/python_library_typed/graph/ford_fulkerson.py.html">python_library_typed/graph/ford_fulkerson.py</a>
-* :warning: <a href="library/python_library_typed/graph/graph.py.html">python_library_typed/graph/graph.py</a>
-* :warning: <a href="library/python_library_typed/graph/graph_adjlist.py.html">python_library_typed/graph/graph_adjlist.py</a>
-* :warning: <a href="library/python_library_typed/graph/graph_adjmatrix.py.html">python_library_typed/graph/graph_adjmatrix.py</a>
-* :warning: <a href="library/python_library_typed/graph/heavy_light_decomposition.py.html">python_library_typed/graph/heavy_light_decomposition.py</a>
-* :warning: <a href="library/python_library_typed/graph/kruskal.py.html">python_library_typed/graph/kruskal.py</a>
-* :warning: <a href="library/python_library_typed/graph/prim.py.html">python_library_typed/graph/prim.py</a>
-* :warning: <a href="library/python_library_typed/graph/primal_dual.py.html">python_library_typed/graph/primal_dual.py</a>
-* :warning: <a href="library/python_library_typed/graph/warshall_floyd.py.html">python_library_typed/graph/warshall_floyd.py</a>
-
-
-<div id="769bec8a7401b9ea69076e29f833e3d2"></div>
-
-### python_library_typed/math
-
-* :warning: <a href="library/python_library_typed/math/combinations.py.html">python_library_typed/math/combinations.py</a>
-* :warning: <a href="library/python_library_typed/math/divisor.py.html">python_library_typed/math/divisor.py</a>
-* :warning: <a href="library/python_library_typed/math/extgcd.py.html">python_library_typed/math/extgcd.py</a>
-* :warning: <a href="library/python_library_typed/math/givens.py.html">python_library_typed/math/givens.py</a>
-* :warning: <a href="library/python_library_typed/math/linear_recursion_solver.py.html">python_library_typed/math/linear_recursion_solver.py</a>
-* :warning: <a href="library/python_library_typed/math/pascalsTriangle.py.html">python_library_typed/math/pascalsTriangle.py</a>
-* :warning: <a href="library/python_library_typed/math/prime.py.html">python_library_typed/math/prime.py</a>
-
-
-<div id="b61a6d542f9036550ba9c401c80f00ef"></div>
-
-### tests
-
-* :warning: <a href="library/tests/__init__.py.html">tests/__init__.py</a>
-
-
-## Verify Files
-
-* :heavy_check_mark: <a href="verify/tests/convex_hull.test.py.html">tests/convex_hull.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/dinic_bimatch.test.py.html">tests/dinic_bimatch.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/dinic_max_flow.test.py.html">tests/dinic_max_flow.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/disc_log.test.py.html">tests/disc_log.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/euler_totient.test.py.html">tests/euler_totient.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/example.test.cpp.html">tests/example.test.cpp</a>
-* :heavy_check_mark: <a href="verify/tests/example.test.py.html">tests/example.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/extgcd.test.py.html">tests/extgcd.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/fenwick_tree_aoj.test.py.html">tests/fenwick_tree_aoj.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/fenwick_tree_yosupo.test.py.html">tests/fenwick_tree_yosupo.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/hld_lca.test.py.html">tests/hld_lca.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/hld_vertex_add_path_sum.test.py.html">tests/hld_vertex_add_path_sum.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/hld_vertex_add_subtree_sum.test.py.html">tests/hld_vertex_add_subtree_sum.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/largest_rect_hist.test.py.html">tests/largest_rect_hist.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/largest_rect_rect.test.py.html">tests/largest_rect_rect.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/lca.test.cpp.html">tests/lca.test.cpp</a>
-* :heavy_check_mark: <a href="verify/tests/lcm.test.py.html">tests/lcm.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/matrix_determinant.test.py.html">tests/matrix_determinant.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/matrix_mult.test.py.html">tests/matrix_mult.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/maximum_independet_set.test.py.html">tests/maximum_independet_set.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/miller_rabbin.test.py.html">tests/miller_rabbin.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/primal_dual.test.py.html">tests/primal_dual.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/prime_factorization.test.py.html">tests/prime_factorization.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/range_tree_2d.test.py.html">tests/range_tree_2d.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/scc_aoj.test.py.html">tests/scc_aoj.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/scc_yosupo.test.py.html">tests/scc_yosupo.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/segment_tree_point_add_range_sum.test.py.html">tests/segment_tree_point_add_range_sum.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/segment_tree_point_set_range_composite.test.py.html">tests/segment_tree_point_set_range_composite.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/segment_tree_range_min_query.test.py.html">tests/segment_tree_range_min_query.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/segment_tree_staticrmq.test.py.html">tests/segment_tree_staticrmq.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/tree_diameter.test.py.html">tests/tree_diameter.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/two_sat.test.py.html">tests/two_sat.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/union_find.test.py.html">tests/union_find.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/weighted_unionfind.test.py.html">tests/weighted_unionfind.test.py</a>
-* :heavy_check_mark: <a href="verify/tests/z_algorithm.test.py.html">tests/z_algorithm.test.py</a>
-
-
