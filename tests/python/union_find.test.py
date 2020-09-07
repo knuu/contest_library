@@ -9,12 +9,14 @@ input = sys.stdin.buffer.readline
 def main() -> None:
     N, Q = map(int, input().split())
     uft = UnionFindTree(N)
+    ans = []
     for _ in range(Q):
         t, u, v = map(int, input().split())
         if t == 0:
             uft.unite(u, v)
         else:
-            print(int(uft.is_same(u, v)))
+            ans.append(int(uft.is_same(u, v)))
+    print(*ans, sep="\n")
 
 
 if __name__ == "__main__":

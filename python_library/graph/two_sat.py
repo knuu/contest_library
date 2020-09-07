@@ -1,4 +1,3 @@
-# @import python_library/graph/scc.py
 from python_library.graph.scc import StronglyConnectedComponets
 
 

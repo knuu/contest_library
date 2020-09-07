@@ -11,14 +11,14 @@ class StronglyConnectedComponets:
         self.edges[from_v].append(to_v)
         self.rev_edeges[to_v].append(from_v)
 
-    def dfs(self, v) -> None:
+    def dfs(self, v: int) -> None:
         self.used[v] = True
         for child in self.edges[v]:
             if not self.used[child]:
                 self.dfs(child)
         self.vs.append(v)
 
-    def rdfs(self, v, k) -> None:
+    def rdfs(self, v: int, k: int) -> None:
         self.used[v] = True
         self.order[v] = k
         for child in self.rev_edeges[v]:
