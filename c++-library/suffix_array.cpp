@@ -8,7 +8,7 @@ struct SuffixArray {
   std::string S;
   std::vector<int> sa, rank, tmp;
   std::vector<int> lcp, rank_lcp;
-  SuffixArray(std::string S)
+  SuffixArray(std::string &S)
       : N(S.size()), S(S), sa(N + 1), rank(N + 1), tmp(N + 1) {
     construct();
   }
@@ -39,7 +39,7 @@ struct SuffixArray {
     }
   }
 
-  bool contain(std::string T) {
+  bool contain(const std::string &T) const {
     int left = 0, right = N;
     while (left + 1 < right) {
       int mid = (left + right) / 2;
@@ -68,18 +68,33 @@ struct SuffixArray {
 };
 
 void yosupo() {
+  // https://judge.yosupo.jp/problem/suffixarray
   std::string S;
   std::cin >> S;
   SuffixArray sa(S);
-  for (int i = 1; i <= S.size(); i++) {
+  for (size_t i = 1; i <= S.size(); i++) {
     std::cout << sa.sa[i] << (i == S.size() ? '\n' : ' ');
   }
+}
+
+void yosupo2() {
+  // https://judge.yosupo.jp/problem/number_of_substrings
+  std::string S;
+  std::cin >> S;
+  SuffixArray sa(S);
+  sa.construct_lcp();
+  long long ans = 1LL * S.size() * (S.size() + 1) / 2;
+  for (size_t i = 0; i < S.size(); i++) {
+    ans -= sa.lcp[i];
+  }
+  std::cout << ans << std::endl;
 }
 
 int main() {
   std::cin.tie(0);
   std::ios_base::sync_with_stdio(false);
 
-  yosupo();
+  // yosupo();
+  yosupo2();
   return 0;
 }

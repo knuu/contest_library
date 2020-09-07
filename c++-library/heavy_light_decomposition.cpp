@@ -448,6 +448,59 @@ void yosupo3() {
   }
 }
 
+template <typename T>
+struct RangeCompositeQuery {
+  using type = std::pair<T, T>;
+  static type identity() { return type{1, 0}; }
+  static type merge(const type &l, const type &r) {
+    return type{l.first * r.first, l.second * r.first + r.second};
+  }
+};
+
+using mint = ModInt<998'244'353>;
+using mint_p = std::pair<mint, mint>;
+
+void yosupo4() {
+  // https://judge.yosupo.jp/problem/vertex_set_path_composite
+  // 通っていない。多分 reverse がどうとか。
+  int N, Q;
+  std::cin >> N >> Q;
+  std::vector<mint_p> funcs;
+  funcs.reserve(N);
+  for (int i = 0; i < N; i++) {
+    int a, b;
+    std::cin >> a >> b;
+    funcs.emplace_back(mint(a), mint(b));
+  }
+
+  Graph<int> g(N);
+  for (int i = 0; i < N - 1; i++) {
+    int a, b;
+    std::cin >> a >> b;
+    g.add_edge(a, b, 1);
+    g.add_edge(b, a, 1);
+  }
+  HeavyLightDecomposition<int> hld(g);
+  SegmentTree<RangeCompositeQuery<mint>> rcq(N);
+  for (int i = 0; i < N; i++) {
+    rcq.update(hld.vid[i], funcs[i]);
+  }
+
+  for (int i = 0; i < Q; i++) {
+    int t, a, b, c;
+    std::cin >> t >> a >> b >> c;
+    if (t == 0) {
+      rcq.update(hld.vid[a], mint_p{b, c});
+    } else {
+      mint_p func = hld.query_path(
+          a, b, RangeCompositeQuery<mint>::identity(),
+          [&](int a, int b) { return rcq.query(a, b); },
+          RangeCompositeQuery<mint>::merge);
+      std::cout << func.first * c + func.second << '\n';
+    }
+  }
+}
+
 void yuki650() {
   int N;
   std::cin >> N;
@@ -495,6 +548,7 @@ int main() {
   // spoj_qtree();
   // yuki650();
   // yosupo2();
-  yosupo3();
+  // yosupo3();
+  yosupo4();
   return 0;
 }

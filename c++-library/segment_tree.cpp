@@ -149,12 +149,142 @@ void yosupo_rsq() {
   }
 }
 
+template <std::uint_fast64_t Modulus = 1'000'000'007>
+class ModInt {
+  using u64 = std::uint_fast64_t;
+
+ public:
+  using type = ModInt;
+
+  u64 value;
+
+  constexpr ModInt(const u64 x = 0) noexcept : value(x % Modulus) {
+    if (value < 0) value += Modulus;
+  }
+  constexpr ModInt operator-() const noexcept {
+    return value ? Modulus - value : 0;
+  }
+  constexpr ModInt operator+(const ModInt rhs) const noexcept {
+    return ModInt(*this) += rhs;
+  }
+  constexpr ModInt operator-(const ModInt rhs) const noexcept {
+    return ModInt(*this) -= rhs;
+  }
+  constexpr ModInt operator*(const ModInt rhs) const noexcept {
+    return ModInt(*this) *= rhs;
+  }
+  constexpr ModInt operator/(const ModInt rhs) const noexcept {
+    return ModInt(*this) /= rhs;
+  }
+  constexpr ModInt &operator+=(const ModInt rhs) noexcept {
+    value += rhs.value;
+    if (value >= Modulus) value -= Modulus;
+    return *this;
+  }
+  constexpr ModInt &operator-=(const ModInt rhs) noexcept {
+    if (value < rhs.value) value += Modulus;
+    value -= rhs.value;
+    return *this;
+  }
+  constexpr ModInt &operator*=(const ModInt rhs) noexcept {
+    value = value * rhs.value % Modulus;
+    return *this;
+  }
+  constexpr bool operator==(const ModInt &r) const noexcept {
+    return value == r.value;
+  }
+  constexpr bool operator!=(const ModInt &r) const noexcept {
+    return value != r.value;
+  }
+  constexpr ModInt &operator/=(ModInt rhs) noexcept {
+    u64 exp = Modulus - 2;
+    while (exp) {
+      if (exp % 2) *this *= rhs;
+      rhs *= rhs;
+      exp /= 2;
+    }
+    return *this;
+  }
+
+  friend constexpr std::ostream &operator<<(std::ostream &os,
+                                            const ModInt &x) noexcept {
+    return os << x.value;
+  }
+
+  static ModInt identity_zero() { return ModInt(); }
+  static ModInt identity_one() { return ModInt(1); }
+};
+
+template <typename T>
+struct RangeCompositeQuery {
+  using type = std::pair<T, T>;
+  static type identity() { return type{1, 0}; }
+  static type merge(const type &l, const type &r) {
+    return type{l.first * r.first, l.second * r.first + r.second};
+  }
+};
+
+using mint = ModInt<998'244'353>;
+using mint_p = std::pair<mint, mint>;
+
+void yosupo_composite() {
+  // https://judge.yosupo.jp/problem/point_set_range_composite
+  int N, Q;
+  std::cin >> N >> Q;
+
+  std::vector<mint_p> funcs;
+  funcs.reserve(N);
+  for (int i = 0; i < N; i++) {
+    int a, b;
+    std::cin >> a >> b;
+    funcs.emplace_back(mint(a), mint(b));
+  }
+  SegmentTree<RangeCompositeQuery<mint>> segt(funcs);
+
+  for (int i = 0; i < Q; i++) {
+    int t, a, b, c;
+    std::cin >> t >> a >> b >> c;
+    if (t == 0) {
+      segt.update(a, mint_p{b, c});
+    } else {
+      mint_p func = segt.query(a, b);
+      std::cout << func.first * c + func.second << '\n';
+    }
+  }
+}
+
+void yosupo_que_composite() {
+  // https://judge.yosupo.jp/problem/queue_operate_all_composite
+  int Q;
+  std::cin >> Q;
+  SegmentTree<RangeCompositeQuery<mint>> segt(Q);
+  int left = 0, right = 0;
+  for (int i = 0; i < Q; i++) {
+    int t;
+    std::cin >> t;
+    if (t == 0) {
+      int a, b;
+      std::cin >> a >> b;
+      segt.update(right++, mint_p{a, b});
+    } else if (t == 1) {
+      left++;
+    } else {
+      int x;
+      std::cin >> x;
+      mint_p func = segt.query(left, right);
+      std::cout << func.first * mint{x} + func.second << '\n';
+    }
+  }
+}
+
 int main() {
   std::cin.tie(0);
   std::ios_base::sync_with_stdio(false);
   // aoj_min();
   // aoj_sum();
   // yosupo_static_rmq();
-  yosupo_rsq();
+  // yosupo_rsq();
+  // yosupo_composite();
+  yosupo_que_composite();
   return 0;
 }
