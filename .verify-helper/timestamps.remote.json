@@ -1,6 +1,8 @@
 {
 "tests/cpp/example.test.cpp": "2020-09-08 03:58:48 +0900",
 "tests/cpp/lca.test.cpp": "2020-09-08 03:58:48 +0900",
+"tests/cpp/suffix_array.test.cpp": "2020-09-08 07:30:00 +0900",
+"tests/cpp/suffix_array_lcp.test.cpp": "2020-09-08 07:30:00 +0900",
 "tests/python/convex_hull.test.py": "2020-09-08 04:10:45 +0900",
 "tests/python/dinic_bimatch.test.py": "2020-09-08 04:10:45 +0900",
 "tests/python/dinic_max_flow.test.py": "2020-09-08 04:10:45 +0900",
@@ -32,5 +34,6 @@
 "tests/python/tree_diameter.test.py": "2020-09-08 04:10:45 +0900",
 "tests/python/two_sat.test.py": "2020-09-08 06:49:11 +0900",
 "tests/python/union_find.test.py": "2020-09-08 06:49:11 +0900",
-"tests/python/weighted_unionfind.test.py": "2020-09-08 04:10:45 +0900"
+"tests/python/weighted_unionfind.test.py": "2020-09-08 04:10:45 +0900",
+"tests/python/z_algorithm.test.py": "2020-09-08 04:10:45 +0900"
 }
