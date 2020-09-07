@@ -3,8 +3,8 @@
 # @import python_library/geometry/convex_hull.py
 import sys
 
-sys.path.insert(0, ".")
-input = sys.stdin.buffer.readline
+# sys.path.insert(0, ".")
+# input = sys.stdin.buffer.readline
 
 from python_library.geometry.geometry import Point
 from python_library.geometry.convex_hull import ConvexHull
