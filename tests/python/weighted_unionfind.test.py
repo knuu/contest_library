@@ -1,11 +1,9 @@
 # verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B
-# @import python_library/data_structures/weighted_unionfind.py
 import sys
 
-sys.path.insert(0, ".")
-input = sys.stdin.buffer.readline
-
 from python_library.data_structures.weighted_unionfind import WeightedUnionFindTree
+
+input = sys.stdin.buffer.readline
 
 
 def main() -> None:

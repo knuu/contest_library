@@ -1,11 +1,9 @@
 # verify-helper: PROBLEM https://judge.yosupo.jp/problem/kth_root_integer
-# @import python_library/math/kth_root.py
 import sys
 
-sys.path.insert(0, ".")
-input = sys.stdin.buffer.readline
-
 from python_library.math.kth_root import kth_root
+
+input = sys.stdin.buffer.readline
 
 
 def main() -> None:

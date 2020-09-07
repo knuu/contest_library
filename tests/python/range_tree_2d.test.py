@@ -1,12 +1,10 @@
 # verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C
 # verify-helper: IGNORE
-# @import python_library/data_structres/range_tree_2d.py
 import sys
 
-sys.path.insert(0, ".")
-input = sys.stdin.buffer.readline
-
 from python_library.data_structures.range_tree_2d import RangeTree2D
+
+input = sys.stdin.buffer.readline
 
 
 def main() -> None:

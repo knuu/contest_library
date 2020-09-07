@@ -1,11 +1,9 @@
 # verify-helper: PROBLEM https://judge.yosupo.jp/problem/discrete_logarithm_mod
-# @import python_library/math/disc_log.py
 import sys
 
-sys.path.insert(0, ".")
-input = sys.stdin.buffer.readline
-
 from python_library.math.disc_log import solve_discrete_logarithm
+
+input = sys.stdin.buffer.readline
 
 
 def main() -> None:

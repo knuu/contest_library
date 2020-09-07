@@ -1,13 +1,10 @@
 # verify-helper: PROBLEM https://judge.yosupo.jp/problem/lca
-# @import python_library/graph/graph.py
-# @import python_library/graph/heavy_light_decomposition.py
 import sys
-
-sys.path.insert(0, ".")
-input = sys.stdin.buffer.readline
 
 from python_library.graph.graph import Graph
 from python_library.graph.heavy_light_decomposition import HeavyLightDecomposition
+
+input = sys.stdin.buffer.readline
 
 
 def main() -> None:

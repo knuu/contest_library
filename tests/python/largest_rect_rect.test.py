@@ -1,13 +1,11 @@
 # verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B
-# @import python_library/dynamic_programming/largest_rect_hist.py
 import sys
-
-sys.path.insert(0, ".")
-input = sys.stdin.buffer.readline
 
 from python_library.dynamic_programming.largest_rect_hist import (
     calc_largest_rect_in_hist,
 )
+
+input = sys.stdin.buffer.readline
 
 
 def main() -> None:

@@ -1,11 +1,9 @@
 # verify-helper: PROBLEM https://judge.yosupo.jp/problem/maximum_independent_set
-# @import python_library/graph/maximum_independet_set.py
 import sys
 
-sys.path.insert(0, ".")
-input = sys.stdin.buffer.readline
-
 from python_library.graph.maximum_independet_set import maximum_independet_set
+
+input = sys.stdin.buffer.readline
 
 
 def main() -> None:

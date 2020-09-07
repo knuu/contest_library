@@ -1,12 +1,10 @@
 # verify-helper: PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum
-# @import python_library/data_structures/segment_tree.py
 import operator
 import sys
 
-sys.path.insert(0, ".")
-input = sys.stdin.buffer.readline
-
 from python_library.data_structures.segment_tree import SegmentTree
+
+input = sys.stdin.buffer.readline
 
 
 def main() -> None:

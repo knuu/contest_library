@@ -1,13 +1,10 @@
 # verify-helper: PROBLEM https://judge.yosupo.jp/problem/two_sat
-# @import python_library/graph/two_sat.py
 import sys
 
-sys.path.insert(0, ".")
+from python_library.graph.two_sat import TwoSat
 
 input = sys.stdin.buffer.readline
 sys.setrecursionlimit(10 ** 6 + 100)
-
-from python_library.graph.two_sat import TwoSat
 
 
 def main() -> None:

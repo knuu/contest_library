@@ -1,11 +1,9 @@
 # verify-helper: PROBLEM https://judge.yosupo.jp/problem/zalgorithm
-# @import python_library/string/z_algorithm.py
 import sys
 
-sys.path.insert(0, ".")
-input = sys.stdin.buffer.readline
-
 from python_library.string.z_algorithm import z_algorithm
+
+input = sys.stdin.buffer.readline
 
 
 def main() -> None:

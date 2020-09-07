@@ -1,12 +1,10 @@
 # verify-helper: PROBLEM http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
-# @import python_library/graph/scc.py
 import sys
 
-sys.path.insert(0, ".")
+from python_library.graph.scc import StronglyConnectedComponets
+
 input = sys.stdin.buffer.readline
 sys.setrecursionlimit(6 * 10 ** 5)
-
-from python_library.graph.scc import StronglyConnectedComponets
 
 
 def main() -> None:
