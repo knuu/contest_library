@@ -5,7 +5,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
   bundledCode: "#line 1 \"tests/cpp/suffix_array.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\
     \n#include <iostream>\n#include <string>\n\n#line 1 \"c++-library/suffix_array.cpp\"\
-    \n#include <functional>\n#line 4 \"c++-library/suffix_array.cpp\"\n#include <vector>\n\
+    \n#include <functional>\n#line 3 \"c++-library/suffix_array.cpp\"\n#include <vector>\n\
     \nstruct SuffixArray {\n  int N, k;\n  std::string S;\n  std::vector<int> sa,\
     \ rank, tmp;\n  std::vector<int> lcp, rank_lcp;\n  SuffixArray(std::string &S)\n\
     \      : N(S.size()), S(S), sa(N + 1), rank(N + 1), tmp(N + 1) {\n    construct();\n\
@@ -26,32 +26,21 @@ data:
     \ rank_lcp[sa[i]] = i;\n\n    int h = 0;\n    lcp[0] = 0;\n    for (int i = 0;\
     \ i < N; i++) {\n      int j = sa[rank[i] - 1];\n\n      if (h > 0) h--;\n   \
     \   for (; j + h < N and i + h < N; h++) {\n        if (S[j + h] != S[i + h])\
-    \ break;\n      }\n\n      lcp[rank[i] - 1] = h;\n    }\n  }\n};\n\nvoid yosupo()\
-    \ {\n  // https://judge.yosupo.jp/problem/suffixarray\n  std::string S;\n  std::cin\
-    \ >> S;\n  SuffixArray sa(S);\n  for (size_t i = 1; i <= S.size(); i++) {\n  \
-    \  std::cout << sa.sa[i] << (i == S.size() ? '\\n' : ' ');\n  }\n}\n\nvoid yosupo2()\
-    \ {\n  // https://judge.yosupo.jp/problem/number_of_substrings\n  std::string\
-    \ S;\n  std::cin >> S;\n  SuffixArray sa(S);\n  sa.construct_lcp();\n  long long\
-    \ ans = 1LL * S.size() * (S.size() + 1) / 2;\n  for (size_t i = 0; i < S.size();\
-    \ i++) {\n    ans -= sa.lcp[i];\n  }\n  std::cout << ans << std::endl;\n}\n\n\
-    int main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\n\
-    \  // yosupo();\n  yosupo2();\n  return 0;\n}\n#line 6 \"tests/cpp/suffix_array.test.cpp\"\
-    \n\n\nvoid yosupo() {\n  // https://judge.yosupo.jp/problem/suffixarray\n  std::string\
-    \ S;\n  std::cin >> S;\n  SuffixArray sa(S);\n  for (size_t i = 1; i <= S.size();\
-    \ i++) {\n    std::cout << sa.sa[i] << (i == S.size() ? '\\n' : ' ');\n  }\n}\n\
-    \nint main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\
+    \ break;\n      }\n\n      lcp[rank[i] - 1] = h;\n    }\n  }\n};\n#line 6 \"tests/cpp/suffix_array.test.cpp\"\
+    \n\n\nvoid yosupo() {\n  std::string S;\n  std::cin >> S;\n  SuffixArray sa(S);\n\
+    \  for (size_t i = 1; i <= S.size(); i++) {\n    std::cout << sa.sa[i] << (i ==\
+    \ S.size() ? '\\n' : ' ');\n  }\n}\n\nint main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\
     \n  yosupo();\n  return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\n#include\
     \ <iostream>\n#include <string>\n\n#include \"c++-library/suffix_array.cpp\"\n\
-    \n\nvoid yosupo() {\n  // https://judge.yosupo.jp/problem/suffixarray\n  std::string\
-    \ S;\n  std::cin >> S;\n  SuffixArray sa(S);\n  for (size_t i = 1; i <= S.size();\
-    \ i++) {\n    std::cout << sa.sa[i] << (i == S.size() ? '\\n' : ' ');\n  }\n}\n\
-    \nint main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\
+    \n\nvoid yosupo() {\n  std::string S;\n  std::cin >> S;\n  SuffixArray sa(S);\n\
+    \  for (size_t i = 1; i <= S.size(); i++) {\n    std::cout << sa.sa[i] << (i ==\
+    \ S.size() ? '\\n' : ' ');\n  }\n}\n\nint main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\
     \n  yosupo();\n  return 0;\n}\n"
   dependsOn:
   - c++-library/suffix_array.cpp
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: c++-library/suffix_array.cpp
     title: c++-library/suffix_array.cpp
   extendedRequiredBy: []
@@ -59,9 +48,9 @@ data:
   isVerificationFile: true
   path: tests/cpp/suffix_array.test.cpp
   requiredBy: []
-  timestamp: '2020-09-08 07:11:24+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  timestamp: '2020-09-08 07:30:00+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/cpp/suffix_array.test.cpp
 layout: document

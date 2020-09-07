@@ -96,7 +96,7 @@ data:
     - icon: ':warning:'
       path: c++-library/segtree_rangeadd.cpp
       title: c++-library/segtree_rangeadd.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: c++-library/suffix_array.cpp
       title: c++-library/suffix_array.cpp
     - icon: ':warning:'
@@ -281,7 +281,7 @@ data:
       title: python_library/scipy/graph.py
   - name: python_library/string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: python_library/string/z_algorithm.py
       title: python_library/string/z_algorithm.py
   - name: python_library_typed/data_structures
@@ -387,9 +387,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/cpp/lca.test.cpp
       title: tests/cpp/lca.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/cpp/suffix_array.test.cpp
       title: tests/cpp/suffix_array.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: tests/cpp/suffix_array_lcp.test.cpp
+      title: tests/cpp/suffix_array_lcp.test.cpp
   - name: tests/python
     pages:
     - icon: ':heavy_check_mark:'
@@ -491,7 +494,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/python/weighted_unionfind.test.py
       title: tests/python/weighted_unionfind.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/python/z_algorithm.test.py
       title: tests/python/z_algorithm.test.py
 layout: toppage
