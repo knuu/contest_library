@@ -7,7 +7,7 @@ when isMainModule:
   let (N, Q) = input(int, 2)
   var dset = initUnionFindTree(N)
   for i in 0..<Q:
-    let (t, u, v) = input(int, 2)
+    let (t, u, v) = input(int, 3)
     if t == 0:
       dset.uniteNode(u, v)
     else:
