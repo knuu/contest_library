@@ -25,7 +25,12 @@ jobs:
 
     # required only if you want to verify Nim code
     - name: Install dependencies (Nim)
-      run: sudo apt install nim
+      run: apt update && apt install -y curl xz-utils g++ git libopenblas-base
+      run: curl https://nim-lang.org/choosenim/init.sh -sSf | bash -s -- -y
+      run: PATH=/root/.nimble/bin:$PATH
+      run: nimble install neo -y
+      run: nimble install bignum -y
+      run: choosenim 1.0.6
 
     # required only if you want to verify Python code importing external libraries
     - name: Install dependencies (Python)
