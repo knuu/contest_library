@@ -18,14 +18,22 @@ data:
   dependsOn: []
   extendedDependsOn: []
   extendedRequiredBy: []
-  extendedVerifiedWith: []
+  extendedVerifiedWith:
+  - icon: ':x:'
+    path: tests/nim/unionfind_yusupo_test.nim
+    title: tests/nim/unionfind_yusupo_test.nim
+  - icon: ':x:'
+    path: tests/nim/unionfind_yusupo_test.nim
+    title: tests/nim/unionfind_yusupo_test.nim
   isVerificationFile: false
   path: nim-library/union_find.nim
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verificationStatusIcon: ':x:'
+  verifiedWith:
+  - tests/nim/unionfind_yusupo_test.nim
+  - tests/nim/unionfind_yusupo_test.nim
 documentation_of: nim-library/union_find.nim
 layout: document
 redirect_from:
