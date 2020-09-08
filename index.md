@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: c++-library
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: c++-library/2sat.cpp
       title: c++-library/2sat.cpp
     - icon: ':warning:'
@@ -81,7 +81,7 @@ data:
     - icon: ':warning:'
       path: c++-library/range_tree_inner.cpp
       title: An implementation of range tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: c++-library/scc.cpp
       title: c++-library/scc.cpp
     - icon: ':warning:'
@@ -382,11 +382,20 @@ data:
   - name: tests/cpp
     pages:
     - icon: ':heavy_check_mark:'
+      path: tests/cpp/2sat.test.cpp
+      title: tests/cpp/2sat.test.cpp
+    - icon: ':heavy_check_mark:'
       path: tests/cpp/example.test.cpp
       title: tests/cpp/example.test.cpp
     - icon: ':heavy_check_mark:'
       path: tests/cpp/lca.test.cpp
       title: tests/cpp/lca.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: tests/cpp/scc_aoj.test.cpp
+      title: tests/cpp/scc_aoj.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: tests/cpp/scc_yosupo.test.cpp
+      title: tests/cpp/scc_yosupo.test.cpp
     - icon: ':heavy_check_mark:'
       path: tests/cpp/suffix_array.test.cpp
       title: tests/cpp/suffix_array.test.cpp
