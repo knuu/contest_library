@@ -13,7 +13,7 @@ def main() -> None:
     for _ in range(Q):
         com, x, y = map(int, input().split())
         if com == 0:
-            rmq.update(x, y)
+            rmq[x] = y
         else:
             print(rmq.query(x, y + 1))
 

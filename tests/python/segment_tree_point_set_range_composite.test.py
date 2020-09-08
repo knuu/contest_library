@@ -19,7 +19,7 @@ def main() -> None:
     for _ in range(Q):
         t, a, b, c = map(int, input().split())
         if t == 0:
-            segt.update(a, (b, c))
+            segt[a] = (b, c)
         else:
             a1, a2 = segt.query(a, b)
             ans.append((a1 * c + a2) % mod)

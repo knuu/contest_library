@@ -15,7 +15,7 @@ def main() -> None:
     for _ in range(Q):
         type_, l, r = map(int, input().split())
         if type_ == 0:
-            rsq.update(l, rsq[l] + r)
+            rsq[l] = rsq[l] + r
         else:
             ans.append(rsq.query(l, r))
     print(*ans, sep="\n")

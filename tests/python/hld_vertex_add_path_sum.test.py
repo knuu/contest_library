@@ -1,10 +1,11 @@
 # verify-helper: PROBLEM https://judge.yosupo.jp/problem/vertex_add_path_sum
-import sys
 import operator
+import sys
 
 from python_library.data_structures.segment_tree import SegmentTree
 from python_library.graph.graph import Graph
-from python_library.graph.heavy_light_decomposition import HeavyLightDecomposition
+from python_library.graph.heavy_light_decomposition import \
+    HeavyLightDecomposition
 
 input = sys.stdin.buffer.readline
 
@@ -27,7 +28,7 @@ def main() -> None:
     for _ in range(Q):
         t, a, b = map(int, input().split())
         if t == 0:
-            rsq.update(hld.vid[a], rsq[hld.vid[a]] + b)
+            rsq[hld.vid[a]] = rsq[hld.vid[a]] + b
         else:
             ans.append(hld.query_path(a, b, 0, rsq.query, operator.add))
     print(*ans, sep="\n")

@@ -1,4 +1,10 @@
-class SegmentTree:
+from __future__ import annotations
+from typing import Generic, TypeVar, Callable, Sequence
+
+T = TypeVar('T')
+
+
+class SegmentTree(Generic[T]):
     """Segment Tree (Point Update & Range Query)
 
     Query
@@ -10,14 +16,17 @@ class SegmentTree:
         space complexity: O(n)
     """
 
-    def __init__(self, N, f, default):
+    def __init__(self, N: int, f: Callable[[T, T], T], default: T) -> None:
+        self._N = N
         self.N = 1 << (N - 1).bit_length()
         self.default = default
         self.f = f
         self.segtree = [self.default] * ((self.N << 1) - 1)
 
     @classmethod
-    def create_from_array(cls, arr, f, default):
+    def create_from_array(cls, arr: Sequence[T],
+                          f: Callable[[T, T], T], default: T
+                          ) -> SegmentTree[T]:
         N = len(arr)
         self = cls(N, f, default)
         for i in range(N):
@@ -29,20 +38,24 @@ class SegmentTree:
             )
         return self
 
-    def update(self, i, val):
-        i += self.N - 1
-        self.segtree[i] = val
-        while i > 0:
-            i = (i - 1) >> 1
-            self.segtree[i] = self.f(
-                self.segtree[(i << 1) + 1], self.segtree[(i << 1) + 2]
-            )
-
-    def __getitem__(self, k):
+    def __getitem__(self, k: int) -> T:
         return self.segtree[self.N - 1 + k]
 
-    def query(self, low, high):
+    def __setitem__(self, key: int, value: T) -> None:
+        key += self.N - 1
+        self.segtree[key] = value
+        while key > 0:
+            key = (key - 1) >> 1
+            self.segtree[key] = self.f(
+                self.segtree[(key << 1) + 1], self.segtree[(key << 1) + 2]
+            )
+
+    def __len__(self) -> int:
+        return self._N
+
+    def query(self, low: int, high: int) -> T:
         # query [l, r)
+        # TODO: rewrite as __getitem__
         low, high = low + self.N, high + self.N
         left_ret, right_ret = self.default, self.default
         while low < high:
