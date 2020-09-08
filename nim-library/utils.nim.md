@@ -27,18 +27,18 @@ data:
   extendedDependsOn: []
   extendedRequiredBy: []
   extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/nim/unionfind_yusupo_test.nim
     title: tests/nim/unionfind_yusupo_test.nim
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/nim/unionfind_yusupo_test.nim
     title: tests/nim/unionfind_yusupo_test.nim
   isVerificationFile: false
   path: nim-library/utils.nim
   requiredBy: []
   timestamp: '2020-09-08 23:52:11+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verificationStatusIcon: ':x:'
+  verificationStatus: LIBRARY_ALL_AC
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/nim/unionfind_yusupo_test.nim
   - tests/nim/unionfind_yusupo_test.nim

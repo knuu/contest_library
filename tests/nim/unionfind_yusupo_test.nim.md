@@ -9,24 +9,24 @@ data:
   code: "# verify-helper: PROBLEM https://judge.yosupo.jp/problem/unionfind\n\ninclude\
     \ \"nim-library/utils.nim\"\ninclude \"nim-library/union_find.nim\"\n\nwhen isMainModule:\n\
     \  let (N, Q) = input(int, 2)\n  var dset = initUnionFindTree(N)\n  for i in 0..<Q:\n\
-    \    let (t, u, v) = input(int, 2)\n    if t == 0:\n      dset.uniteNode(u, v)\n\
+    \    let (t, u, v) = input(int, 3)\n    if t == 0:\n      dset.uniteNode(u, v)\n\
     \    else:\n      echo dset.hasSameRoot(u, v).int\n"
   dependsOn:
   - nim-library/utils.nim
+  - nim-library/union_find.nim
   - nim-library/utils.nim
   - nim-library/union_find.nim
-  - nim-library/union_find.nim
   extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: nim-library/utils.nim
     title: nim-library/utils.nim
-  - icon: ':x:'
-    path: nim-library/utils.nim
-    title: nim-library/utils.nim
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: nim-library/union_find.nim
     title: nim-library/union_find.nim
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
+    path: nim-library/utils.nim
+    title: nim-library/utils.nim
+  - icon: ':heavy_check_mark:'
     path: nim-library/union_find.nim
     title: nim-library/union_find.nim
   extendedRequiredBy: []
@@ -34,9 +34,9 @@ data:
   isVerificationFile: true
   path: tests/nim/unionfind_yusupo_test.nim
   requiredBy: []
-  timestamp: '2020-09-08 23:52:11+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
-  verificationStatusIcon: ':x:'
+  timestamp: '2020-09-09 01:00:13+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/nim/unionfind_yusupo_test.nim
 layout: document

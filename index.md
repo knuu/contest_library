@@ -137,10 +137,10 @@ data:
     - icon: ':warning:'
       path: nim-library/segment_tree.nim
       title: nim-library/segment_tree.nim
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: nim-library/union_find.nim
       title: nim-library/union_find.nim
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: nim-library/utils.nim
       title: nim-library/utils.nim
   - name: python_library
@@ -407,7 +407,7 @@ data:
       title: tests/cpp/suffix_array_lcp.test.cpp
   - name: tests/nim
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/nim/unionfind_yusupo_test.nim
       title: tests/nim/unionfind_yusupo_test.nim
   - name: tests/python
