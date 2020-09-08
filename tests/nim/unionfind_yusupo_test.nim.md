@@ -12,20 +12,20 @@ data:
     \    let (t, u, v) = input(int, 2)\n    if t == 0:\n      dset.uniteNode(u, v)\n\
     \    else:\n      echo dset.hasSameRoot(u, v).int\n"
   dependsOn:
+  - nim-library/utils.nim
+  - nim-library/utils.nim
   - nim-library/union_find.nim
-  - nim-library/utils.nim
-  - nim-library/utils.nim
   - nim-library/union_find.nim
   extendedDependsOn:
   - icon: ':x:'
+    path: nim-library/utils.nim
+    title: nim-library/utils.nim
+  - icon: ':x:'
+    path: nim-library/utils.nim
+    title: nim-library/utils.nim
+  - icon: ':x:'
     path: nim-library/union_find.nim
     title: nim-library/union_find.nim
-  - icon: ':x:'
-    path: nim-library/utils.nim
-    title: nim-library/utils.nim
-  - icon: ':x:'
-    path: nim-library/utils.nim
-    title: nim-library/utils.nim
   - icon: ':x:'
     path: nim-library/union_find.nim
     title: nim-library/union_find.nim
