@@ -11,8 +11,8 @@ data:
     \ninput = sys.stdin.buffer.readline\n\n\ndef main() -> None:\n    N, Q = map(int,\
     \ input().split())\n    default = (1 << 31) - 1\n    rmq = SegmentTree(N, min,\
     \ default)\n    for _ in range(Q):\n        com, x, y = map(int, input().split())\n\
-    \        if com == 0:\n            rmq.update(x, y)\n        else:\n         \
-    \   print(rmq.query(x, y + 1))\n\n\nif __name__ == \"__main__\":\n    main()\n"
+    \        if com == 0:\n            rmq[x] = y\n        else:\n            print(rmq.query(x,\
+    \ y + 1))\n\n\nif __name__ == \"__main__\":\n    main()\n"
   dependsOn:
   - python_library/data_structures/segment_tree.py
   extendedDependsOn:
@@ -24,7 +24,7 @@ data:
   isVerificationFile: true
   path: tests/python/segment_tree_range_min_query.test.py
   requiredBy: []
-  timestamp: '2020-09-08 04:10:45+09:00'
+  timestamp: '2020-09-08 22:41:32+09:00'
   verificationStatus: TEST_ACCEPTED
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []

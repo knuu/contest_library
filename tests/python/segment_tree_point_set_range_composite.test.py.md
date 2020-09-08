@@ -13,9 +13,9 @@ data:
     \    mod = 998244353\n\n    def merge(l, r, mod=mod):\n        return l[0] * r[0]\
     \ % mod, (l[1] * r[0] + r[1]) % mod\n\n    segt = SegmentTree.create_from_array(A,\
     \ merge, (1, 0))\n    ans = []\n    for _ in range(Q):\n        t, a, b, c = map(int,\
-    \ input().split())\n        if t == 0:\n            segt.update(a, (b, c))\n \
-    \       else:\n            a1, a2 = segt.query(a, b)\n            ans.append((a1\
-    \ * c + a2) % mod)\n    print(*ans, sep=\"\\n\")\n\n\nif __name__ == \"__main__\"\
+    \ input().split())\n        if t == 0:\n            segt[a] = (b, c)\n       \
+    \ else:\n            a1, a2 = segt.query(a, b)\n            ans.append((a1 * c\
+    \ + a2) % mod)\n    print(*ans, sep=\"\\n\")\n\n\nif __name__ == \"__main__\"\
     :\n    main()\n"
   dependsOn:
   - python_library/data_structures/segment_tree.py
@@ -28,7 +28,7 @@ data:
   isVerificationFile: true
   path: tests/python/segment_tree_point_set_range_composite.test.py
   requiredBy: []
-  timestamp: '2020-09-08 04:10:45+09:00'
+  timestamp: '2020-09-08 22:41:32+09:00'
   verificationStatus: TEST_ACCEPTED
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []

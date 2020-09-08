@@ -12,8 +12,8 @@ data:
     \    _, Q = map(int, input().split())\n    A = [int(x) for x in input().split()]\n\
     \    rsq = SegmentTree.create_from_array(A, operator.add, 0)\n    ans = []\n \
     \   for _ in range(Q):\n        type_, l, r = map(int, input().split())\n    \
-    \    if type_ == 0:\n            rsq.update(l, rsq[l] + r)\n        else:\n  \
-    \          ans.append(rsq.query(l, r))\n    print(*ans, sep=\"\\n\")\n\n\nif __name__\
+    \    if type_ == 0:\n            rsq[l] = rsq[l] + r\n        else:\n        \
+    \    ans.append(rsq.query(l, r))\n    print(*ans, sep=\"\\n\")\n\n\nif __name__\
     \ == \"__main__\":\n    main()\n"
   dependsOn: []
   extendedDependsOn: []

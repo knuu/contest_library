@@ -24,7 +24,7 @@ data:
   isVerificationFile: true
   path: tests/python/segment_tree_staticrmq.test.py
   requiredBy: []
-  timestamp: '2020-09-08 04:10:45+09:00'
+  timestamp: '2020-09-08 22:41:32+09:00'
   verificationStatus: TEST_ACCEPTED
   verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
