@@ -51,7 +51,7 @@ struct ShortestPath {
 
     dist[start] = 0;
     que.emplace(start, 0);
-    prev[0] = -1;
+    prev[start] = -1;
 
     while (!que.empty()) {
       Node<T> n = que.top();
