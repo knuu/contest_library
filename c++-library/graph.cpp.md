@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/graph.cpp\"\n#include <vector>\n\n// graph by\
     \ adjacency list\ntemplate <typename T>\nstruct Edge {\n  int src, dst;\n  T weight;\n\
     \  Edge(const int src, const int dst, const T weight)\n      : src(src), dst(dst),\
@@ -22,15 +28,11 @@ data:
     \ V) : V(V) { E.resize(V); }\n  void add_edge(const int src, const int dst, const\
     \ T weight) {\n    E[src].emplace_back(src, dst, weight);\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/graph.cpp
   requiredBy: []
   timestamp: '2020-01-21 04:11:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/graph.cpp
 layout: document

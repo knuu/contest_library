@@ -1,10 +1,17 @@
 ---
 data:
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/python.py\"\
-    , line 84, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: py
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/python.py\"\
+    , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "class WarshallFloyd():\n    \"\"\"Warshall-Floyd Algorithm:\n       find\
     \ the lengths of the shortest paths between all pairs of vertices\n       complexity:\
     \ O(V^3)\n       used in GRL1C(AOJ), aoj0189\n    \"\"\"\n\n    def __init__(self,\
@@ -23,15 +30,11 @@ data:
     \        for i in range(self.V):\n            if self.distance[i][i] < 0:\n  \
     \              return True\n        else:\n            return False\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: python_library/graph/warshall_floyd.py
   requiredBy: []
   timestamp: '2020-02-16 02:53:38+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: python_library/graph/warshall_floyd.py
 layout: document

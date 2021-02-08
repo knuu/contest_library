@@ -1,8 +1,19 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: c++-library/scc.cpp
+    title: c++-library/scc.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C
   bundledCode: "#line 1 \"tests/cpp/scc_aoj.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C\"\
     \n#include <iostream>\n\n#line 1 \"c++-library/scc.cpp\"\n#include <algorithm>\n\
     #include <vector>\n\nstruct StronglyConnectedComponents {\n  int V;\n  std::vector<std::vector<int>>\
@@ -36,18 +47,11 @@ data:
     \ std::ios_base::sync_with_stdio(false);\n\n  aoj();\n  return 0;\n}\n"
   dependsOn:
   - c++-library/scc.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: c++-library/scc.cpp
-    title: c++-library/scc.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: tests/cpp/scc_aoj.test.cpp
   requiredBy: []
   timestamp: '2020-09-08 22:17:10+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/cpp/scc_aoj.test.cpp
 layout: document

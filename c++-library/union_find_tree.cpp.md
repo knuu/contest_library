@@ -1,7 +1,15 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=ja
+    - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"c++-library/union_find_tree.cpp\"\n#include <iostream>\n\
     #include <vector>\n\nstruct DisjointSet {\n  std::vector<size_t> parent, rank;\n\
     \n  DisjointSet(const size_t N) : parent(N), rank(N, 0) {\n    for (size_t i =\
@@ -34,15 +42,11 @@ data:
     \ << std::endl;\n    }\n  }\n}\n\nint main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\
     \n  yosupo_aoj();\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/union_find_tree.cpp
   requiredBy: []
   timestamp: '2020-01-21 04:11:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/union_find_tree.cpp
 layout: document

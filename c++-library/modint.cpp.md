@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/modint.cpp\"\n#include <cstdint>\n#include <iostream>\n\
     \ntemplate <std::uint_fast64_t Modulus = 1'000'000'007>\nclass ModInt {\n  using\
     \ u64 = std::uint_fast64_t;\n\n public:\n  using type = ModInt;\n\n  u64 value;\n\
@@ -53,15 +59,11 @@ data:
     \ os << x.value;\n  }\n\n  static ModInt identity_zero() { return ModInt(); }\n\
     \  static ModInt identity_one() { return ModInt(1); }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/modint.cpp
   requiredBy: []
   timestamp: '2020-09-08 04:11:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/modint.cpp
 layout: document

@@ -1,8 +1,19 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: c++-library/suffix_array.cpp
+    title: c++-library/suffix_array.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
+    links:
+    - https://judge.yosupo.jp/problem/suffixarray
   bundledCode: "#line 1 \"tests/cpp/suffix_array.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\
     \n#include <iostream>\n#include <string>\n\n#line 1 \"c++-library/suffix_array.cpp\"\
     \n#include <functional>\n#line 3 \"c++-library/suffix_array.cpp\"\n#include <vector>\n\
@@ -39,18 +50,11 @@ data:
     \n  yosupo();\n  return 0;\n}\n"
   dependsOn:
   - c++-library/suffix_array.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: c++-library/suffix_array.cpp
-    title: c++-library/suffix_array.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: tests/cpp/suffix_array.test.cpp
   requiredBy: []
   timestamp: '2020-09-08 07:30:00+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/cpp/suffix_array.test.cpp
 layout: document

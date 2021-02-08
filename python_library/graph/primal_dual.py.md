@@ -1,10 +1,17 @@
 ---
 data:
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/python.py\"\
-    , line 84, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: py
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/python.py\"\
+    , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "import heapq\n\n\nclass MinCostFlow:\n    class Edge:\n        def __init__(self,\
     \ to, cap, rev, cost):\n            self.to, self.cap, self.rev, self.cost = to,\
     \ cap, rev, cost\n\n    def __init__(self, V):\n        self.V = V\n        self.E\
@@ -29,20 +36,12 @@ data:
     \ -= d\n                self.E[v][self.E[prevv[v]][preve[v]].rev].cap += d\n \
     \               v = prevv[v]\n        return res\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/python/primal_dual.test.py
-    title: tests/python/primal_dual.test.py
   isVerificationFile: false
   path: python_library/graph/primal_dual.py
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
-  verifiedWith:
-  - tests/python/primal_dual.test.py
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: python_library/graph/primal_dual.py
 layout: document
 redirect_from:

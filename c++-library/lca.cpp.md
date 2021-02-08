@@ -1,7 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/cpp/lca.test.cpp
+    title: tests/cpp/lca.test.cpp
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/lca.cpp\"\n#include <cmath>\n#include <utility>\n\
     #include <vector>\n\nstruct LowestCommonAncestor {\n  int V, log_V;\n  std::vector<std::vector<int>>\
     \ edge;\n\n  std::vector<std::vector<int>> parent;\n  std::vector<int> depth;\n\
@@ -48,18 +57,11 @@ data:
     \ 0; k--) {\n      if (cnt >> k & 1) {\n        v = parent[k][v];\n      }\n \
     \   }\n    return v;\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/cpp/lca.test.cpp
-    title: tests/cpp/lca.test.cpp
   isVerificationFile: false
   path: c++-library/lca.cpp
   requiredBy: []
   timestamp: '2020-02-16 02:15:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/cpp/lca.test.cpp
 documentation_of: c++-library/lca.cpp

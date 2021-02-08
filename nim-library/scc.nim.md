@@ -1,9 +1,17 @@
 ---
 data:
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/nim.py\"\
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: nim
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links:
+    - https://nim-lang.org/docs/manual.html#macros-expression-macros
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/nim.py\"\
     , line 86, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "import algorithm, complex, future, macros, math, queues, rationals, sets,\
     \ sequtils, strutils, tables # for 0.13.0\n# import algorithm, bitops, complex,\
@@ -51,15 +59,11 @@ data:
     \    (N, M) = input(int, 2)\n  var scc = initSCC(N)\n  for i in 0..<(N - 1 + M):\n\
     \    let (a, b) = input(int, 2)\n    scc.add_edge(a, b)\n  scc.run()\n  debug(scc.sorted_vs)\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: nim-library/scc.nim
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: nim-library/scc.nim
 layout: document

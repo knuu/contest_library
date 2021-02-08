@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/minimum_ratio_spanning_tree.cpp\"\n#include\
     \ <bits/stdc++.h>\n\nusing namespace std;\ntypedef long long int ll;\ntypedef\
     \ pair<int, int> P;\ntypedef pair<ll, ll> Pll;\ntypedef vector<int> Vi;\n// typedef\
@@ -78,15 +84,11 @@ data:
     \ c, t);\n  }\n  MinimumRatioSpanningTree<double> mrst(g);\n\n  std::cout << std::fixed\
     \ << std::setprecision(20) << mrst.run() << std::endl;\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/minimum_ratio_spanning_tree.cpp
   requiredBy: []
   timestamp: '2020-01-21 04:11:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/minimum_ratio_spanning_tree.cpp
 layout: document

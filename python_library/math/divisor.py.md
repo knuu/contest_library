@@ -1,10 +1,18 @@
 ---
 data:
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/python.py\"\
-    , line 84, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: py
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links:
+    - https://judge.yosupo.jp/problem/factorize
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/python.py\"\
+    , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "from copy import deepcopy\nfrom functools import reduce\n\n\nclass Divisor:\n\
     \    def __init__(self, n):\n        \"\"\" make divisors list and prime factorization\
     \ list of n\n            complexity: O(n^(1/2))\n            used in ProjectEuler\
@@ -32,20 +40,12 @@ data:
     \   ans.extend([k] * pf.primeFactorization[k])\n        print(len(ans), *ans)\n\
     \n\nif __name__ == \"__main__\":\n    yosupo()\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/python/prime_factorization.test.py
-    title: tests/python/prime_factorization.test.py
   isVerificationFile: false
   path: python_library/math/divisor.py
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
-  verifiedWith:
-  - tests/python/prime_factorization.test.py
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: python_library/math/divisor.py
 layout: document
 redirect_from:

@@ -1,8 +1,15 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: ange Sum Query by FenwickTree(Binary Indexed Tree)
+    links:
+    - http://hos.ac/slides/20140319_bit.pdf
   bundledCode: "#line 1 \"c++-library/fenwick_tree.cpp\"\n/**\n * @brief ange Sum\
     \ Query by FenwickTree(Binary Indexed Tree)\n *\n * total number: n\n * queries:\n\
     \ *    1. add(i, val): bit[i] += val\n *    2. sum(n): sum(bit[0] + ... + bit[n-1])\n\
@@ -51,15 +58,11 @@ data:
     \ rsq.sum(x, y) << '\\n';\n    }\n  }\n}\n\nint main() {\n  std::cin.tie(0);\n\
     \  std::ios_base::sync_with_stdio(false);\n\n  yosupo();\n\n  return 0;\n}"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/fenwick_tree.cpp
   requiredBy: []
   timestamp: '2020-01-21 04:11:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/fenwick_tree.cpp
 layout: document

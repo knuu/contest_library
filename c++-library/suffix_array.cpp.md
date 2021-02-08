@@ -1,7 +1,19 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/cpp/suffix_array.test.cpp
+    title: tests/cpp/suffix_array.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/cpp/suffix_array_lcp.test.cpp
+    title: tests/cpp/suffix_array_lcp.test.cpp
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/suffix_array.cpp\"\n#include <functional>\n\
     #include <string>\n#include <vector>\n\nstruct SuffixArray {\n  int N, k;\n  std::string\
     \ S;\n  std::vector<int> sa, rank, tmp;\n  std::vector<int> lcp, rank_lcp;\n \
@@ -48,21 +60,11 @@ data:
     \        if (S[j + h] != S[i + h]) break;\n      }\n\n      lcp[rank[i] - 1] =\
     \ h;\n    }\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/cpp/suffix_array_lcp.test.cpp
-    title: tests/cpp/suffix_array_lcp.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: tests/cpp/suffix_array.test.cpp
-    title: tests/cpp/suffix_array.test.cpp
   isVerificationFile: false
   path: c++-library/suffix_array.cpp
   requiredBy: []
   timestamp: '2020-09-08 07:30:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/cpp/suffix_array_lcp.test.cpp
   - tests/cpp/suffix_array.test.cpp

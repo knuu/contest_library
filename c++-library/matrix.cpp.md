@@ -1,7 +1,14 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/all/ITP1_7_D
   bundledCode: "#line 1 \"c++-library/matrix.cpp\"\n#include <cassert>\n#include <cstdint>\n\
     #include <iostream>\n#include <vector>\n\ntemplate <typename T>\nstruct Int {\n\
     \  using type = T;\n\n  static type identity_zero() { return T(0); }\n  static\
@@ -96,15 +103,11 @@ data:
     \ ? '\\n' : ' ');\n    }\n  }\n}\n\nint main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\
     \  // aoj();\n  example();\n  return 0;\n}"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/matrix.cpp
   requiredBy: []
   timestamp: '2020-01-21 04:11:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/matrix.cpp
 layout: document

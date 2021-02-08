@@ -150,16 +150,16 @@ data:
       title: python_library/__init__.py
   - name: python_library/data_structures
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/data_structures/fenwick_tree.py
       title: python_library/data_structures/fenwick_tree.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/data_structures/matrix.py
       title: python_library/data_structures/matrix.py
-    - icon: ':x:'
+    - icon: ':warning:'
       path: python_library/data_structures/range_tree_2d.py
       title: python_library/data_structures/range_tree_2d.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/data_structures/segment_tree.py
       title: python_library/data_structures/segment_tree.py
     - icon: ':heavy_check_mark:'
@@ -195,40 +195,40 @@ data:
     - icon: ':warning:'
       path: python_library/graph/dijkstra.py
       title: python_library/graph/dijkstra.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/graph/dinic.py
       title: python_library/graph/dinic.py
     - icon: ':warning:'
       path: python_library/graph/ford_fulkerson.py
       title: python_library/graph/ford_fulkerson.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/graph/graph.py
       title: python_library/graph/graph.py
     - icon: ':warning:'
       path: python_library/graph/graph2.py
       title: python_library/graph/graph2.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/graph/heavy_light_decomposition.py
       title: python_library/graph/heavy_light_decomposition.py
     - icon: ':warning:'
       path: python_library/graph/kruskal.py
       title: python_library/graph/kruskal.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/graph/maximum_independet_set.py
       title: python_library/graph/maximum_independet_set.py
     - icon: ':warning:'
       path: python_library/graph/prim.py
       title: python_library/graph/prim.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/graph/primal_dual.py
       title: python_library/graph/primal_dual.py
     - icon: ':heavy_check_mark:'
       path: python_library/graph/scc.py
       title: python_library/graph/scc.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/graph/tree_diameter.py
       title: python_library/graph/tree_diameter.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/graph/two_sat.py
       title: python_library/graph/two_sat.py
     - icon: ':warning:'
@@ -242,7 +242,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: python_library/math/disc_log.py
       title: python_library/math/disc_log.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: python_library/math/divisor.py
       title: python_library/math/divisor.py
     - icon: ':heavy_check_mark:'
@@ -415,6 +415,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/python/convex_hull.test.py
       title: tests/python/convex_hull.test.py
+    - icon: ':x:'
+      path: tests/python/dijkstra.test.py
+      title: tests/python/dijkstra.test.py
     - icon: ':heavy_check_mark:'
       path: tests/python/dinic_bimatch.test.py
       title: tests/python/dinic_bimatch.test.py
@@ -445,7 +448,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/python/hld_vertex_add_path_sum.test.py
       title: tests/python/hld_vertex_add_path_sum.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/hld_vertex_add_subtree_sum.test.py
       title: tests/python/hld_vertex_add_subtree_sum.test.py
     - icon: ':heavy_check_mark:'
@@ -460,22 +463,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/python/lcm.test.py
       title: tests/python/lcm.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/matrix_determinant.test.py
       title: tests/python/matrix_determinant.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/matrix_mult.test.py
       title: tests/python/matrix_mult.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/maximum_independet_set.test.py
       title: tests/python/maximum_independet_set.test.py
     - icon: ':heavy_check_mark:'
       path: tests/python/miller_rabbin.test.py
       title: tests/python/miller_rabbin.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/primal_dual.test.py
       title: tests/python/primal_dual.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/prime_factorization.test.py
       title: tests/python/prime_factorization.test.py
     - icon: ':x:'
@@ -487,22 +490,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/python/scc_yosupo.test.py
       title: tests/python/scc_yosupo.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/segment_tree_point_add_range_sum.test.py
       title: tests/python/segment_tree_point_add_range_sum.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/segment_tree_point_set_range_composite.test.py
       title: tests/python/segment_tree_point_set_range_composite.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/segment_tree_range_min_query.test.py
       title: tests/python/segment_tree_range_min_query.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/segment_tree_staticrmq.test.py
       title: tests/python/segment_tree_staticrmq.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/tree_diameter.test.py
       title: tests/python/tree_diameter.test.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/python/two_sat.test.py
       title: tests/python/two_sat.test.py
     - icon: ':heavy_check_mark:'

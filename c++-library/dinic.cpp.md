@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/dinic.cpp\"\n#define INF 1<<29\n\ntemplate <typename\
     \ T>\nstruct MaxFlow {\n  struct Edge {\n    int to, rev; T cap;\n    Edge(int\
     \ to, int rev, T cap) : to(to), rev(rev), cap(cap) { }\n  };\n\n  typedef vector<Edge>\
@@ -42,15 +48,11 @@ data:
     \      if (level[sink] < 0) return flow;\n      iter.assign(V, 0);\n      T f;\n\
     \      while ((f = dfs(source, sink, INF)) > 0) flow += f;\n    }\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/dinic.cpp
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/dinic.cpp
 layout: document

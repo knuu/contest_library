@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/prim.cpp\"\ntemplate <typename T>\nstruct Node\
     \ {\n  int v, src; T dist;\n  Node(int v, int src, T dist) : v(v), src(src), dist(dist)\
     \ { };\n  bool operator < (const Node<T> &n) const {\n    return dist > n.dist;\
@@ -27,15 +33,11 @@ data:
     \        if (!used[e.dst]) que.emplace(e.dst, v, e.weight);\n      }\n    }\n\
     \    return mincost;\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/prim.cpp
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/prim.cpp
 layout: document

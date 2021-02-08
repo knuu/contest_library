@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/segtree_pointupdate_rangemin.cpp\"\nconst int\
     \ INF = 1<<29;\n\n/*\n  RangeMinimumQuery by Segment Tree\n  query:\n  1. update(i,\
     \ val): update i-th value to val(0-indexrd)\n  2. query(low, high): find minimun\
@@ -34,15 +40,11 @@ data:
     \    int mid = (l + r) / 2;\n    return min(query(a, b, 2 * k + 1, l, mid),\n\
     \               query(a, b, 2 * k + 2, mid, r));\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/segtree_pointupdate_rangemin.cpp
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/segtree_pointupdate_rangemin.cpp
 layout: document

@@ -1,8 +1,19 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: c++-library/scc.cpp
+    title: c++-library/scc.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/scc
+    links:
+    - https://judge.yosupo.jp/problem/scc
   bundledCode: "#line 1 \"tests/cpp/scc_yosupo.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\
     \n#include <iostream>\n#include <map>\n\n#line 1 \"c++-library/scc.cpp\"\n#include\
     \ <algorithm>\n#include <vector>\n\nstruct StronglyConnectedComponents {\n  int\
@@ -40,18 +51,11 @@ data:
     \n  yosupo();\n  return 0;\n}"
   dependsOn:
   - c++-library/scc.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: c++-library/scc.cpp
-    title: c++-library/scc.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: tests/cpp/scc_yosupo.test.cpp
   requiredBy: []
   timestamp: '2020-09-08 22:17:10+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/cpp/scc_yosupo.test.cpp
 layout: document

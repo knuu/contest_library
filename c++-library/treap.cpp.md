@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/treap.cpp\"\ntemplate <typename T>\nstruct Node\
     \ {\n  using type = T;\n  T val;\n  Node *left, *right;\n  int priority;\n\n \
     \ Node() {}\n  Node(T val) : val(val), left(nullptr), right(nullptr) {}\n  bool\
@@ -30,15 +36,11 @@ data:
     \ {\n      parent->right = node;\n    }\n    return true;\n  }\n};\n\ntemplate\
     \ <class Node>\nTreap<Node>::Treap() : root(nullptr), nil(nullptr) {}"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/treap.cpp
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/treap.cpp
 layout: document

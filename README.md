@@ -45,12 +45,12 @@ Library for Competitive Programming for C++, Python, Nim-lang
 | Minimum Spanning Tree (Prim)                                 | :warning:          | :warning:          |           |
 | Minimum Spanning Tree (Kruskal)                              | :warning:          | :warning:          |           |
 | Minimum Ratio Spanning Tree                                  | :warning:          |                    |           |
-| Strongly Connected Componets                                 | :warning:          | :heavy_check_mark: | :warning: |
+| Strongly Connected Componets                                 | :heavy_check_mark: | :heavy_check_mark: | :warning: |
 | Lowest Common Anscestor                                      | :heavy_check_mark: | :heavy_check_mark: |           |
 | Heavy Light Decomposition <br/>(Centroid Path Decomposition) | :warning:          | :heavy_check_mark: |           |
 | Maximum Independet Set                                       |                    | :heavy_check_mark: |           |
 | Tree Diameter                                                |                    | :heavy_check_mark: |           |
-| 2 Sat                                                        | :warning:          | :heavy_check_mark: |           |
+| 2 Sat                                                        | :heavy_check_mark: | :heavy_check_mark: |           |
 
 - Notes
     - Bipartite Matching of C++: using Dinic
@@ -73,10 +73,10 @@ Library for Competitive Programming for C++, Python, Nim-lang
 
 ### String
 
-|                         | C++       | Python             | Nim  |
-| ----------------------- | --------- | ------------------ | ---- |
-| Z-algorithm             |           | :heavy_check_mark: |      |
-| Suffix Array (with LCP) | :warning: |                    |      |
+|                         | C++                | Python             | Nim  |
+| ----------------------- | ------------------ | ------------------ | ---- |
+| Z-algorithm             |                    | :heavy_check_mark: |      |
+| Suffix Array (with LCP) | :heavy_check_mark: |                    |      |
 
 ### Geometry
 

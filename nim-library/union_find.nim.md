@@ -1,9 +1,22 @@
 ---
 data:
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/nim.py\"\
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/nim/unionfind_yusupo_test.nim
+    title: tests/nim/unionfind_yusupo_test.nim
+  - icon: ':heavy_check_mark:'
+    path: tests/nim/unionfind_yusupo_test.nim
+    title: tests/nim/unionfind_yusupo_test.nim
+  _isVerificationFailed: false
+  _pathExtension: nim
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    links: []
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/nim.py\"\
     , line 86, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "import sequtils\n\ntype\n  UnionFind = object\n    parent, rank: seq[int]\n\
     \nproc initUnionFindTree(size: Natural): UnionFind =\n  return UnionFind(parent:\
@@ -16,21 +29,11 @@ data:
     \nproc hasSameRoot(uf: var UnionFind, x, y: int): bool =\n  return uf.findRoot(x)\
     \ == uf.findRoot(y)\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/nim/unionfind_yusupo_test.nim
-    title: tests/nim/unionfind_yusupo_test.nim
-  - icon: ':heavy_check_mark:'
-    path: tests/nim/unionfind_yusupo_test.nim
-    title: tests/nim/unionfind_yusupo_test.nim
   isVerificationFile: false
   path: nim-library/union_find.nim
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/nim/unionfind_yusupo_test.nim
   - tests/nim/unionfind_yusupo_test.nim

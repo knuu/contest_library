@@ -1,7 +1,14 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://judge.yosupo.jp/problem/manhattanmst
   bundledCode: "#line 1 \"c++-library/manhattan_mst.cpp\"\n#include <algorithm>\n\
     #include <cassert>\n#include <iostream>\n#include <limits>\n#include <numeric>\n\
     #include <tuple>\n#include <utility>\n#include <vector>\n\ntemplate <class Monoid>\n\
@@ -171,15 +178,11 @@ data:
     \  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\n  yosupo();\n\
     \  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/manhattan_mst.cpp
   requiredBy: []
   timestamp: '2020-09-08 04:11:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/manhattan_mst.cpp
 layout: document

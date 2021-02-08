@@ -1,10 +1,17 @@
 ---
 data:
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/python.py\"\
-    , line 84, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: py
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/python.py\"\
+    , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "import collections\n\n\nclass MaxFlow:\n    \"\"\"Calculate max flow by Dinic's\
     \ algorithm\n       complexity: O(EV^2)\n       used in GRL6A(AOJ)\n    \"\"\"\
     \n\n    class Edge:\n        \"\"\"edge in flow networks\"\"\"\n\n        def\
@@ -33,24 +40,12 @@ data:
     \ in self.E[fr]:\n                if e.cap > 0 and self.level[e.to] < 0:\n   \
     \                 self.level[e.to] = self.level[fr] + 1\n                    que.append(e.to)\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/python/dinic_bimatch.test.py
-    title: tests/python/dinic_bimatch.test.py
-  - icon: ':heavy_check_mark:'
-    path: tests/python/dinic_max_flow.test.py
-    title: tests/python/dinic_max_flow.test.py
   isVerificationFile: false
   path: python_library/graph/dinic.py
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
-  verifiedWith:
-  - tests/python/dinic_bimatch.test.py
-  - tests/python/dinic_max_flow.test.py
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: python_library/graph/dinic.py
 layout: document
 redirect_from:

@@ -1,7 +1,19 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: c++-library/scc.cpp
+    title: c++-library/scc.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/cpp/2sat.test.cpp
+    title: tests/cpp/2sat.test.cpp
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/2sat.cpp\"\n#include <vector>\n\n#line 1 \"\
     c++-library/scc.cpp\"\n#include <algorithm>\n#line 3 \"c++-library/scc.cpp\"\n\
     \nstruct StronglyConnectedComponents {\n  int V;\n  std::vector<std::vector<int>>\
@@ -38,21 +50,11 @@ data:
     \  ans[i - 1] = cmp[i] > cmp[i + N];\n    }\n    return true;\n  }\n};\n"
   dependsOn:
   - c++-library/scc.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: c++-library/scc.cpp
-    title: c++-library/scc.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/cpp/2sat.test.cpp
-    title: tests/cpp/2sat.test.cpp
   isVerificationFile: false
   path: c++-library/2sat.cpp
   requiredBy: []
   timestamp: '2020-09-08 22:17:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
   - tests/cpp/2sat.test.cpp
 documentation_of: c++-library/2sat.cpp

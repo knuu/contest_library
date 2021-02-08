@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/kruskal.cpp\"\n#include <vector>\n\ntemplate\
     \ <typename T>\nstruct Edge {\n  int src, dst;\n  T weight;\n\n  Edge(int src,\
     \ int dst, T weight) : src(src), dst(dst), weight(weight) {}\n\n  bool operator<(const\
@@ -46,15 +52,11 @@ data:
     \        mst.emplace_back(e);\n        mincost += e.weight;\n        edge_count--;\n\
     \      }\n    }\n    return mincost;\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/kruskal.cpp
   requiredBy: []
   timestamp: '2020-01-21 04:11:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/kruskal.cpp
 layout: document

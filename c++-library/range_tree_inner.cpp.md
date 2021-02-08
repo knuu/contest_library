@@ -1,8 +1,15 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: An implementation of range tree
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C)
   bundledCode: "#line 1 \"c++-library/range_tree_inner.cpp\"\n/**\n * @file range_tree.cpp\n\
     \ * @brief An implementation of range tree\n * @author knuu\n * @date 2018/09/16\n\
     \ *\n */\n\n#include <algorithm>\n#include <array>\n#include <cassert>\n#include\
@@ -298,15 +305,11 @@ data:
     \ out);\n    std::sort(out.begin(), out.end());\n    for (size_t i : out) printf(\"\
     %lu\\n\", i);\n    printf(\"\\n\");\n  }\n  //*/\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/range_tree_inner.cpp
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/range_tree_inner.cpp
 layout: document

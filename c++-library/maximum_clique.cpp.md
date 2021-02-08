@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/maximum_clique.cpp\"\n#include <cassert>\n#include\
     \ <iostream>\n#include <numeric>\n#include <vector>\n\nstd::vector<int> maximum_clique_naive(\n\
     \    const std::vector<int> &vs, const std::vector<std::vector<int>> &adj_mat)\
@@ -45,15 +51,11 @@ data:
     \  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\n  abc002_d();\n\
     \  return 0;\n}"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/maximum_clique.cpp
   requiredBy: []
   timestamp: '2020-09-08 04:11:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/maximum_clique.cpp
 layout: document

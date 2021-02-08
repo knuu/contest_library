@@ -1,7 +1,25 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: c++-library/2sat.cpp
+    title: c++-library/2sat.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/cpp/2sat.test.cpp
+    title: tests/cpp/2sat.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/cpp/scc_aoj.test.cpp
+    title: tests/cpp/scc_aoj.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/cpp/scc_yosupo.test.cpp
+    title: tests/cpp/scc_yosupo.test.cpp
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/scc.cpp\"\n#include <algorithm>\n#include <vector>\n\
     \nstruct StronglyConnectedComponents {\n  int V;\n  std::vector<std::vector<int>>\
     \ G, rG;\n  std::vector<int> vs, cmp;\n  std::vector<bool> used;\n\n  StronglyConnectedComponents(const\
@@ -33,32 +51,16 @@ data:
     \    std::vector<int> order(V);\n    for (std::size_t i = 0; i < cmp.size(); i++)\
     \ {\n      order[cmp[i]] = i;\n    }\n    return order;\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: c++-library/2sat.cpp
-    title: c++-library/2sat.cpp
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/cpp/2sat.test.cpp
-    title: tests/cpp/2sat.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: tests/cpp/scc_aoj.test.cpp
-    title: tests/cpp/scc_aoj.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: tests/cpp/scc_yosupo.test.cpp
-    title: tests/cpp/scc_yosupo.test.cpp
   isVerificationFile: false
   path: c++-library/scc.cpp
   requiredBy:
   - c++-library/2sat.cpp
   timestamp: '2020-09-08 22:17:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith:
-  - tests/cpp/2sat.test.cpp
-  - tests/cpp/scc_aoj.test.cpp
   - tests/cpp/scc_yosupo.test.cpp
+  - tests/cpp/scc_aoj.test.cpp
+  - tests/cpp/2sat.test.cpp
 documentation_of: c++-library/scc.cpp
 layout: document
 redirect_from:

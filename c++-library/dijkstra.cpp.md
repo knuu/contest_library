@@ -1,7 +1,14 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_1_A
   bundledCode: "#line 1 \"c++-library/dijkstra.cpp\"\n#include <algorithm>\n#include\
     \ <iostream>\n#include <numeric>\n#include <queue>\n#include <vector>\n\n// graph\
     \ by adjacency list\ntemplate <typename T>\nstruct Edge {\n  int src, dst;\n \
@@ -19,9 +26,9 @@ data:
     \ = std::numeric_limits<T>::max())\n      : g(g), dist(g.V), prev(g.V), inf(inf)\
     \ {}\n\n  void run(int start, int goal = -1) {\n    std::priority_queue<Node<T>>\
     \ que;\n    std::fill(dist.begin(), dist.end(), inf);\n\n    dist[start] = 0;\n\
-    \    que.emplace(start, 0);\n    prev[0] = -1;\n\n    while (!que.empty()) {\n\
-    \      Node<T> n = que.top();\n      que.pop();\n      int v = n.v;\n      if\
-    \ (v == goal) return;\n      T cost = n.dist;\n      if (dist[v] < cost) continue;\n\
+    \    que.emplace(start, 0);\n    prev[start] = -1;\n\n    while (!que.empty())\
+    \ {\n      Node<T> n = que.top();\n      que.pop();\n      int v = n.v;\n    \
+    \  if (v == goal) return;\n      T cost = n.dist;\n      if (dist[v] < cost) continue;\n\
     \      for (Edge<T> e : g.E[v]) {\n        if (dist[v] < dist[e.dst] - e.weight)\
     \ {\n          dist[e.dst] = dist[v] + e.weight;\n          prev[e.dst] = v;\n\
     \          que.emplace(e.dst, dist[e.dst]);\n        }\n      }\n    }\n  }\n\n\
@@ -52,7 +59,7 @@ data:
     \  ShortestPath(const Graph<T> g, T inf = std::numeric_limits<T>::max())\n   \
     \   : g(g), dist(g.V), prev(g.V), inf(inf) {}\n\n  void run(int start, int goal\
     \ = -1) {\n    std::priority_queue<Node<T>> que;\n    std::fill(dist.begin(),\
-    \ dist.end(), inf);\n\n    dist[start] = 0;\n    que.emplace(start, 0);\n    prev[0]\
+    \ dist.end(), inf);\n\n    dist[start] = 0;\n    que.emplace(start, 0);\n    prev[start]\
     \ = -1;\n\n    while (!que.empty()) {\n      Node<T> n = que.top();\n      que.pop();\n\
     \      int v = n.v;\n      if (v == goal) return;\n      T cost = n.dist;\n  \
     \    if (dist[v] < cost) continue;\n      for (Edge<T> e : g.E[v]) {\n       \
@@ -70,15 +77,11 @@ data:
     \  }\n}\n\nint main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\
     \n  aoj();\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/dijkstra.cpp
   requiredBy: []
-  timestamp: '2020-01-21 04:11:11+09:00'
+  timestamp: '2021-02-09 04:27:54+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/dijkstra.cpp
 layout: document

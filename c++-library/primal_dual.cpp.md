@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/primal_dual.cpp\"\nconst int INF = 1e7;\n\n\
     template <typename T>\nstruct MinCostFlow {\n  struct Edge {\n    int to, rev;\
     \ T cap, cost;\n    Edge(int to, int rev, T cap, T cost) : to(to), rev(rev), cap(cap),\
@@ -54,15 +60,11 @@ data:
     \  Edge &e = G[prevv[v]][preve[v]];\n        e.cap -= d;\n        G[v][e.rev].cap\
     \ += d;\n      }\n    }\n    return res;\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/primal_dual.cpp
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/primal_dual.cpp
 layout: document

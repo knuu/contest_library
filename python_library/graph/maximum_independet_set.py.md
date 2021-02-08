@@ -1,10 +1,17 @@
 ---
 data:
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/python.py\"\
-    , line 84, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: py
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/python.py\"\
+    , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "# @import python_library/misc/popcount.py\nfrom python_library.misc.popcount\
     \ import popcount\n\n\ndef maximum_independet_set(v: int, bad: int, adj_mat):\n\
     \    \"\"\"\u6700\u5927\u72EC\u7ACB\u96C6\u5408\n    v: \u4ECA\u8ABF\u3079\u3066\
@@ -21,25 +28,13 @@ data:
     \     new_bad |= 1 << v\n        cand, cand_set = maximum_independet_set(v + 1,\
     \ new_bad, adj_mat)\n        if cand > ret:\n            ret, ret_set = cand,\
     \ cand_set\n\n    return ret, ret_set\n"
-  dependsOn:
-  - python_library/misc/popcount.py
-  extendedDependsOn:
-  - icon: ':warning:'
-    path: python_library/misc/popcount.py
-    title: python_library/misc/popcount.py
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/python/maximum_independet_set.test.py
-    title: tests/python/maximum_independet_set.test.py
+  dependsOn: []
   isVerificationFile: false
   path: python_library/graph/maximum_independet_set.py
   requiredBy: []
-  timestamp: '2020-02-16 07:49:55+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
-  verifiedWith:
-  - tests/python/maximum_independet_set.test.py
+  timestamp: '1970-01-01 00:00:00+00:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: python_library/graph/maximum_independet_set.py
 layout: document
 redirect_from:

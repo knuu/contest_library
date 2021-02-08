@@ -1,10 +1,17 @@
 ---
 data:
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/python.py\"\
-    , line 84, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: py
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/python.py\"\
+    , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "from __future__ import annotations\nfrom typing import Generic, TypeVar,\
     \ Callable, Sequence\n\nT = TypeVar('T')\n\n\nclass SegmentTree(Generic[T]):\n\
     \    \"\"\"Segment Tree (Point Update & Range Query)\n\n    Query\n        1.\
@@ -35,28 +42,12 @@ data:
     \ - 1], right_ret)\n            low, high = low >> 1, high >> 1\n        return\
     \ self.f(left_ret, right_ret)\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/python/segment_tree_range_min_query.test.py
-    title: tests/python/segment_tree_range_min_query.test.py
-  - icon: ':heavy_check_mark:'
-    path: tests/python/segment_tree_staticrmq.test.py
-    title: tests/python/segment_tree_staticrmq.test.py
-  - icon: ':heavy_check_mark:'
-    path: tests/python/segment_tree_point_set_range_composite.test.py
-    title: tests/python/segment_tree_point_set_range_composite.test.py
   isVerificationFile: false
   path: python_library/data_structures/segment_tree.py
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
-  verifiedWith:
-  - tests/python/segment_tree_range_min_query.test.py
-  - tests/python/segment_tree_staticrmq.test.py
-  - tests/python/segment_tree_point_set_range_composite.test.py
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: python_library/data_structures/segment_tree.py
 layout: document
 redirect_from:

@@ -1,10 +1,18 @@
 ---
 data:
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 64, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/python.py\"\
-    , line 84, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: py
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links:
+    - http://hos.ac/slides/20140319_bit.pdf
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/python.py\"\
+    , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "from typing import List\n\n\nclass FenwickTree:\n    \"\"\"FenwickTree (Binary\
     \ Indexed Tree, 0-index)\n\n    Queries:\n        1. add(i, val): add val to i-th\
     \ value\n        2. sum(n): sum(bit[0] + ... + bit[n-1])\n\n    complexity: O(log\
@@ -19,24 +27,12 @@ data:
     \            n = (n & (n + 1)) - 1\n        return ret\n\n    def query(self,\
     \ low: int, high: int) -> int:\n        return self.sum(high) - self.sum(low)\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/python/fenwick_tree_aoj.test.py
-    title: tests/python/fenwick_tree_aoj.test.py
-  - icon: ':heavy_check_mark:'
-    path: tests/python/fenwick_tree_yosupo.test.py
-    title: tests/python/fenwick_tree_yosupo.test.py
   isVerificationFile: false
   path: python_library/data_structures/fenwick_tree.py
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verificationStatusIcon: ':heavy_check_mark:'
-  verifiedWith:
-  - tests/python/fenwick_tree_aoj.test.py
-  - tests/python/fenwick_tree_yosupo.test.py
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: python_library/data_structures/fenwick_tree.py
 layout: document
 redirect_from:

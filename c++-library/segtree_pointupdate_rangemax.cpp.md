@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/segtree_pointupdate_rangemax.cpp\"\ntemplate<typename\
     \ T> struct RangeMaxQuery {\n  int N, _N;\n  vector<T> dat;\n  T initial;\n\n\
     \  RangeMaxQuery(int _N, T initial = 0) : _N(_N), initial(initial) {\n    assert(_N\
@@ -28,15 +34,11 @@ data:
     \ max(query(a, b, 2 * k + 1, l, mid),\n               query(a, b, 2 * k + 2, mid,\
     \ r));\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/segtree_pointupdate_rangemax.cpp
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/segtree_pointupdate_rangemax.cpp
 layout: document

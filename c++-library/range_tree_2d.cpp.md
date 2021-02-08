@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/range_tree_2d.cpp\"\n#include <bits/stdc++.h>\n\
     \nusing namespace std;\ntypedef long long int ll;\ntypedef pair<int, int> P;\n\
     typedef pair<ll, ll> Pll;\ntypedef vector<int> Vi;\n// typedef tuple<int, int,\
@@ -132,15 +138,11 @@ data:
     \ i : output) printf(\"%lu\\n\", i);\n    printf(\"\\n\");\n  }\n  return 0;\n\
     }\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/range_tree_2d.cpp
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/range_tree_2d.cpp
 layout: document

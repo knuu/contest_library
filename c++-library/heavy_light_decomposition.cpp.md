@@ -1,7 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://judge.yosupo.jp/problem/vertex_add_path_sum
+    - https://judge.yosupo.jp/problem/vertex_add_subtree_sum
+    - https://judge.yosupo.jp/problem/vertex_set_path_composite
   bundledCode: "#line 1 \"c++-library/heavy_light_decomposition.cpp\"\n#include <algorithm>\n\
     #include <cassert>\n#include <iostream>\n#include <queue>\n#include <stack>\n\
     #include <tuple>\n#include <utility>\n#include <vector>\n\ntemplate <std::uint_fast64_t\
@@ -410,15 +419,11 @@ data:
     \  // yosupo();\n  // spoj_qtree();\n  // yuki650();\n  // yosupo2();\n  // yosupo3();\n\
     \  yosupo4();\n  return 0;\n}"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/heavy_light_decomposition.cpp
   requiredBy: []
   timestamp: '2020-09-08 04:11:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/heavy_light_decomposition.cpp
 layout: document

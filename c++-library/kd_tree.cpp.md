@@ -1,8 +1,15 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: An implementation of kd-tree
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C)
   bundledCode: "#line 1 \"c++-library/kd_tree.cpp\"\n/**\n * @file kd_tree.cpp\n *\
     \ @brief An implementation of kd-tree\n * @author knuu\n * @date 2018/09/16\n\
     \ *\n * Usage:\n * 1. Define struct Data for Input data, comparing function, and\
@@ -290,15 +297,11 @@ data:
     }\n\nint main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\
     \  aoj();\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/kd_tree.cpp
   requiredBy: []
   timestamp: '2020-01-21 04:11:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/kd_tree.cpp
 layout: document

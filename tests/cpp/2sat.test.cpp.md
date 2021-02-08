@@ -1,8 +1,22 @@
 ---
 data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: c++-library/2sat.cpp
+    title: c++-library/2sat.cpp
+  - icon: ':heavy_check_mark:'
+    path: c++-library/scc.cpp
+    title: c++-library/scc.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/two_sat
+    links:
+    - https://judge.yosupo.jp/problem/two_sat
   bundledCode: "#line 1 \"tests/cpp/2sat.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/two_sat\"\
     \n#include <iostream>\n#include <string>\n\n#line 1 \"c++-library/2sat.cpp\"\n\
     #include <vector>\n\n#line 1 \"c++-library/scc.cpp\"\n#include <algorithm>\n#line\
@@ -50,21 +64,11 @@ data:
   dependsOn:
   - c++-library/2sat.cpp
   - c++-library/scc.cpp
-  extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: c++-library/2sat.cpp
-    title: c++-library/2sat.cpp
-  - icon: ':heavy_check_mark:'
-    path: c++-library/scc.cpp
-    title: c++-library/scc.cpp
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: true
   path: tests/cpp/2sat.test.cpp
   requiredBy: []
   timestamp: '2020-09-08 22:17:10+09:00'
   verificationStatus: TEST_ACCEPTED
-  verificationStatusIcon: ':heavy_check_mark:'
   verifiedWith: []
 documentation_of: tests/cpp/2sat.test.cpp
 layout: document

@@ -1,7 +1,16 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://judge.yosupo.jp/problem/point_set_range_composite
+    - https://judge.yosupo.jp/problem/queue_operate_all_composite
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A
   bundledCode: "#line 1 \"c++-library/segment_tree.cpp\"\n#include <algorithm>\n#include\
     \ <cassert>\n#include <iostream>\n#include <limits>\n#include <vector>\n\ntemplate\
     \ <class Monoid>\nstruct SegmentTree {\n  using T = typename Monoid::type;\n \
@@ -188,15 +197,11 @@ data:
     \  // aoj_min();\n  // aoj_sum();\n  // yosupo_static_rmq();\n  // yosupo_rsq();\n\
     \  // yosupo_composite();\n  yosupo_que_composite();\n  return 0;\n}"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/segment_tree.cpp
   requiredBy: []
   timestamp: '2020-09-08 04:11:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/segment_tree.cpp
 layout: document

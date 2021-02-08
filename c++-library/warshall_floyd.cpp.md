@@ -1,7 +1,14 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_1_C
   bundledCode: "#line 1 \"c++-library/warshall_floyd.cpp\"\n#include <algorithm>\n\
     #include <iostream>\n#include <numeric>\n#include <vector>\n\n// graph by adjacency\
     \ matrix\ntemplate <typename T>\nstruct Graph {\n  int V;\n  std::vector<std::vector<T>>\
@@ -59,15 +66,11 @@ data:
     \  }\n  }\n}\n\nint main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\
     \n  aoj();\n  return 0;\n}\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/warshall_floyd.cpp
   requiredBy: []
   timestamp: '2020-01-21 04:11:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/warshall_floyd.cpp
 layout: document

@@ -1,7 +1,13 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links: []
   bundledCode: "#line 1 \"c++-library/segtree_rangeadd.cpp\"\ntemplate <typename T>\n\
     struct RangeSumQuery {\n  int N, _N;\n  vector<T> data, datb;\n\n  RangeSumQuery(int\
     \ _N) : _N(_N) {\n    assert(_N > 0);\n    N = 1;\n    while (N < _N) N <<= 1;\n\
@@ -32,15 +38,11 @@ data:
     \ + 1, l, (l + r) / 2);\n      res += sum(a, b, 2 * k + 2, (l + r) / 2, r);\n\
     \      return res;\n    }\n  }\n};\n"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/segtree_rangeadd.cpp
   requiredBy: []
   timestamp: '2019-04-11 03:52:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/segtree_rangeadd.cpp
 layout: document

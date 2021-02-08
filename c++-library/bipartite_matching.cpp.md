@@ -1,7 +1,14 @@
 ---
 data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://judge.yosupo.jp/problem/bipartitematching
   bundledCode: "#line 1 \"c++-library/bipartite_matching.cpp\"\n#include <algorithm>\n\
     #include <iostream>\n#include <numeric>\n#include <queue>\n#include <vector>\n\
     \ntemplate <typename T>\nstruct BipartiteMatching {\n  struct Edge {\n    int\
@@ -72,15 +79,11 @@ data:
     \nint main() {\n  std::cin.tie(0);\n  std::ios_base::sync_with_stdio(false);\n\
     \n  yosupo_bm();\n  return 0;\n}"
   dependsOn: []
-  extendedDependsOn: []
-  extendedRequiredBy: []
-  extendedVerifiedWith: []
   isVerificationFile: false
   path: c++-library/bipartite_matching.cpp
   requiredBy: []
   timestamp: '2020-09-08 04:11:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
-  verificationStatusIcon: ':warning:'
   verifiedWith: []
 documentation_of: c++-library/bipartite_matching.cpp
 layout: document
