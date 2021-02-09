@@ -33,9 +33,9 @@ data:
     \    else:\n      echo dset.hasSameRoot(u, v).int\n"
   dependsOn:
   - nim-library/utils.nim
+  - nim-library/union_find.nim
+  - nim-library/union_find.nim
   - nim-library/utils.nim
-  - nim-library/union_find.nim
-  - nim-library/union_find.nim
   isVerificationFile: true
   path: tests/nim/unionfind_yusupo_test.nim
   requiredBy: []
