@@ -44,8 +44,21 @@ jobs:
     #   uses: actions/setup-ruby@v1
 
     # required only if you want to verify Nim code
-    - name: Install dependencies (Nim)
-      run: sudo apt install nim
+    - name: Cache choosenim
+      id: cache-choosenim
+      uses: actions/cache@v1
+      with:
+        path: ~/.choosenim
+        key: ${{ runner.os }}-choosenim-stable
+    - name: Cache nimble
+      id: cache-nimble
+      uses: actions/cache@v1
+      with:
+        path: ~/.nimble
+        key: ${{ runner.os }}-nimble-stable
+    - uses: jiro4989/setup-nim-action@v1
+      with:
+        nim-version: 1.0.6
 
     # - name: Set up Rust (1.42.0)
     #   uses: actions-rs/toolchain@v1
